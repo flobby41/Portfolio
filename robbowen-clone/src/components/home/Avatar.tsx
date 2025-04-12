@@ -20,32 +20,23 @@ const Avatar = () => {
       const relativeX = (e.clientX - centerX) / (window.innerWidth / 2);
       const relativeY = (e.clientY - centerY) / (window.innerHeight / 2);
 
-      // Limit the amount of movement with a smoother curve
+      // Limit the amount of movement
       const limitedX = Math.max(-10, Math.min(10, relativeX * 10));
       const limitedY = Math.max(-10, Math.min(10, relativeY * 10));
 
-      // Use a smoother transition rather than direct setting
-      setMousePosition(prev => ({
-        x: prev.x + (limitedX - prev.x) * 0.1,
-        y: prev.y + (limitedY - prev.y) * 0.1
-      }));
+      setMousePosition({ x: limitedX, y: limitedY });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Set loaded after a sequence of delays to trigger animations
-    const timeouts = [
-      setTimeout(() => {
-        document.body.classList.add('is-loaded');
-      }, 100),
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 300)
-    ];
+    // Set loaded after a small delay to trigger animations
+    const timeout = setTimeout(() => {
+      setIsLoaded(true);
+    }, 300);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      timeouts.forEach(clearTimeout);
+      clearTimeout(timeout);
     };
   }, []);
 
@@ -53,25 +44,14 @@ const Avatar = () => {
     <div
       ref={avatarRef}
       className={`avatar-wrap relative h-[350px] w-[300px] mx-auto ${isLoaded ? 'avatar--ready' : ''}`}
-      style={{
-        opacity: isLoaded ? 1 : 0,
-        transform: `scale(${isLoaded ? 1 : 0.95})`,
-        transition: 'opacity 0.6s ease, transform 0.5s ease',
-      }}
     >
       <div
         className="bar-outer absolute inset-0"
-        style={{ 
-          transform: `translate3d(0px, ${-mousePosition.y * 3}px, 0px)`,
-          transition: 'transform 0.2s ease-out'
-        }}
+        style={{ transform: `translate3d(0px, ${-mousePosition.y * 3}px, 0px)` }}
       >
         <div
           className="bar stripes absolute inset-0"
-          style={{ 
-            transform: `translateX(-50%) translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-            transition: 'transform 0.3s ease-out'
-          }}
+          style={{ transform: `translateX(-50%) translate(${mousePosition.x}px, ${mousePosition.y}px)` }}
         />
       </div>
 
@@ -90,10 +70,7 @@ const Avatar = () => {
           {/* Face outline */}
           <div
             className="face-outline absolute inset-0"
-            style={{ 
-              transform: `rotate(${mousePosition.x * 0.3}deg)`,
-              transition: 'transform 0.4s ease-out'
-            }}
+            style={{ transform: `rotate(${mousePosition.x * 0.3}deg)` }}
           >
             <svg
               viewBox="0 0 400 400"
@@ -110,10 +87,7 @@ const Avatar = () => {
           {/* Glasses */}
           <div
             className="glasses absolute inset-0"
-            style={{ 
-              transform: `translateY(${mousePosition.y * 0.2}px) translateX(${mousePosition.x * 0.2}px)`,
-              transition: 'transform 0.3s ease-out' 
-            }}
+            style={{ transform: `translateY(${mousePosition.y * 0.2}px) translateX(${mousePosition.x * 0.2}px)` }}
           >
             <svg
               viewBox="0 0 400 400"
@@ -131,10 +105,7 @@ const Avatar = () => {
           {/* Eyes */}
           <div
             className="eyes absolute inset-0"
-            style={{ 
-              transform: `translateY(${mousePosition.y * 0.5}px) translateX(${mousePosition.x * 0.5}px)`,
-              transition: 'transform 0.2s ease-out'
-            }}
+            style={{ transform: `translateY(${mousePosition.y * 0.5}px) translateX(${mousePosition.x * 0.5}px)` }}
           >
             <svg
               viewBox="0 0 400 400"
@@ -164,10 +135,7 @@ const Avatar = () => {
           {/* Hair */}
           <div
             className="hair absolute inset-0"
-            style={{ 
-              transform: `rotate(${mousePosition.x * 0.1}deg)`,
-              transition: 'transform 0.5s ease-out' 
-            }}
+            style={{ transform: `rotate(${mousePosition.x * 0.1}deg)` }}
           >
             <svg
               viewBox="0 0 400 400"

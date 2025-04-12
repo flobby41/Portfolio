@@ -1,50 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [logoVisible, setLogoVisible] = useState(false);
-  const [menuLinkVisible, setMenuLinkVisible] = useState(false);
-  const [hireMeVisible, setHireMeVisible] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
-    // Séquence d'animations pour l'apparition progressive
-    const timeouts = [
-      setTimeout(() => setIsLoaded(true), 10),
-      setTimeout(() => setLogoVisible(true), 200),
-      setTimeout(() => setMenuLinkVisible(true), 400),
-      setTimeout(() => setHireMeVisible(true), 600)
-    ];
-
-    return () => timeouts.forEach(clearTimeout);
-  }, []);
-
   return (
-    <div 
-      className="mainnav flex justify-between items-center w-full py-4 px-6"
-      style={{
-        opacity: isLoaded ? 1 : 0,
-        transform: `translateY(${isLoaded ? '0' : '-10px'})`,
-        transition: 'opacity 0.6s ease, transform 0.6s ease'
-      }}
-    >
-      <div 
-        className="logo-wrap"
-        style={{
-          opacity: logoVisible ? 1 : 0,
-          transform: `translateY(${logoVisible ? '0' : '-5px'})`,
-          transition: 'opacity 0.4s ease, transform 0.4s ease'
-        }}
-      >
+    <div className="mainnav flex justify-between items-center w-full py-4 px-6">
+      <div className="logo-wrap">
         <Link href="/" className="block">
           <span className="u-vhide">Back to the homepage</span>
           <span className="logo relative w-[60px] h-[60px] block">
@@ -61,15 +31,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div 
-        className="menu-link"
-        style={{
-          opacity: menuLinkVisible ? 1 : 0,
-          transform: `translateY(${menuLinkVisible ? '0' : '-5px'})`,
-          transition: 'opacity 0.4s ease, transform 0.4s ease',
-          transitionDelay: '0.1s'
-        }}
-      >
+      <div className="menu-link">
         <button
           className="menu-link__trigger flex items-center gap-2 text-dark-blue"
           aria-expanded={isMenuOpen}
@@ -85,12 +47,6 @@ const Navbar = () => {
       <Link
         href="mailto:hello@robbowen.digital?subject=🤘 Hi Robb, I'd like to hire you"
         className="hire-me flex items-center gap-2 text-dark-blue"
-        style={{
-          opacity: hireMeVisible ? 1 : 0,
-          transform: `translateY(${hireMeVisible ? '0' : '-5px'})`,
-          transition: 'opacity 0.4s ease, transform 0.4s ease',
-          transitionDelay: '0.2s'
-        }}
       >
         <div className="main">
           <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
@@ -102,13 +58,7 @@ const Navbar = () => {
       </Link>
 
       {isMenuOpen && (
-        <div 
-          className="main-menu fixed inset-0 bg-white z-50" 
-          id="main-menu"
-          style={{
-            animation: 'fadeIn 0.3s ease forwards'
-          }}
-        >
+        <div className="main-menu fixed inset-0 bg-white z-50" id="main-menu">
           <div className="main-menu__flyout">
             <div className="main-menu__inr p-8">
               <div className="flex justify-between items-center mb-8">
