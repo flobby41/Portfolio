@@ -10,9 +10,9 @@ const bitter = Bitter({
 });
 
 export const metadata: Metadata = {
-  title: "Robb Owen - Independent Creative Developer",
-  description: "Robb is an independent creative developer from South Wales. He loves helping organisations to build ambitious yet accessible web projects.",
-  authors: [{ name: "Robb Owen" }],
+  title: "Florian Cheheb - Independent Creative Developer",
+  description: "Florian is an independent creative developer from Paris, France. He loves helping organisations to build ambitious yet accessible web projects.",
+  authors: [{ name: "Florian Cheheb" }],
 };
 
 export default function RootLayout({

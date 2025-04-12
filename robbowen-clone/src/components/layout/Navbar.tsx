@@ -45,7 +45,7 @@ const Navbar = () => {
       </div>
 
       <Link
-        href="mailto:hello@robbowen.digital?subject=🤘 Hi Robb, I'd like to hire you"
+        href="mailto:florian.cheheb@gmail.com?subject=🤘 Hi Florian, I'd like to hire you"
         className="hire-me flex items-center gap-2 text-dark-blue"
       >
         <div className="main">
