@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Florian - Portfolio</title>
+    <meta name="description" content="Full Stack Developer specializing in e-commerce solutions and creative web development">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary-color: #ec0606;
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --card-bg: #f8f9fa;
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .section-title {
+            font-family: 'Fira Mono', monospace;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+  <header>
+            <a href="/" class="logo">
+                <img src="/img/logonoir01_reduced.jpg" alt="Florian's Logo">
+                <h1>Florian</h1>
+            </a>
+            <nav class="nav-links">
+                <a href="/cv">Resume</a>
+                <a href="/blog/blog.html">Blog</a>
+                <a href="https://garcondargent.com/">Garçon d'Argent</a>
+            </nav>
+  </header>
+
+        <section id="major-projects">
+            <h2 class="section-title">Major Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <img src="/img/modasphere.jpg" alt="ModaSphere Project" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">ModaSphere</h3>
+                        <p class="project-description">A fully custom e-commerce template with admin panel, product management, and Stripe integration.</p>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Stripe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://modasphere.vercel.app" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/yourusername/modasphere" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="/img/skandiwall.jpg" alt="SkandiWall Project" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">SkandiWall</h3>
+                        <p class="project-description">Nordic-inspired storefront with user authentication and complete backend architecture.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Express</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">JWT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://skandiwall.vercel.app" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/yourusername/skandiwall" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="/img/shopify-headless.jpg" alt="Shopify Headless Demo" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Shopify Headless Demo</h3>
+                        <p class="project-description">Lightweight storefront using Next.js and Shopify Storefront API with GraphQL.</p>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">GraphQL</span>
+                            <span class="tag">Shopify</span>
+                            <span class="tag">TailwindCSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://shopify-headless-demo.vercel.app" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                            <a href="https://github.com/yourusername/shopify-headless" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+    </section>
+
+        <section id="experiments">
+            <h2 class="section-title">Experiments & Side Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <img src="/img/node-blog/Purple-Crayon.png" alt="Purple Crayon" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Purple Crayon</h3>
+                        <p class="project-description">Interactive drawing application with custom brush effects and color manipulation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Canvas API</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/portfolio/PurpleCrayon.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="/img/Cube-Anim.png" alt="3D Animation" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">3D Cube Animation</h3>
+                        <p class="project-description">CSS 3D transform experiment creating an interactive rotating cube.</p>
+                        <div class="project-tags">
+                            <span class="tag">CSS3</span>
+                            <span class="tag">Animation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/portfolio/Cube-Anim-codePen.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img src="/img/photoEditApp/gray-filter.webp" alt="Photo Editor" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Photo Editor</h3>
+                        <p class="project-description">Web-based photo editing tool with filters and basic image manipulation.</p>
+                        <div class="project-tags">
+                            <span class="tag">WebGL</span>
+                            <span class="tag">Canvas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/portfolio/photoEdit.html" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Try It Out
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+    </section>
+
+    <footer>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/florian-dev/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/flobby41" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="/docs/CV.pdf" class="social-link" target="_blank">
+                    <i class="fas fa-file-alt"></i>
+                    Resume
+                </a>
+            </div>
+      </footer>
+</div>
+</body>
+</html>
+
