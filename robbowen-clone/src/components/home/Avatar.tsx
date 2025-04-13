@@ -7,6 +7,15 @@ const Avatar = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
+// Dans Avatar.tsx, modifiez les valeurs de couleur
+const colors = {
+  primary: '#7C3AED',    // Violet pour les traits
+  secondary: '#E0F2FE',  // Bleu clair pour les remplissages
+  background: '#ffffff'  // Blanc pour le fond
+};
+
+
+
   // Handle mouse movement to animate the avatar
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

@@ -1,34 +1,52 @@
 "use client";
 
 import Avatar from "./Avatar";
+import { motion } from "framer-motion";
+import Image from 'next/image';
+
 
 const Hero = () => {
   return (
-    <header className="page-header page-header--masthead py-12 px-6 md:px-12 relative">
-      <div className="page-header__inr max-w-6xl mx-auto">
-        <div
-          className="page-header__content relative"
-          style={{ transform: 'translate3d(0px, 0px, 0px)' }}
+    <motion.div 
+      className="flex items-center justify-between max-w-6xl mx-auto py-20 px-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="flex-1 pr-12">
+        <motion.h1 
+          className="text-4xl font-bold mb-4"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
         >
-          <h1 className="page-header__title lh-tight t-primary text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Hi, my <br />name is <b>Florian</b><span className="dot">.</span>
-          </h1>
-          <p className="page-header__lede lh-loose t-primary text-lg md:text-xl max-w-xl">
-            I'm an <b>independent creative developer</b> from Paris, France.
-          </p>
-        </div>
+          Hi, my name is Florian.
+        </motion.h1>
+        <motion.p 
+          className="text-xl text-gray-600"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          I'm an independent creative developer from Paris, France.
+        </motion.p>
       </div>
 
-      <div className="avatar-bg max-w-xl mx-auto mt-8">
-        <Avatar />
-      </div>
-
-      <div className="scroll-indicator flex justify-center mt-16">
-        <div className="scroll text-text-gray uppercase text-sm tracking-widest">
-          Scroll
-        </div>
-      </div>
-    </header>
+      <motion.div 
+        className="relative w-80 h-80"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.6, duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <Image
+          src="/profile.jpg"
+          alt="Florian's profile"
+          fill
+          className="rounded-2xl object-cover"
+          priority
+        />
+      </motion.div>
+    </motion.div>
   );
 };
 

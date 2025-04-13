@@ -94,6 +94,76 @@
     font-family: 'Bitter', serif;
   }
 
+  .avatar-wrap {
+    /* Style de base */
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .avatar {
+    /* Style de l'avatar */
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+  
+  /* Style pour le motif hachuré */
+  .stripes {
+    background-image: linear-gradient(
+      45deg,
+      #e0f2fe 25%,
+      transparent 25%,
+      transparent 75%,
+      #e0f2fe 75%
+    );
+    background-size: 20px 20px;
+    opacity: 0.5;
+  }
+  
+  /* Styles pour les éléments SVG */
+  .face-outline path {
+    fill: #ffffff;
+    stroke: #7C3AED;
+    stroke-width: 3;
+  }
+  
+  .glasses rect, .glasses line {
+    fill: none;
+    stroke: #7C3AED;
+    stroke-width: 3;
+  }
+  
+  .eyes circle {
+    fill: #7C3AED;
+  }
+  
+  .mouth path {
+    stroke: #7C3AED;
+    stroke-width: 3;
+  }
+  
+  .hair path {
+    stroke: #7C3AED;
+    stroke-width: 3;
+    fill: none;
+  }
+  
+  /* Animation d'entrée */
+  .avatar--ready {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Bitter', serif;
     font-weight: 700;
