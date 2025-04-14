@@ -35,7 +35,7 @@ const Navbar = () => {
 
           <div className="menu-link">
             <button
-              className="menu-link__trigger flex items-center gap-2 text-dark-blue font-mono text-sm font-['DM_Sans'] text-sm tracking-[0.2em]"
+              className="menu-link__trigger flex items-center gap-2 text-dark-blue text-sm font-['Inter'] text-sm tracking-[0.2em]"
               aria-expanded={isMenuOpen}
               aria-controls="main-menu"
               onClick={toggleMenu}

@@ -3,6 +3,7 @@ import { Bitter } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 
+
 const bitter = Bitter({
   subsets: ["latin"],
   weight: ['400', '700'],
@@ -22,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bitter.variable}`}>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></link>
       <ClientBody>{children}</ClientBody>
     </html>
   );
