@@ -35,7 +35,7 @@ const Navbar = () => {
 
           <div className="menu-link">
             <button
-              className="menu-link__trigger flex items-center gap-2 text-dark-blue text-sm font-['Inter'] text-sm tracking-[0.2em]"
+              className="menu-link__trigger flex items-center gap-2 text-dark-blue text-sm font-['Inter'] tracking-[0.2em] transition-all duration-300 hover:tracking-[0.3em]"
               aria-expanded={isMenuOpen}
               aria-controls="main-menu"
               onClick={toggleMenu}
@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <Link
             href="mailto:florian.cheheb@gmail.com?subject=🤘 Hi Florian, I'd like to hire you"
-            className="hire-me flex items-center gap-2 text-dark-blue text-sm font-['Inter'] text-sm tracking-[0.2em] font-bold"
+            className="hire-me flex items-center gap-2 text-dark-blue text-sm font-['Inter'] tracking-[0.2em] font-bold transition-all duration-300 hover:tracking-[0.3em]"
           >
             <div className="main">
               <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
