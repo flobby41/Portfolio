@@ -15,7 +15,7 @@ const Hero = () => {
     >
       <div className="flex-1 pr-12">
         <motion.h1 
-          className="font-bitter text-[5.25rem] leading-[1.1] mb-4 font-normal"
+          className="font-bitter text-[4.75rem] leading-[1.1] mb-4 font-normal text-[#0A0F4C]"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
@@ -23,7 +23,7 @@ const Hero = () => {
           Hi, my <br /> name  is <span className="font-bold">Florian</span>.
         </motion.h1>
         <motion.p 
-          className="font-bitter text-3xl text-gray-600"
+          className="font-bitter text-3xl text-[#0A0F4C]  "
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
