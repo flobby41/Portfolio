@@ -8,14 +8,14 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <motion.div 
-      className="flex items-center justify-between max-w-6xl mx-auto py-20 px-4"
+      className="flex items-center justify-between max-w-6xl mx-auto py-0 px-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
       <div className="flex-1 pr-12">
         <motion.h1 
-          className="text-7xl font-bold mb-4"
+          className="text-7xl mb-4 font-weight: 100"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}

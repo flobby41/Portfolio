@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white">
+    <nav className="fixed top-0 left-0 right-0 bg-[#EEF5FB]">
       <div className="mainnav flex justify-between items-center w-full py-4 px-6">
         <div className="flex items-center gap-8">
           <div className="logo-wrap">
@@ -41,7 +41,7 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               <span className="menu-link__mask">
-                <span className="menu-link__label">MENU</span>
+                <span className="menu-link__label font-bold">MENU</span>
               </span>
             </button>
           </div>
@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <Link
             href="mailto:florian.cheheb@gmail.com?subject=🤘 Hi Florian, I'd like to hire you"
-            className="hire-me flex items-center gap-2 text-dark-blue font-mono text-sm tracking-wider"
+            className="hire-me flex items-center gap-2 text-dark-blue font-mono text-sm tracking-[0.2em] font-bold"
           >
             <div className="main">
               <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
@@ -70,7 +70,7 @@ const Navbar = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="main-menu fixed inset-0 bg-white z-50" id="main-menu">
+          <div className="main-menu fixed inset-0 bg-red-200" id="main-menu">
             <div className="main-menu__flyout">
               <div className="main-menu__inr p-8">
                 <div className="flex justify-between items-center mb-8">
