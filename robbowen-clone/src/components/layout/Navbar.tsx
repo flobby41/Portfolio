@@ -13,7 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav className="fixed top-0 left-0 right-0 z-40">
+      <div className="bg-white h-[15px] w-full"></div>
       <div className="mainnav flex justify-between items-center w-full py-4 px-6">
         <div className="flex items-center gap-8">
           <div className="logo-wrap">

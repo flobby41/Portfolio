@@ -42,26 +42,27 @@ const skillsData = [
 ];
 export default function Home() {
   return (
-    <motion.div 
-      className="section space-y-32 relative"
-      initial="initial"
-      animate="animate"
-      variants={staggerContainer}
-    >
-      {/* Hero section avec animation immédiate */}
-      <motion.div
-        variants={fadeInUp}
-        transition={{
-          duration: 1.2,        // Plus long pour plus de smoothness
-          delay: 0.5,          // Attendre avant de commencer
-          ease: [0.25, 0.1, 0.25, 1],  // Courbe d'easing personnalisée
-        }}
-        className="min-h-screen flex items-center"
+    <div className="bg-white min-h-screen">
+      <motion.div 
+        className="section space-y-32 relative bg-[#F5F8FC] mx-[15px] mt-[15px] min-h-[calc(100vh-15px)]"
+        initial="initial"
+        animate="animate"
+        variants={staggerContainer}
       >
-        <Hero />
-      </motion.div>
-      
-      
+        {/* Hero section avec animation immédiate */}
+        <motion.div
+          variants={fadeInUp}
+          transition={{
+            duration: 1.2,        // Plus long pour plus de smoothness
+            delay: 0.5,          // Attendre avant de commencer
+            ease: [0.25, 0.1, 0.25, 1],  // Courbe d'easing personnalisée
+          }}
+          className="min-h-screen flex items-center"
+        >
+          <Hero />
+        </motion.div>
+        
+        
 
 <LazySection className="min-h-screen py-20">
   <div className="max-w-7xl mx-auto px-4">
@@ -112,46 +113,47 @@ export default function Home() {
     </motion.div>
   </div>
 </LazySection>
-      
-      {/* Image bleue avec effet de révélation précoce */}
-      <LazySection 
-        className="my-40 relative"
-        threshold={0.05}
-        rootMargin="-200px"
-      >
-        <BlueImageReveal 
-          src="/images/blue-background.jpg" 
-          alt="Blue background transition" 
-        />
-      </LazySection>
-      
-      {/* Section Work Together avec délai et seuil plus élevé */}
-      <LazySection 
-        className="py-20 relative"
-        threshold={0.15}
-        rootMargin="-150px"
-      >
-        <motion.div
-          variants={fadeInUp}
-          transition={{ delay: 0.2 }}
+        
+        {/* Image bleue avec effet de révélation précoce */}
+        <LazySection 
+          className="my-40 relative"
+          threshold={0.05}
+          rootMargin="-200px"
         >
-          <WorkTogether />
-        </motion.div>
-      </LazySection>
-      
-      {/* Section Open Source avec animation plus progressive */}
-      <LazySection 
-        className="py-20 relative"
-        threshold={0.2}
-        rootMargin="-100px"
-      >
-        <motion.div
-          variants={fadeInUp}
-          transition={{ delay: 0.3 }}
+          <BlueImageReveal 
+            src="/images/blue-background.jpg" 
+            alt="Blue background transition" 
+          />
+        </LazySection>
+        
+        {/* Section Work Together avec délai et seuil plus élevé */}
+        <LazySection 
+          className="py-20 relative"
+          threshold={0.15}
+          rootMargin="-150px"
         >
-          <OpenSource />
-        </motion.div>
-      </LazySection>
-    </motion.div>
+          <motion.div
+            variants={fadeInUp}
+            transition={{ delay: 0.2 }}
+          >
+            <WorkTogether />
+          </motion.div>
+        </LazySection>
+        
+        {/* Section Open Source avec animation plus progressive */}
+        <LazySection 
+          className="py-20 relative"
+          threshold={0.2}
+          rootMargin="-100px"
+        >
+          <motion.div
+            variants={fadeInUp}
+            transition={{ delay: 0.3 }}
+          >
+            <OpenSource />
+          </motion.div>
+        </LazySection>
+      </motion.div>
+    </div>
   );
 }

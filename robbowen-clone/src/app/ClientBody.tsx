@@ -11,7 +11,7 @@ export default function ClientBody({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    document.body.className = "antialiased bg-[#EEF5FB]";
+    document.body.className = "antialiased bg-white";
   }, []);
 
   return (
