@@ -10,7 +10,7 @@ export default function LoadingScreen() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,9 +23,9 @@ export default function LoadingScreen() {
     animate: (i: number) => ({
       opacity: [0, 1, 0],
       transition: {
-        duration: 1.5,
+        duration: 0.8,
         repeat: Infinity,
-        delay: i * 0.2 // Délai différent pour chaque point
+        delay: i * 0.1
       }
     })
   };
@@ -38,7 +38,7 @@ export default function LoadingScreen() {
           exit={{
             y: "100%",
             transition: {
-              duration: 1.2,
+              duration: 0.8,
               ease: [0.76, 0, 0.24, 1]
             }
           }}

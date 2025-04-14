@@ -44,23 +44,15 @@ export default function Home() {
   return (
     <div className="bg-white min-h-screen">
       <motion.div 
-        className="section space-y-32 relative bg-[#F5F8FC] mx-[15px] mt-[15px] min-h-[calc(100vh-15px)]"
+        className="section space-y-32 relative bg-[#F5F8FC] mx-[20px] mt-[20px] min-h-[calc(100vh-15px)]"
         initial="initial"
         animate="animate"
         variants={staggerContainer}
       >
-        {/* Hero section avec animation immédiate */}
-        <motion.div
-          variants={fadeInUp}
-          transition={{
-            duration: 1.2,        // Plus long pour plus de smoothness
-            delay: 0.5,          // Attendre avant de commencer
-            ease: [0.25, 0.1, 0.25, 1],  // Courbe d'easing personnalisée
-          }}
-          className="min-h-screen flex items-center"
-        >
+        {/* Hero section */}
+        <div className="min-h-screen flex items-center">
           <Hero />
-        </motion.div>
+        </div>
         
         
 
