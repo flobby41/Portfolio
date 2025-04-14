@@ -5,7 +5,7 @@ import ClientBody from "./ClientBody";
 
 const bitter = Bitter({
   subsets: ["latin"],
-  weight: ['400', '700'],
+  weight: ['300', '400', '700'],
   variable: "--font-bitter",
 });
 
