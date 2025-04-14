@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#EEF5FB]">
+    <nav className="fixed top-0 left-0 right-0 bg-[#EEF5FB] z-50">
       <div className="mainnav flex justify-between items-center w-full py-4 px-6">
         <div className="flex items-center gap-8">
           <div className="logo-wrap">
@@ -35,7 +35,7 @@ const Navbar = () => {
 
           <div className="menu-link">
             <button
-              className="menu-link__trigger flex items-center gap-2 text-dark-blue font-mono text-sm tracking-wider"
+              className="menu-link__trigger flex items-center gap-2 text-dark-blue font-mono text-sm font-['DM_Sans'] text-sm tracking-[0.2em]"
               aria-expanded={isMenuOpen}
               aria-controls="main-menu"
               onClick={toggleMenu}
@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <Link
             href="mailto:florian.cheheb@gmail.com?subject=🤘 Hi Florian, I'd like to hire you"
-            className="hire-me flex items-center gap-2 text-dark-blue font-mono text-sm tracking-[0.2em] font-bold"
+            className="hire-me flex items-center gap-2 text-dark-blue text-sm font-['DM_Sans'] text-sm tracking-[0.2em] font-bold"
           >
             <div className="main">
               <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
