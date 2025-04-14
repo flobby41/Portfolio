@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Bitter } from "next/font/google";
+import { Bitter, Inter } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
-
 
 const bitter = Bitter({
   subsets: ["latin"],
   weight: ['400', '700'],
   variable: "--font-bitter",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ['400', '600', '700'],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -22,8 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bitter.variable}`}>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></link>
+    <html lang="en" className={`${bitter.variable} ${inter.variable}`}>
       <ClientBody>{children}</ClientBody>
     </html>
   );
