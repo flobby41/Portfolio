@@ -15,12 +15,12 @@ const Hero = () => {
     >
       <div className="flex-1 pr-12">
         <motion.h1 
-          className="text-4xl font-bold mb-4"
+          className="text-7xl font-bold mb-4"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Hi, my name is Florian.
+          Hi, my name <br /> is Florian.
         </motion.h1>
         <motion.p 
           className="text-xl text-gray-600"

@@ -11,11 +11,11 @@ export default function ClientBody({
   children: React.ReactNode;
 }) {
   useEffect(() => {
-    document.body.className = "antialiased bg-off-white";
+    document.body.className = "antialiased bg-[#EEF5FB]";
   }, []);
 
   return (
-    <body className="antialiased bg-off-white" suppressHydrationWarning>
+    <body className="antialiased bg-[#EEF5FB]" suppressHydrationWarning>
       <div className="pagewrap min-h-screen flex flex-col">
         <LoadingScreen />
         <Navbar />
