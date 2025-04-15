@@ -53,7 +53,7 @@ const Hero = () => {
           priority
         />
       </motion.div>
-      <ScrollIndicator />
+    <ScrollIndicator />
     </motion.div>
   );
 };
