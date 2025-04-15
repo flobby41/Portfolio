@@ -6,7 +6,6 @@ import OpenSource from "@/components/home/OpenSource";
 import { LazySection } from "@/components/home/LazySection";
 import { BlueImageReveal } from "@/components/home/BlueImageReveal";
 import { motion } from "framer-motion";
-import ScrollIndicator from "@/components/home/ScrollIndicator";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -54,9 +53,6 @@ export default function Home() {
         <div className="flex flex-col min-h-screen">
           <div className="flex-1 flex items-center">
             <Hero />
-          </div>
-          <div className="h-20 flex justify-center items-center">
-            <ScrollIndicator />
           </div>
         </div>
         
