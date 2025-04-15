@@ -9,7 +9,6 @@ alwaysApply: true
 - Always analyze the attachments in my messages, regardless of the format.
 - With each new conversation after the first prompt, automatically analyze the entire current project to have perfect knowledge of the project context and all files content.
 - In your source control, suggested commit names must always be in English
-- Make commit suggestions in english for each implementation
 - Never translate english to french in the project without my permission
 - Suggest solutions that I didn’t think about—anticipate my needs
 - Consider new technologies and contrarian ideas, not just the conventional wisdom

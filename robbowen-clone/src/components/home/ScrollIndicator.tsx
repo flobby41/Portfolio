@@ -7,17 +7,31 @@ const ScrollIndicator = () => {
 
   return (
     <div className="flex flex-col items-center mt-20">
-      <div className="flex space-x-4">
+      <div className="flex space-x-2">
         {letters.map((letter, index) => (
           <motion.span
             key={index}
-            className="text-2xl text-gray-400"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1, 0] }}
+            className="text-xs"
+            initial={{ y: 0, color: "#8a8f96" }}
+            animate={{ 
+              y: [0, -10, 0, -10, 0],
+              color: ["#9CA3AF", "#87CEEB", "#87CEEB", "#87CEEB", "#9CA3AF"]
+            }}
             transition={{
-              duration: 2,
-              repeat: Infinity,
-              delay: index * 0.2,
+              y: {
+                times: [0, 0.2, 0.4, 0.6, 0.8],
+                duration: 1,
+                repeat: Infinity,
+                repeatDelay: 5,
+                delay: index * 0.1,
+              },
+              color: {
+                times: [0, 0.2, 0.4, 0.6, 0.8],
+                duration: 1,
+                repeat: Infinity,
+                repeatDelay: 5,
+                delay: index * 0.1,
+              },
               ease: "easeInOut"
             }}
           >
@@ -25,16 +39,7 @@ const ScrollIndicator = () => {
           </motion.span>
         ))}
       </div>
-      <motion.div 
-        className="h-32 w-[1px] bg-gray-300 mt-6"
-        initial={{ scaleY: 0, opacity: 0 }}
-        animate={{ scaleY: 1, opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 1,
-          ease: "easeOut"
-        }}
-      />
+      <div className="h-32 w-[1px] bg-gray-300 mt-6" />
     </div>
   );
 };
