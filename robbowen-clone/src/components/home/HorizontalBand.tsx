@@ -83,7 +83,7 @@ const HorizontalBand = () => {
         
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-4 rounded-full font-medium"
+          className="bg-gradient-to-r from-[#8B5CF6] to-[#7C3AED] text-white px-8 py-4 rounded-full font-medium hover:shadow-lg transition-shadow duration-300"
         >
           About my approach
         </motion.button>
