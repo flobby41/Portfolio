@@ -1,0 +1,79 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const lineInAnimation = {
+  initial: {
+    width: 0,
+    opacity: 0,
+    x: 0,
+    transformOrigin: "0px 1.5px",
+  },
+  animate: {
+    width: "80px",
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.25,
+      ease: [0.45, 0.85, 0.35, 0.85],
+    },
+  },
+};
+
+const HorizontalBand = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+    rootMargin: "-150px",
+  });
+
+  return (
+    <div ref={ref} className="relative w-full overflow-hidden my-32">
+      <motion.div
+        initial={{ x: "100%", width: "100%" }}
+        animate={inView ? { 
+          x: 0,
+          width: ["100%", "90%"],
+        } : { x: "100%", width: "100%" }}
+        transition={{
+          x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+          width: {
+            delay: 0.8,
+            duration: 0.4,
+            ease: [0.25, 0.1, 0.25, 1],
+          },
+        }}
+        className="relative h-[120px] bg-[#73BBC5]"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{
+            delay: 1,
+            duration: 0.6,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+          className="absolute inset-0 flex items-center justify-start pl-24"
+        >
+          <div className="relative">
+            <h2 className="font-bitter text-[4rem] text-[#0A0F4C] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
+              Let&apos;s work<br />together
+              <span className="text-[#73BBC5]">.</span>
+            </h2>
+            <motion.div
+              variants={lineInAnimation}
+              initial="initial"
+              animate={inView ? "animate" : "initial"}
+              className="absolute left-0 h-[3px] bg-[#73BBC5]"
+              style={{
+                transformOrigin: "0px 1.5px",
+              }}
+            />
+          </div>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default HorizontalBand; 

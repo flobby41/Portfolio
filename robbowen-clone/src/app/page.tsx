@@ -5,6 +5,7 @@ import WorkTogether from "@/components/home/WorkTogether";
 import OpenSource from "@/components/home/OpenSource";
 import { LazySection } from "@/components/home/LazySection";
 import { BlueImageReveal } from "@/components/home/BlueImageReveal";
+import HorizontalBand from "@/components/home/HorizontalBand";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -56,7 +57,8 @@ export default function Home() {
           </div>
         </div>
         
-        
+        <div className="h-[150px]" />
+        <HorizontalBand />
 
 <LazySection className="min-h-screen py-20">
   <div className="max-w-7xl mx-auto px-4">
