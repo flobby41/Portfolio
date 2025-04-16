@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bitter, Inter } from "next/font/google";
+import { Bitter } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 
@@ -7,12 +7,6 @@ const bitter = Bitter({
   subsets: ["latin"],
   weight: ['300', '400', '700'],
   variable: "--font-bitter",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ['400', '600', '700'],
-  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bitter.variable} ${inter.variable}`}>
+    <html lang="en" className={`${bitter.variable}`}>
       <ClientBody>{children}</ClientBody>
     </html>
   );

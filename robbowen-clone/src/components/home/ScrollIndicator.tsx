@@ -1,6 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const ScrollIndicator = () => {
   const letters = "SCROLL".split("");
@@ -11,7 +17,7 @@ const ScrollIndicator = () => {
         {letters.map((letter, index) => (
           <motion.span
             key={index}
-            className="text-xs"
+            className={`text-xs ${inter.className}`} // Applique la classe générée par next/font
             initial={{ y: 0, color: "#8a8f96" }}
             animate={{ 
               y: [0, -10, 0, -10, 0],
