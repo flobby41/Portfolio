@@ -85,11 +85,11 @@ export default function Home() {
           }}
         >
           <div className={`flex-1 ${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
-            <h2 className="text-3xl font-bold mb-6 text-red-600">{skill.title}</h2>
+            <h2 className="text-3xl font-bold mb-6 bg-[#F4F9FC]">{skill.title}</h2>
             <p className="text-xl text-gray-600 mb-8">{skill.description}</p>
             <motion.a
               href={skill.link}
-              className="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-lg"
+              className="inline-flex items-center bg-[#F4F9FC] text-white px-6 py-3 rounded-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
