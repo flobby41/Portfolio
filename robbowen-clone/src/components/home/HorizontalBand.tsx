@@ -29,8 +29,6 @@ const HorizontalBand = () => {
 
   return (
     <div ref={ref} className="relative w-full overflow-hidden my-32">
-    
-
       {/* Texte */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -47,11 +45,11 @@ const HorizontalBand = () => {
             Let&apos;s work together
             <span className="text-[#73BBC5]">.</span>
           </h2>
-        
         </div>
       </motion.div>
-        {/* Bande horizontale */}
-        <motion.div
+
+      {/* Bande horizontale */}
+      <motion.div
         initial={{ x: "100%", width: "10%" }}
         animate={inView ? { 
           x: 0,
@@ -67,8 +65,31 @@ const HorizontalBand = () => {
         }}
         className="relative h-[5px] bg-[#73BBC5] ml-24 mt-8"
       />
+
+      {/* Nouveau contenu avec lazy loading */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{
+          delay: 1.6,
+          duration: 0.6,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        className="mt-16 pl-24 max-w-4xl"
+      >
+        <p className="text-[#0A0F4C] text-xl leading-relaxed mb-8">
+          From interaction design to scaleable design systems, single-page apps to something more experimental with WebGL. I help awesome people to build ambitious yet accessible web projects - <span className="font-semibold">the wilder, the better</span>.
+        </p>
+        
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-8 py-4 rounded-full font-medium"
+        >
+          About my approach
+        </motion.button>
+      </motion.div>
     </div>
   );
 };
 
-export default HorizontalBand; 
+export default HorizontalBand;
