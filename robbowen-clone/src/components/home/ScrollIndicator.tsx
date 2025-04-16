@@ -45,7 +45,7 @@ const ScrollIndicator = () => {
           </motion.span>
         ))}
       </div>
-      <div className="h-32 w-[1px] bg-[#3a78c9] mt-6" />
+      <div className="h-60 w-[1px] bg-[#3a78c9] mt-6" />
     </div>
   );
 };
