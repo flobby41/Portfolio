@@ -29,23 +29,7 @@ const HorizontalBand = () => {
 
   return (
     <div ref={ref} className="relative w-full overflow-hidden my-32">
-      {/* Bande horizontale */}
-      <motion.div
-        initial={{ x: "100%", width: "100%" }}
-        animate={inView ? { 
-          x: 0,
-          width: ["100%", "90%"],
-        } : { x: "100%", width: "100%" }}
-        transition={{
-          x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
-          width: {
-            delay: 0.8,
-            duration: 0.4,
-            ease: [0.25, 0.1, 0.25, 1],
-          },
-        }}
-        className="relative h-[10px] bg-[#73BBC5]"
-      />
+    
 
       {/* Texte */}
       <motion.div
@@ -60,20 +44,29 @@ const HorizontalBand = () => {
       >
         <div className="relative">
           <h2 className="font-bitter text-[4rem] text-[#0A0F4C] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
-            Let&apos;s work<br />together
+            Let&apos;s work together
             <span className="text-[#73BBC5]">.</span>
           </h2>
-          <motion.div
-            variants={lineInAnimation}
-            initial="initial"
-            animate={inView ? "animate" : "initial"}
-            className="absolute left-0 h-[3px] bg-[#73BBC5]"
-            style={{
-              transformOrigin: "0px 1.5px",
-            }}
-          />
+        
         </div>
       </motion.div>
+        {/* Bande horizontale */}
+        <motion.div
+        initial={{ x: "100%", width: "10%" }}
+        animate={inView ? { 
+          x: 0,
+          width: ["20%", "10%"],
+        } : { x: "100%", width: "100%" }}
+        transition={{
+          x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+          width: {
+            delay: 0.8,
+            duration: 0.4,
+            ease: [0.25, 0.1, 0.25, 1],
+          },
+        }}
+        className="relative h-[5px] bg-[#73BBC5] ml-24 mt-8"
+      />
     </div>
   );
 };
