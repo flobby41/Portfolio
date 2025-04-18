@@ -13,6 +13,7 @@ export default function ClientBody({
   useEffect(() => {
     document.body.className = "antialiased bg-white";
     window.scrollTo({ top: 0, behavior: "smooth" });
+    window.history.scrollRestoration = 'manual';
   }, []);
 
   return (
