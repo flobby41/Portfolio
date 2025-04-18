@@ -1,24 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const lineInAnimation = {
-  initial: {
-    width: 0,
-    opacity: 0,
-    x: 0,
-    transformOrigin: "0px 1.5px",
-  },
-  animate: {
-    width: "80px",
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.3,
-      duration: 0.25,
-      ease: [0.45, 0.85, 0.35, 0.85],
-    },
-  },
-};
 
 const HorizontalBand = () => {
   const [ref, inView] = useInView({
