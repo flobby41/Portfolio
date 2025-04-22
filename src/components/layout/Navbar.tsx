@@ -68,7 +68,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-40">
       <div className="bg-white h-[15px] w-full"></div>
       <div className="mainnav flex justify-between items-center w-full py-4 px-6">
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-8 z-50">
           <div className="logo-wrap">
             <Link href="/" className="block">
               <span className="u-vhide">Back to the homepage</span>
@@ -100,15 +100,20 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 z-50">
           <Link
             href="mailto:florian.cheheb@gmail.com?subject=🤘 Hi Florian, I'd like to hire you"
             className="hire-me flex items-center gap-2 text-dark-blue text-sm font-['Inter'] tracking-[0.2em] font-bold transition-all duration-300 hover:tracking-[0.3em]"
           >
+            <div className="shade" data-drift="-4 -6" data-drift-center="y" style={{ transform: "translateY(-50%) translate(-3.94702px, 2.41256px)" }}>
+
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+              <path className="filled-path" d="M30.78,9.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L42.37,50.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C10.42,45,6.24,38.52,6.24,31.2,6.24,19.53,17.26,9.87,30.78,9.87Z"></path>
+              </svg>
+            </div>
             <div className="main">
-              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
-                <circle cx="12" cy="12" r="10" fill="#a5d0e1" stroke="none" />
-                <path d="M12 16v-4M12 8h.01" stroke="#342c6e" strokeLinecap="round" strokeLinejoin="round" />
+              <svg viewBox="0 0 60 60" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
+                <path className="stroke-path" d="M27.78,5.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L39.37,46.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C7.42,41,3.24,34.52,3.24,27.2,3.24,15.53,14.26,5.87,27.78,5.87Z" />
               </svg>
             </div>
             HIRE ME

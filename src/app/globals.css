@@ -154,6 +154,82 @@
     animation: fadeIn 0.5s ease-out;
   }
   
+  /* Stroke styles for paths and polygons */
+.stroke-path, .stroke-poly {
+  fill: none;
+  color: #7f00e0;
+  stroke: var(--line);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Media query for larger screens */
+@media (min-width: 512px) {
+  .stroke-path, .stroke-poly {
+    stroke-width: 3px;
+  }
+}
+
+/* Thin stroke style */
+.svg-stroke-thin {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Dashed stroke style */
+.svg-stroke-dashed {
+  stroke-dasharray: 6;
+}
+
+/* Background fill */
+.svg-bg {
+  fill: blueviolet;
+}
+
+/* Fill styles */
+.filled-path, .filled-poly, .svg-fill {
+  fill: #aadcec;
+}
+
+/* Hire Me button styles */
+.hire-me {
+  position: fixed;
+  right: 65px;
+  
+}
+
+.hire-me:hover {
+  letter-spacing: 6px;
+  color: var(--text);
+}
+
+.hire-me .shade {
+  transition: transform 1.5s ease-out;
+}
+
+.hire-me .main svg, 
+.hire-me .shade {
+  position: absolute;
+  left: -35px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+}
+
+.hire-me .main svg .stroke-path, 
+.hire-me .shade .stroke-path {
+  stroke-width: 2.5px;
+}
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -250,4 +326,8 @@
   .lh-loose {
     @apply leading-relaxed;
   }
+
+
+
+  
 }
