@@ -58,6 +58,12 @@ const Navbar = () => {
     }
   };
 
+  const socialIcons = [
+    { href: "https://www.linkedin.com/in/florian-dev/", icon: "linkedIn", label: "linkedIn" },
+    { href: "https://github.com/flobby41", icon: "github", label: "GitHub" },
+    { href: "mailto:florian.cheheb@gmail.com?subject=🤘 Hi Florian, I'd like to hire you", icon: "mail", label: "Email" }
+  ];
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-40">
       <div className="bg-white h-[15px] w-full"></div>
@@ -144,7 +150,47 @@ const Navbar = () => {
                     </button>
                   </motion.div>
 
-                 
+                  {/* Bande horizontale */}
+                  <motion.div
+                    initial={{ x: "100%", width: "10%" }}
+                    animate={{ 
+                      x: 0,
+                      width: ["20%", "10%"],
+                    }}
+                    transition={{
+                      x: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+                      width: {
+                        delay: 0.8,
+                        duration: 0.4,
+                        ease: [0.76, 0, 0.24, 1],
+                      },
+                    }}
+                    className="relative h-[2px] bg-[#342c6e] mt-8 mb-8"
+                  />
+
+                  {/* Social Icons */}
+                  <motion.div 
+                    className="flex space-x-8 mb-12"
+                    variants={{
+                      animate: {
+                        transition: {
+                          delayChildren: 1.2,
+                          staggerChildren: 0.1
+                        }
+                      }
+                    }}
+                  >
+                    {socialIcons.map((social) => (
+                      <motion.a
+                        key={social.icon}
+                        href={social.href}
+                        className="text-[#342c6e] hover:text-[#8e27e2] transition-colors"
+                        variants={itemVariants}
+                      >
+                        <span className="sr-only">{social.label}</span>
+                      </motion.a>
+                    ))}
+                  </motion.div>
 
                   <motion.ul className="main-menu__links primary-links">
                     {[
