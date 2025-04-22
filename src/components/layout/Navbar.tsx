@@ -119,7 +119,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="main-menu fixed inset-0 bg-[#87CEEB]"
+              className="main-menu fixed inset-0 bg-[#aadcec]"
               id="main-menu"
               variants={menuVariants}
               initial="initial"

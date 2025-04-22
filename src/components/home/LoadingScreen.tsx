@@ -33,7 +33,7 @@ export default function LoadingScreen() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 bg-[#87CEEB] z-50 flex items-center justify-center"
+          className="fixed inset-0 bg-[#aadcec] z-50 flex items-center justify-center"
           initial={{ y: 0 }}
           exit={{
             y: "100%",
