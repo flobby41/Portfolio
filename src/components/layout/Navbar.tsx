@@ -27,7 +27,7 @@ const Navbar = () => {
     exit: {
       y: "-100%",
       transition: {
-        duration: 0.8,
+        duration: 0, // ⚡️ Réduit de 0.8 à 0.3
         ease: [0.76, 0, 0.24, 1],
         when: "afterChildren"
       }
@@ -51,7 +51,7 @@ const Navbar = () => {
       y: 20,
       opacity: 0,
       transition: {
-        duration: 0.5
+        duration: 0 // ⚡️ Réduit de 0.5 à 0.2
       }
     }
   };
