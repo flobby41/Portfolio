@@ -18,16 +18,16 @@ const Navbar = () => {
     animate: {
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.5, // ⚡️ Réduit de 0.8 à 0.5
         ease: [0.76, 0, 0.24, 1],
         when: "beforeChildren",
-        staggerChildren: 0.1
+        staggerChildren: 0.05 // ⚡️ Réduit de 0.1 à 0.05 pour accélérer l'animation des enfants
       }
     },
     exit: {
       y: "-100%",
       transition: {
-        duration: 0, // ⚡️ Réduit de 0.8 à 0.3
+        duration: 0,
         ease: [0.76, 0, 0.24, 1],
         when: "afterChildren"
       }
@@ -36,14 +36,14 @@ const Navbar = () => {
 
   const itemVariants = {
     initial: { 
-      y: 40,
+      y: 20,
       opacity: 0
     },
     animate: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.8,
+        duration: 0.4, // ⚡️ Réduit de 0.8 à 0.4
         ease: [0.25, 0.1, 0.25, 1],
       }
     },
@@ -51,7 +51,29 @@ const Navbar = () => {
       y: 20,
       opacity: 0,
       transition: {
-        duration: 0 // ⚡️ Réduit de 0.5 à 0.2
+        duration: 0
+      }
+    }
+  };
+
+  const socialIconsVariants = {
+    initial: { 
+      y: 20,
+      opacity: 0
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3, // ⚡️ Plus rapide que les autres animations
+        ease: [0.25, 0.1, 0.25, 1],
+      }
+    },
+    exit: {
+      y: 20,
+      opacity: 0,
+      transition: {
+        duration: 0
       }
     }
   };
@@ -170,8 +192,8 @@ const Navbar = () => {
                     variants={{
                       animate: {
                         transition: {
-                          delayChildren: 1.2,
-                          staggerChildren: 0.1
+                          delayChildren: 0.5,
+                          staggerChildren: 0.05
                         }
                       }
                     }}
@@ -181,7 +203,7 @@ const Navbar = () => {
                         key={social.icon}
                         href={social.href}
                         className="group text-[#342c6e] hover:text-[#f5f5f5] transition-colors"
-                        variants={itemVariants}
+                        variants={socialIconsVariants}
                       >
                         <span className="sr-only">{social.label}</span>
                         {social.icon === 'linkedIn' && (
@@ -216,7 +238,15 @@ const Navbar = () => {
                   </div>
 
 
-                  <motion.ul className="main-menu__links primary-links">
+                  <motion.ul className="main-menu__links primary-links"
+                  variants={{
+                    animate: {
+                      transition: {
+                        delayChildren: 0.7, // ⚡️ Apparaît après les icônes sociales
+                        staggerChildren: 0.05
+                      }
+                    }
+                  }}>
                     {[
                       { href: "/", title: "Home", desc: "Back to the home page." },
                       { href: "/work", title: "Work", desc: "My approach to development." },
