@@ -4,12 +4,58 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const menuVariants = {
+    initial: { 
+      y: "-100%"
+    },
+    animate: {
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.76, 0, 0.24, 1],
+        when: "beforeChildren",
+        staggerChildren: 0.1
+      }
+    },
+    exit: {
+      y: "-100%",
+      transition: {
+        duration: 0.8,
+        ease: [0.76, 0, 0.24, 1],
+        when: "afterChildren"
+      }
+    }
+  };
+
+  const itemVariants = {
+    initial: { 
+      y: 40,
+      opacity: 0
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      }
+    },
+    exit: {
+      y: 20,
+      opacity: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
   };
 
   return (
@@ -70,109 +116,99 @@ const Navbar = () => {
           </div>
         </div>
 
-        {isMenuOpen && (
-          <div className="main-menu fixed inset-0 bg-red-200" id="main-menu">
-            <div className="main-menu__flyout">
-              <div className="main-menu__inr p-8">
-                <div className="flex justify-between items-center mb-8">
-                  <Link href="/" className="text-2xl font-bold text-dark-blue">Robb Owen</Link>
-                  <button
-                    className="text-dark-blue"
-                    onClick={() => setIsMenuOpen(false)}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              className="main-menu fixed inset-0 bg-[#87CEEB]"
+              id="main-menu"
+              variants={menuVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+            >
+              <div className="main-menu__flyout">
+                <div className="main-menu__inr p-8">
+                  <motion.div 
+                    className="flex justify-between items-center mb-8"
+                    variants={itemVariants}
                   >
-                    <span className="sr-only">Close menu</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
+                    <Link href="/" className="text-2xl font-bold text-dark-blue">Robb Owen</Link>
+                    <button
+                      className="text-dark-blue"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="sr-only">Close menu</span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  </motion.div>
+
+                  <motion.ul 
+                    className="social-links mb-8"
+                    variants={itemVariants}
+                  >
+                    <li className="social-links__item mb-2">
+                      <a className="social-links__link social-links__link--bs flex items-center gap-2 text-dark-blue" href="https://bsky.app/profile/robbowen.digital" rel="noopener noreferrer" target="_blank">
+                        Follow me on Bluesky
+                      </a>
+                    </li>
+                    <li className="social-links__item mb-2">
+                      <a className="social-links__link social-links__link--in flex items-center gap-2 text-dark-blue" href="http://www.instagram.com/robb0wen" rel="noopener noreferrer" target="_blank">
+                        Follow me on Instagram
+                      </a>
+                    </li>
+                    <li className="social-links__item mb-2">
+                      <a className="social-links__link social-links__link--gh flex items-center gap-2 text-dark-blue" href="https://github.com/robb0wen" rel="noopener noreferrer" target="_blank">
+                        Visit my GitHub
+                      </a>
+                    </li>
+                    <li className="social-links__item mb-2">
+                      <a className="social-links__link social-links__link--rss flex items-center gap-2 text-dark-blue" href="/feed.xml" rel="noopener noreferrer" target="_blank">
+                        Subscribe to my RSS feed
+                      </a>
+                    </li>
+                    <li className="social-links__item mb-2">
+                      <a className="social-links__link social-links__link--email flex items-center gap-2 text-dark-blue" href="mailto:hello@robbowen.digital" rel="noopener noreferrer" target="_blank">
+                        Send me an Email
+                      </a>
+                    </li>
+                  </motion.ul>
+
+                  <motion.ul className="main-menu__links primary-links">
+                    {[
+                      { href: "/", title: "Home", desc: "Back to the home page." },
+                      { href: "/work", title: "Work", desc: "My approach to development." },
+                      { href: "/about", title: "About", desc: "A little about me and my background." },
+                      { href: "/writing", title: "Writing", desc: "My latest writing on tech and language." }
+                    ].map((link, index) => (
+                      <motion.li 
+                        key={link.href}
+                        className="primary-links__item mb-4"
+                        variants={itemVariants}
+                      >
+                        <Link
+                          href={link.href}
+                          className="primary-links__link t-primary text-xl font-bold"
+                          aria-describedby={`desc_${link.title.toLowerCase()}`}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {link.title}
+                        </Link>
+                        <span 
+                          id={`desc_${link.title.toLowerCase()}`} 
+                          className="primary-links__summary block text-sm text-gray-500"
+                        >
+                          {link.desc}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </motion.ul>
                 </div>
-
-                <ul className="social-links mb-8">
-                  <li className="social-links__item mb-2">
-                    <a className="social-links__link social-links__link--bs flex items-center gap-2 text-dark-blue" href="https://bsky.app/profile/robbowen.digital" rel="noopener noreferrer" target="_blank">
-                      Follow me on Bluesky
-                    </a>
-                  </li>
-                  <li className="social-links__item mb-2">
-                    <a className="social-links__link social-links__link--in flex items-center gap-2 text-dark-blue" href="http://www.instagram.com/robb0wen" rel="noopener noreferrer" target="_blank">
-                      Follow me on Instagram
-                    </a>
-                  </li>
-                  <li className="social-links__item mb-2">
-                    <a className="social-links__link social-links__link--gh flex items-center gap-2 text-dark-blue" href="https://github.com/robb0wen" rel="noopener noreferrer" target="_blank">
-                      Visit my GitHub
-                    </a>
-                  </li>
-                  <li className="social-links__item mb-2">
-                    <a className="social-links__link social-links__link--rss flex items-center gap-2 text-dark-blue" href="/feed.xml" rel="noopener noreferrer" target="_blank">
-                      Subscribe to my RSS feed
-                    </a>
-                  </li>
-                  <li className="social-links__item mb-2">
-                    <a className="social-links__link social-links__link--email flex items-center gap-2 text-dark-blue" href="mailto:hello@robbowen.digital" rel="noopener noreferrer" target="_blank">
-                      Send me an Email
-                    </a>
-                  </li>
-                </ul>
-
-                <ul className="main-menu__links primary-links">
-                  <li className="primary-links__item mb-4">
-                    <Link
-                      href="/"
-                      className="primary-links__link t-primary text-xl font-bold"
-                      aria-describedby="desc_home"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Home
-                    </Link>
-                    <span id="desc_home" className="primary-links__summary block text-sm text-gray-500">
-                      Back to the home page.
-                    </span>
-                  </li>
-                  <li className="primary-links__item mb-4">
-                    <Link
-                      href="/work"
-                      className="primary-links__link t-primary text-xl font-bold"
-                      aria-describedby="desc_work"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Work
-                    </Link>
-                    <span id="desc_work" className="primary-links__summary block text-sm text-gray-500">
-                      My approach to development.
-                    </span>
-                  </li>
-                  <li className="primary-links__item mb-4">
-                    <Link
-                      href="/about"
-                      className="primary-links__link t-primary text-xl font-bold"
-                      aria-describedby="desc_about"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      About
-                    </Link>
-                    <span id="desc_about" className="primary-links__summary block text-sm text-gray-500">
-                      A little about me and my background.
-                    </span>
-                  </li>
-                  <li className="primary-links__item mb-4">
-                    <Link
-                      href="/writing"
-                      className="primary-links__link t-primary text-xl font-bold"
-                      aria-describedby="desc_writing"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Writing
-                    </Link>
-                    <span id="desc_writing" className="primary-links__summary block text-sm text-gray-500">
-                      My latest writing on tech and language.
-                    </span>
-                  </li>
-                </ul>
               </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );

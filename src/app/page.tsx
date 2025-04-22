@@ -113,23 +113,7 @@ export default function Home() {
     </motion.div>
   </div>
 </LazySection>
-        
-        
-      
-        
-        {/* Section Open Source avec animation plus progressive */}
-        <LazySection 
-          className="py-20 relative"
-          threshold={0.2}
-          rootMargin="-100px"
-        >
-          <motion.div
-            variants={fadeInUp}
-            transition={{ delay: 0.3 }}
-          >
-            <OpenSource />
-          </motion.div>
-        </LazySection>
+  
       </motion.div>
     </div>
   );
