@@ -132,7 +132,7 @@ const Navbar = () => {
                     className="flex justify-between items-center mb-8"
                     variants={itemVariants}
                   >
-                    <Link href="/" className="text-2xl font-bold text-dark-blue">Robb Owen</Link>
+                   
                     <button
                       className="text-dark-blue"
                       onClick={() => setIsMenuOpen(false)}
@@ -144,36 +144,7 @@ const Navbar = () => {
                     </button>
                   </motion.div>
 
-                  <motion.ul 
-                    className="social-links mb-8"
-                    variants={itemVariants}
-                  >
-                    <li className="social-links__item mb-2">
-                      <a className="social-links__link social-links__link--bs flex items-center gap-2 text-dark-blue" href="https://bsky.app/profile/robbowen.digital" rel="noopener noreferrer" target="_blank">
-                        Follow me on Bluesky
-                      </a>
-                    </li>
-                    <li className="social-links__item mb-2">
-                      <a className="social-links__link social-links__link--in flex items-center gap-2 text-dark-blue" href="http://www.instagram.com/robb0wen" rel="noopener noreferrer" target="_blank">
-                        Follow me on Instagram
-                      </a>
-                    </li>
-                    <li className="social-links__item mb-2">
-                      <a className="social-links__link social-links__link--gh flex items-center gap-2 text-dark-blue" href="https://github.com/robb0wen" rel="noopener noreferrer" target="_blank">
-                        Visit my GitHub
-                      </a>
-                    </li>
-                    <li className="social-links__item mb-2">
-                      <a className="social-links__link social-links__link--rss flex items-center gap-2 text-dark-blue" href="/feed.xml" rel="noopener noreferrer" target="_blank">
-                        Subscribe to my RSS feed
-                      </a>
-                    </li>
-                    <li className="social-links__item mb-2">
-                      <a className="social-links__link social-links__link--email flex items-center gap-2 text-dark-blue" href="mailto:hello@robbowen.digital" rel="noopener noreferrer" target="_blank">
-                        Send me an Email
-                      </a>
-                    </li>
-                  </motion.ul>
+                 
 
                   <motion.ul className="main-menu__links primary-links">
                     {[
@@ -189,7 +160,7 @@ const Navbar = () => {
                       >
                         <Link
                           href={link.href}
-                          className="primary-links__link t-primary text-xl font-bold"
+                          className="primary-links__link t-primary text-6xl font-bold"
                           aria-describedby={`desc_${link.title.toLowerCase()}`}
                           onClick={() => setIsMenuOpen(false)}
                         >
