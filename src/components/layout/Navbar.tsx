@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Menu } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
@@ -140,7 +138,7 @@ const Navbar = () => {
               exit="exit"
             >
               <div className="main-menu__flyout">
-                <div className="main-menu__inr p-8">
+                <div className="main-menu__inr p-8 grid grid-rows-[50px_auto]  min-h-screen">
                   <motion.div 
                     className="flex justify-between items-center mb-8"
                     variants={itemVariants}
@@ -232,7 +230,7 @@ const Navbar = () => {
                       >
                         <Link
                           href={link.href}
-                          className="primary-links__link t-primary text-6xl font-bold"
+                          className="primary-links__link t-primary text-4xl font-bold mb-5"
                           aria-describedby={`desc_${link.title.toLowerCase()}`}
                           onClick={() => setIsMenuOpen(false)}
                         >
@@ -240,7 +238,7 @@ const Navbar = () => {
                         </Link>
                         <span 
                           id={`desc_${link.title.toLowerCase()}`} 
-                          className="primary-links__summary block text-sm text-gray-500"
+                          className="primary-links__summary block "
                         >
                           {link.desc}
                         </span>
