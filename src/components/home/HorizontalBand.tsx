@@ -64,10 +64,13 @@ const HorizontalBand = () => {
         </p>
         
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="bg-gradient-to-r from-[#8B5CF6] to-[#7C3AED] text-white px-8 py-4 rounded-full font-medium hover:shadow-lg transition-shadow duration-300"
         >
+          <span className="btn__label stripes">
           About my approach
+          </span>
+          <span className="btn btn__fill" data-drift="-10 -12" aria-hidden="true" style={{ transform: "translate(-4.95845px, 7.15695px)" }}>
+          About my approach
+          </span>
         </motion.button>
       </motion.div>
     </div>

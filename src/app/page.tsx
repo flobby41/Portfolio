@@ -1,7 +1,6 @@
 "use client";
 
 import Hero from "@/components/home/Hero";
-import OpenSource from "@/components/home/OpenSource";
 import { LazySection } from "@/components/home/LazySection";
 import HorizontalBand from "@/components/home/HorizontalBand";
 import { motion } from "framer-motion";
