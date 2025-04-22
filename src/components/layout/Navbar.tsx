@@ -94,7 +94,9 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               <span className="menu-link__mask">
-                <span className="menu-link__label font-bold">MENU</span>
+                <span className="menu-link__label font-bold">
+                  {isMenuOpen ? 'CLOSE' : 'MENU'}
+                </span>
               </span>
             </button>
           </div>
@@ -143,14 +145,6 @@ const Navbar = () => {
                     className="flex justify-between items-center mb-8"
                     variants={itemVariants}
                   >
-                   
-                    <button
-                      className="text-dark-blue"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                       <span className="font-bold">CLOSE</span>
-
-                    </button>
                   </motion.div>
                   <div className="flex items-center gap-8">
 
