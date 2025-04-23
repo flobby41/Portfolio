@@ -63,15 +63,15 @@ const HorizontalBand = () => {
           From interaction design to scaleable design systems, single-page apps to something more experimental with WebGL. I help awesome people to build ambitious yet accessible web projects - <span className="font-semibold">the wilder, the better</span>.
         </p>
         
-        <motion.button
+        <motion.a href="" className="btn"
         >
-          <span className="btn__label stripes">
+          <span className="btn__label">
           About my approach
           </span>
-          <span className="btn btn__fill" data-drift="-10 -12" aria-hidden="true" style={{ transform: "translate(-4.95845px, 7.15695px)" }}>
+          <span className="btn__fill stripes" data-drift="-10 -12" aria-hidden="true" style={{ transform: "translate(-4.95845px, 7.15695px)" }}>
           About my approach
           </span>
-        </motion.button>
+        </motion.a>
       </motion.div>
     </div>
   );

@@ -7,14 +7,12 @@ const Avatar = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
-// Dans Avatar.tsx, modifiez les valeurs de couleur
-const colors = {
-  primary: '#7C3AED',    // Violet pour les traits
-  secondary: '#E0F2FE',  // Bleu clair pour les remplissages
-  background: '#ffffff'  // Blanc pour le fond
-};
-
-
+  // Dans Avatar.tsx, modifiez les valeurs de couleur
+  const colors = {
+    primary: '#7C3AED',    // Violet pour les traits
+    secondary: '#E0F2FE',  // Bleu clair pour les remplissages
+    background: '#ffffff'  // Blanc pour le fond
+  };
 
   // Handle mouse movement to animate the avatar
   useEffect(() => {
@@ -71,7 +69,7 @@ const colors = {
           className="w-full h-full absolute"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <circle cx="200" cy="200" r="150" fill="#a5d0e1" />
+          <circle cx="200" cy="200" r="150" fill={colors.secondary} />
         </svg>
 
         {/* Face features - simplified for the clone */}
@@ -87,31 +85,13 @@ const colors = {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M200,100 Q260,100 280,150 Q300,200 280,250 Q260,300 200,320 Q140,300 120,250 Q100,200 120,150 Q140,100 200,100 Z"
-                    fill="#ffffff"
-                    stroke="#342c6e"
+                    fill={colors.background}
+                    stroke={colors.primary}
                     strokeWidth="2" />
             </svg>
           </div>
 
-          {/* Glasses */}
-          <div
-            className="glasses absolute inset-0"
-            style={{ transform: `translateY(${mousePosition.y * 0.2}px) translateX(${mousePosition.x * 0.2}px)` }}
-          >
-            <svg
-              viewBox="0 0 400 400"
-              className="w-full h-full"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect x="130" y="160" width="60" height="45" rx="10" fill="none" stroke="#342c6e" strokeWidth="4" />
-              <rect x="210" y="160" width="60" height="45" rx="10" fill="none" stroke="#342c6e" strokeWidth="4" />
-              <line x1="190" y1="182" x2="210" y2="182" stroke="#342c6e" strokeWidth="4" />
-              <line x1="130" y1="182" x2="110" y2="175" stroke="#342c6e" strokeWidth="4" />
-              <line x1="270" y1="182" x2="290" y2="175" stroke="#342c6e" strokeWidth="4" />
-            </svg>
-          </div>
-
-          {/* Eyes */}
+          {/* Eyes - maintenu mais sans lunettes */}
           <div
             className="eyes absolute inset-0"
             style={{ transform: `translateY(${mousePosition.y * 0.5}px) translateX(${mousePosition.x * 0.5}px)` }}
@@ -121,8 +101,8 @@ const colors = {
               className="w-full h-full"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="160" cy="182" r="6" fill="#342c6e" />
-              <circle cx="240" cy="182" r="6" fill="#342c6e" />
+              <ellipse cx="160" cy="182" rx="8" ry="12" fill={colors.primary} />
+              <ellipse cx="240" cy="182" rx="8" ry="12" fill={colors.primary} />
             </svg>
           </div>
 
@@ -135,13 +115,13 @@ const colors = {
             >
               <path d="M170,250 Q200,270 230,250"
                     fill="none"
-                    stroke="#342c6e"
+                    stroke={colors.primary}
                     strokeWidth="3"
                     strokeLinecap="round" />
             </svg>
           </div>
 
-          {/* Hair */}
+          {/* Cheveux bouclés */}
           <div
             className="hair absolute inset-0"
             style={{ transform: `rotate(${mousePosition.x * 0.1}deg)` }}
@@ -151,14 +131,22 @@ const colors = {
               className="w-full h-full"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M120,150 Q150,80 200,80 Q250,80 280,150"
-                    fill="none"
-                    stroke="#342c6e"
-                    strokeWidth="4" />
-              <path d="M280,150 L300,120 L320,150 L340,140"
-                    fill="none"
-                    stroke="#342c6e"
-                    strokeWidth="4" />
+              {/* Cheveux bouclés ajoutés ici */}
+              <path d="M120,150 
+                       C100,120 110,90 140,100
+                       C170,70 200,80 210,110
+                       C240,80 270,90 280,110
+                       C310,90 340,100 340,140
+                       C370,120 390,150 370,180
+                       C400,200 380,230 360,220
+                       C370,250 340,260 320,240
+                       C310,270 280,260 270,240
+                       C250,260 220,250 210,230
+                       C190,250 160,240 150,210
+                       C120,220 100,190 120,150"
+                    fill={colors.secondary}
+                    stroke={colors.primary}
+                    strokeWidth="3" />
             </svg>
           </div>
         </div>
