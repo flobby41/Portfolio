@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-// Changez l'export pour un export default
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -15,25 +14,11 @@ export default function LoadingScreen() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Animation des points
-  const dotsVariants = {
-    initial: {
-      opacity: 0
-    },
-    animate: (i: number) => ({
-      opacity: [0, 1, 0],
-      transition: {
-        duration: 0.8,
-        repeat: Infinity,
-        delay: i * 0.1
-      }
-    })
-  };
   return (
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 bg-[#aadcec] z-50 flex items-center justify-center"
+          className="loading loading--in fixed inset-0 bg-[#aadcec] z-50 overflow-hidden"
           initial={{ y: 0 }}
           exit={{
             y: "100%",
@@ -43,19 +28,14 @@ export default function LoadingScreen() {
             }
           }}
         >
-          <motion.div
-            className="flex space-x-2">
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                variants={dotsVariants}
-                initial="initial"
-                animate="animate"
-                className="w-2 h-2 bg-white rounded-full"
-              />
-            ))}
-          </motion.div>
+          <div className="loader fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-200 ease-out">
+            <div className="lds-ellipsis">
+              <div className="absolute top-[27px] w-[8px] h-[8px] rounded-full bg-white [animation:lds-ellipsis1_0.6s_infinite] left-[6px]"></div>
+              <div className="absolute top-[27px] w-[8px] h-[8px] rounded-full bg-white [animation:lds-ellipsis2_0.6s_infinite] left-[6px]"></div>
+              <div className="absolute top-[27px] w-[8px] h-[8px] rounded-full bg-white [animation:lds-ellipsis2_0.6s_infinite] left-[26px]"></div>
+              <div className="absolute top-[27px] w-[8px] h-[8px] rounded-full bg-white [animation:lds-ellipsis3_0.6s_infinite] left-[45px]"></div>
+            </div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

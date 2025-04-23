@@ -305,6 +305,45 @@
     }
   }
 
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
+  }
+
+  .loading--in .loader {
+    opacity: 1;
+    transition: opacity 0.2s ease-out 1s;
+  }
+
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Bitter', serif;
     font-weight: 700;
