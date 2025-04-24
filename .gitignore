@@ -3,3 +3,4 @@ node_modules
 test.html
 .cursor
 model.css
+netlify.toml
