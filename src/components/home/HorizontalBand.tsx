@@ -16,8 +16,8 @@ const HorizontalBand = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{
-          delay: 1.2,
-          duration: 0.6,
+          delay: 0.3, // Réduit de 1.2 à 0.3
+          duration: 0.4, // Réduit de 0.6 à 0.4
           ease: [0.25, 0.1, 0.25, 1],
         }}
         className="mt-12 pl-24"
@@ -38,23 +38,23 @@ const HorizontalBand = () => {
           width: ["20%", "10%"],
         } : { x: "100%", width: "100%" }}
         transition={{
-          x: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+          x: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }, // Réduit de 0.8 à 0.5
           width: {
-            delay: 0.8,
-            duration: 0.4,
+            delay: 0.4, // Réduit de 0.8 à 0.4
+            duration: 0.3, // Réduit de 0.4 à 0.3
             ease: [0.25, 0.1, 0.25, 1],
           },
         }}
         className="relative h-[5px] bg-[#73BBC5] ml-24 mt-8"
       />
 
-      {/* Nouveau contenu avec lazy loading */}
+      {/* Nouveau contenu */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{
-          delay: 1.6,
-          duration: 0.6,
+          delay: 0.6, // Réduit de 1.6 à 0.6
+          duration: 0.4, // Réduit de 0.6 à 0.4
           ease: [0.25, 0.1, 0.25, 1],
         }}
         className="mt-16 pl-24 max-w-4xl"
