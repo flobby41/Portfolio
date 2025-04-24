@@ -87,14 +87,29 @@ export default function Home() {
           <div className={`flex-1 ${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
             <h2 className="text-3xl font-bold mb-6 bg-[#F4F9FC]">{skill.title}</h2>
             <p className="text-xl text-gray-600 mb-8">{skill.description}</p>
-            <motion.a
-              href={skill.link}
-              className="inline-flex items-center bg-[#F4F9FC] text-black px-6 py-3 rounded-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore {skill.title}
-            </motion.a>
+            <motion.a href="" className="btn"
+        >
+          <span className="btn__label">
+          Explore {skill.title}
+          </span>
+          <motion.span 
+    className="btn__fill stripes" 
+    data-drift="-10 -12" 
+    aria-hidden="true"
+    initial={{ x: -4.95845, y: 7.15695 }}
+    whileHover={{ 
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }}
+  >
+          Explore {skill.title}
+          </motion.span>
+        </motion.a>
+
           </div>
           <motion.div 
             className={`flex-1 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}
