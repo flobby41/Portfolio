@@ -68,9 +68,22 @@ const HorizontalBand = () => {
           <span className="btn__label">
           About my approach
           </span>
-          <span className="btn__fill stripes" data-drift="-10 -12" aria-hidden="true" style={{ transform: "translate(-4.95845px, 7.15695px)" }}>
-          About my approach
-          </span>
+          <motion.span 
+    className="btn__fill stripes" 
+    data-drift="-10 -12" 
+    aria-hidden="true"
+    initial={{ x: -4.95845, y: 7.15695 }}
+    whileHover={{ 
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }}
+  >
+    About my approach
+  </motion.span>
         </motion.a>
       </motion.div>
     </div>

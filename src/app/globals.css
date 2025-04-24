@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 
 @layer base {
   :root {
@@ -93,12 +95,9 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+ 
 
   body {
-    @apply bg-background text-foreground;
     font-family: 'Bitter', serif;
   }
 
@@ -116,64 +115,6 @@
   }
   
 
-  .btn {
-    margin: 30px 0;
-    font-size: 18px;
-    text-decoration: none;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    font-weight: 700;
-    text-align: center
-  }
-  
-  .btn,.btn__label {
-    display: inline-block;
-    position: relative
-  }
-  
-  .btn__label {
-    padding: 15px 45px;
-    color: var(--line);
-    border: 3px solid var(--line);
-    border-radius: 8px;
-    z-index: 2;
-    font-weight: bold;
-  }
-  
-  .btn__fill {
-    will-change: transform;
-    backface-visibility: hidden;
-    user-select: none;
-    transition: transform 1.5s ease-out,background .15s ease-out;
-    display: inline-block;
-    position: absolute;
-    padding: 16px 0;
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-    color: var(--bg);
-    text-align: center;
-    z-index: 1;
-    border-radius: 8px;
-    opacity: .75
-  }
-  
-  .btn:hover .btn__fill {
-    background-color: var(--fill,var(--bg))
-  }
-  
-
-  /* Style pour le motif hachuré */
-  .stripes {
-    background-image: linear-gradient(
-      45deg,
-      #e0f2fe 25%,
-      transparent 25%,
-      transparent 75%,
-      #e0f2fe 75%
-    );
-    opacity: 0.5;
-  }
   
   /* Styles pour les éléments SVG */
   .face-outline path {
@@ -349,19 +290,9 @@
     font-weight: 700;
   }
 
-  .dot {
-    @apply text-purple;
-  }
+  
 
-  .stripes {
-    background-image: repeating-linear-gradient(
-      135deg,
-      var(--light-blue),
-      var(--light-blue) 5px,
-      var(--off-white) 5px,
-      var(--off-white) 10px
-    );
-  }
+  
 
   .dots {
     background-image: radial-gradient(
@@ -397,18 +328,71 @@
 }
 
 @layer components {
- 
+  /* Supprimer les styles dupliqués et corriger les styles du bouton */
+  .btn {
+    margin: 30px 0;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .btn__label {
+    display: inline-block;
+    position: relative;
+    padding: 15px 45px;
+    color: var(--line);
+    border: 3px solid var(--line);
+    border-radius: 8px;
+    z-index: 2;
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le saut de ligne */
 
-  .page-header {
-    @apply mb-16;
+  }
+  
+  .btn__fill {
+    will-change: transform;
+    backface-visibility: hidden;
+    user-select: none;
+    transition: all 0.3s ease-out;
+    display: inline-block;
+    position: absolute;
+    padding: 15px 45px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    white-space: nowrap; /* Empêche le saut de ligne */
+    color: var(--bg);
+    text-align: center;
+    z-index: 1;
+    border-radius: 8px;
+    background-color: var(--light-blue);
+    opacity: 0.75;
   }
 
-  .flow > * + * {
-    @apply mt-4;
+  .stripes {
+    background-image: repeating-linear-gradient(
+      135deg,
+      var(--light-blue),
+      var(--light-blue) 5px,
+      var(--off-white) 5px,
+      var(--off-white) 10px
+    );
+    transition: all 0.3s ease-out;
+  }
+  
+  .btn:hover .stripes {
+    background-image: none;
+    background-color: #aadcec;
+    opacity: 1;
   }
 
-  .t-primary {
-    @apply text-dark-blue;
+  .btn:hover .btn__fill {
+    transform: translate(0, 0) !important;
   }
 
   .t-outline {
@@ -416,17 +400,7 @@
     color: transparent;
   }
 
-  .t-heading {
-    @apply text-4xl font-bold;
-  }
 
-  .lh-tight {
-    @apply leading-tight;
-  }
-
-  .lh-loose {
-    @apply leading-relaxed;
-  }
 
   .menu-link__label {
     color: --text;
@@ -434,6 +408,38 @@
     font-size: 12px;
   }
 
+/* Hire Me button styles */
+.hire-me {
+  position: fixed;
+  right: 65px;
+  color: --text;
+    font-weight:700;
+    font-size: 12px;  
+  
+}
 
+.hire-me:hover {
+  letter-spacing: 6px;
+}
+
+.hire-me .shade {
+  transition: transform 1.5s ease-out;
+}/* Hire Me button styles */
+.hire-me {
+  position: fixed;
+  right: 65px;
+  color: --text;
+    font-weight:700;
+    font-size: 12px;  
+  
+}
+
+.hire-me:hover {
+  letter-spacing: 6px;
+}
+
+.hire-me .shade {
+  transition: transform 1.5s ease-out;
+}
   
 }
