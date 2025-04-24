@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Ajout de la configuration pour GitHub Pages
+  basePath: '',
+  output: 'export',  // Génère une version statique de l'application
   images: {
-    unoptimized: true,
+    unoptimized: true,  // Nécessaire pour l'export statique
     domains: [
       "source.unsplash.com",
       "images.unsplash.com",
