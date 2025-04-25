@@ -18,7 +18,7 @@ const Navbar = () => {
     animate: {
       y: 0,
       transition: {
-        duration: 0.5, // ⚡️ Réduit de 0.8 à 0.5
+        duration: 0.3, // ⚡️ Réduit de 0.8 à 0.5
         ease: [0.76, 0, 0.24, 1],
         when: "beforeChildren",
         staggerChildren: 0.05 // ⚡️ Réduit de 0.1 à 0.05 pour accélérer l'animation des enfants
@@ -27,7 +27,7 @@ const Navbar = () => {
     exit: {
       y: "-100%",
       transition: {
-        duration: 0,
+        duration: 0, // Fermeture instantanée (0 au lieu de la valeur précédente)
         ease: [0.76, 0, 0.24, 1],
         when: "afterChildren"
       }
@@ -43,7 +43,7 @@ const Navbar = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.4, // ⚡️ Réduit de 0.8 à 0.4
+        duration: 0.3, // ⚡️ Réduit de 0.8 à 0.4
         ease: [0.25, 0.1, 0.25, 1],
       }
     },
@@ -181,16 +181,17 @@ const Navbar = () => {
                   <div className="flex items-center h-full">
                     {/* Bande horizontale */}
                     <motion.div
-                      initial={{ x: "100%", width: "10%" }}
+                      initial={{ x: "140%", width: "10%" }}
                       animate={{ 
                         x: 0,
-                        width: ["20%", "10%"],
+                        y:0, 
+                        width: ["20%", "8%"],
                       }}
                       transition={{
-                        x: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+                        x: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
                         width: {
-                          delay: 0.8,
-                          duration: 0.4,
+                          delay: 0.25,
+                          duration: 0.2,
                           ease: [0.76, 0, 0.24, 1],
                         },
                       }}
