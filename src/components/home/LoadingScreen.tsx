@@ -18,12 +18,12 @@ export default function LoadingScreen() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="loading loading--in fixed inset-0 bg-[#aadcec] z-50 overflow-hidden"
+          className="loading loading--in fixed mt-4 mx-5 inset-0 bg-[#aadcec] z-50 overflow-hidden"
           initial={{ y: 0 }}
           exit={{
             y: "100%",
             transition: {
-              duration: 0.8,
+              duration: 0.5,
               ease: [0.76, 0, 0.24, 1]
             }
           }}
