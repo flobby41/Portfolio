@@ -37,7 +37,7 @@ const skillsData = [
     title: "About Me",
     description: "Programmer, designer, and singer passionate about creating engaging digital experiences.",
     icon: "👨‍💻",
-    link: "/cv#about", 
+    link: "https://garcondargent.com/", 
     image: "/images/AboutMe.png"
   }
 ];
@@ -87,7 +87,7 @@ export default function Home() {
           <div className={`flex-1 ${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
             <h2 className="text-3xl font-bold mb-6 bg-[#F4F9FC]">{skill.title}</h2>
             <p className="text-xl text-gray-600 mb-8">{skill.description}</p>
-            <motion.a href="" className="btn"
+            <motion.a href={skill.link} className="btn"
         >
           <span className="btn__label">
           Explore {skill.title}
