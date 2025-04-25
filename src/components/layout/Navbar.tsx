@@ -88,25 +88,35 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-40">
       <div className="bg-white h-[15px] w-full"></div>
       <div className="mainnav flex justify-between items-center w-full py-4 px-6">
-        <div className="flex items-center gap-8 z-50">
-          <div className="logo-wrap">
-            <Link href="/" className="block">
-              <span className="u-vhide">Back to the homepage</span>
-              <span className="logo relative w-[60px] h-[60px] block">
-                <div className="logo__sugarloaf">
-                  <div className="logo">
-                    <svg viewBox="0 0 22.93 22.93" width="60" height="60">
-                      <polygon fill="#aadcec" points="0 8.18 14.75 22.93 22.74 22.93 0 0.19 0 8.18" />
-                      <polygon fill="#aadcec" points="22.93 14.75 0 14.75 0 22.93 22.93 22.93 22.93 14.75" />
-                      <polygon fill="#8e27e2" points="8.04 0 0 0 0 8.04 8.04 0" />
-                    </svg>
-                  </div>
+        <div className="flex items-center gap-8">
+        <div className="absolute logo-wrap">
+          <a href="/"
+            >
+            <span className="logo js-logo"
+              ><div>
+                <div className="shade" data-drift="-5 -10">
+                  <svg version="1.1" x="0px" y="0px" viewBox="0 0 256 256">
+                    <polygon
+                      className="filled-poly"
+                      points="156.2,91.5 112.7,146.5 89,116.5 33.2,187 80.7,187 144.8,187 231.8,187"
+                    />
+                  </svg>
                 </div>
-              </span>
-            </Link>
-          </div>
+                <div className="logo">
+                  <svg version="1.1" x="0px" y="0px" viewBox="0 0 256 256">
+                    <polygon
+                      className="stroke-poly"
+                      points="84,106.5 28.2,177 139.8,177 "
+                    />
+                    <polygon
+                      className="stroke-poly"
+                      points="151.2,81.5 75.7,177 226.8,177 "
+                    />
+                  </svg>
+                </div></div></span></a>
+        </div>
 
-          <div className="menu-link">
+          <div className="menu-link absolute">
             <button
               className="menu-link__trigger flex items-center gap-2 text-dark-blue font-['Inter'] tracking-[0.2em] transition-all duration-300 hover:tracking-[0.3em]"
               aria-expanded={isMenuOpen}
@@ -152,7 +162,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="main-menu fixed top-[20px] left-5 right-5 bottom-0  bg-red-300"
+              className="main-menu fixed top-[20px] left-5 right-5 bottom-0  bg-[#aadcec]"
               id="main-menu"
               variants={menuVariants}
               initial="initial"
