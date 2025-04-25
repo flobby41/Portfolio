@@ -184,7 +184,6 @@ const Navbar = () => {
                       initial={{ x: "140%", width: "10%" }}
                       animate={{ 
                         x: 0,
-                        y:0, 
                         width: ["20%", "8%"],
                       }}
                       transition={{
