@@ -507,11 +507,33 @@ vector-effect: non-scaling-stroke;
   color: var(--text);
 }
 
-.primary-links__summary  {
--webkit-font-smoothing: antialiased;
-font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-font-size: 1rem;
-font-weight: 400;
+.primary-links__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.primary-links__link {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 120px;
+  transition: color 0.3s ease;
+}
+
+.primary-links__link:hover {
+  color: white;
+}
+
+.primary-links__summary {
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 1rem;
+  font-weight: 400;
+  position: absolute;
+  left: 200px;
+  top: 40%;
+  transform: translateY(-50%);
 }
 
 /* Media query for larger screens */
