@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Ajout de la configuration pour GitHub Pages
-  basePath: '',
-  output: 'export',  // Génère une version statique de l'application
+  // Supprimez ces paramètres spécifiques à GitHub Pages
+  // basePath: '',
+  // output: 'export',  // Vercel gère mieux le rendu côté serveur
+  
   images: {
-    unoptimized: true,  // Nécessaire pour l'export statique
+    // Pas besoin de unoptimized: true avec Vercel
+    // unoptimized: true,
     domains: [
       "source.unsplash.com",
       "images.unsplash.com",
