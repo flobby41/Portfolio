@@ -208,6 +208,11 @@
     opacity: 0.75;
   }
 
+
+.CACA:hover{
+  color: red;
+}
+
   .stripes {
     background-image: repeating-linear-gradient(
       135deg,
