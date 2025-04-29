@@ -23,7 +23,7 @@ const HorizontalBand = () => {
         className="mt-12 pl-24"
       >
         <div className="relative">
-          <h2 className="font-bitter text-[4rem] text-[#0A0F4C] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
+          <h2 className="font-bitter text-[4rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
             Let&apos;s work together
             <span className="text-[#73BBC5]">.</span>
           </h2>
@@ -59,7 +59,7 @@ const HorizontalBand = () => {
         }}
         className="mt-16 pl-24 max-w-4xl"
       >
-        <p className="text-[#0A0F4C] text-xl leading-relaxed mb-8">
+        <p className="text-[#0f1b61] text-xl leading-relaxed mb-8">
         From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but everyone feels. Whether it’s an e-commerce platform, a prototype, or a WebGL experiment — I love helping people build ambitious web projects that are both  <span className="font-semibold">powerful and playful</span>.
         </p>
         
