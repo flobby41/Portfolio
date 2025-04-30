@@ -116,24 +116,37 @@ const Navbar = () => {
                 </div></div></span></a>
         </div>
 
-          <div className="flex menu-link absolute top-[35px] left-[200px]">
-            <button
-              className="menu-link__trigger flex items-center gap-2 text-dark-blue font-['Inter'] tracking-[0.2em]"
-              aria-expanded={isMenuOpen}
-              aria-controls="main-menu"
-              onClick={toggleMenu}
-            >
-            
-                  {isMenuOpen ? 'CLOSE' : 'MENU'}
-             
-            </button>
-          </div>
+          <div className="flex menu-link absolute top-[35px] left-[150px]">
+          <button
+  className="menu-link__trigger flex items-center gap-2 text-dark-blue font-['Inter'] tracking-[0.4em] transition-all duration-300 group"
+  aria-expanded={isMenuOpen}
+  aria-controls="main-menu"
+  onClick={toggleMenu}
+>
+  {isMenuOpen ? (
+    <div className="flex">
+      <span className="transition-transform duration-300 group-hover:-translate-x-[5px]">C</span>
+      <span className="transition-transform duration-300 group-hover:-translate-x-[2px]">L</span>
+      <span className="transition-transform duration-300 group-hover:-translate-x-[1px]">O</span>
+      <span className="transition-transform duration-300 group-hover:translate-x-[1px]">S</span>
+      <span className="transition-transform duration-300 group-hover:translate-x-[5px]">E</span>
+    </div>
+  ) : (
+    <div className="flex">
+      <span className="transition-transform duration-300 group-hover:-translate-x-[5px]">M</span>
+      <span className="transition-transform duration-300 group-hover:-translate-x-[2px]">E</span>
+      <span className="transition-transform duration-300 group-hover:translate-x-[2px]">N</span>
+      <span className="transition-transform duration-300 group-hover:translate-x-[5px]">U</span>
+    </div>
+  )}
+</button>
+        </div>
         </div>
 
         <div className="flex items-center gap-6 z-50">
           <Link
             href="mailto:florian.cheheb@gmail.com?subject=🤘 Hi Florian, I'd like to hire you"
-            className="hire-me flex items-center gap-2 font-['Inter'] tracking-[0.2em] font-bold transition-all duration-300 hover:tracking-[0.3em]"
+            className="hire-me flex items-center gap-2 font-['Inter'] tracking-[0.3em] font-bold transition-all duration-300 hover:tracking-[0.5em]"
           >
             <div className="shade" data-drift="-4 -6" data-drift-center="y" style={{ transform: "translateY(-50%) translate(-3.94702px, 2.41256px)" }}>
 
@@ -152,8 +165,18 @@ const Navbar = () => {
 
         {/* Texte vertical */}
         <div className="fixed left-6 top-1/2 -translate-y-1/2 transform">
-          <div className="vertical-text font-mono text-xs tracking-wider text-gray-400" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
-            © MMXXV. Gwneud yn Ne Cymru.
+          <div 
+            className="vertical-text" 
+            style={{ 
+              writingMode: 'vertical-rl', 
+              transform: 'rotate(180deg)',
+              fontSize: '0.8rem',
+              letterSpacing: '0.02em',
+              color: '#919795',
+              fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol'
+            }}
+          >
+            © MMXXV. Fait en France.
           </div>
         </div>
 
@@ -182,7 +205,7 @@ const Navbar = () => {
                       initial={{ x: "140%", width: "10%" }}
                       animate={{ 
                         x: 0,
-                        width: ["20%", "8%"],
+                        width: ["15%", "8%"],
                       }}
                       transition={{
                         x: { duration: 0.4, ease: [0.76, 0, 0.24, 1] },
@@ -263,7 +286,7 @@ const Navbar = () => {
                     ].map((link, index) => (
                       <motion.li 
                         key={link.href}
-                        className="primary-links__item mb-4 flex items-baseline gap-8"
+                        className="primary-links__item mb-4 flex items-baseline "
                         variants={{
                           initial: { 
                             y: -5, // Changé de 50 à -20 pour un mouvement descendant
