@@ -199,7 +199,7 @@ const Navbar = () => {
                     {/* Première rangée - pour d'autres éléments si nécessaire */}
                   </motion.div>
                   
-                  <div className="flex items-center h-full">
+                  <div className="flex items-center h-full ">
                     {/* Bande horizontale */}
                     <motion.div
                       initial={{ x: "140%", width: "10%" }}
