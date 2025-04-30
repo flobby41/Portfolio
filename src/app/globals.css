@@ -95,12 +95,9 @@
 }
 
 @layer base {
- 
-
   body {
     font-family: 'Bitter', serif;
   }
-
 
   @keyframes fadeIn {
     from {
@@ -156,13 +153,10 @@
     font-family: 'Bitter', serif;
     font-weight: 700;
   }
-
-  
-
 }
 
 @layer components {
-  /* Supprimer les styles dupliqués et corriger les styles du bouton */
+  /* Styles du bouton */
   .btn {
     margin: 30px 0;
     font-size: 18px;
@@ -184,7 +178,6 @@
     z-index: 2;
     font-weight: bold;
     white-space: nowrap; /* Empêche le saut de ligne */
-
   }
   
   .btn__fill {
@@ -207,11 +200,6 @@
     background-color: var(--light-blue);
     opacity: 0.75;
   }
-
-
-.CACA:hover{
-  color: red;
-}
 
   .stripes {
     background-image: repeating-linear-gradient(
@@ -239,20 +227,21 @@
     color: transparent;
   }
 
-
-
-  .menu-link__label {
-    color: --text;
-    font-weight:700;
-    font-size: 12px;
-  }
+  /* Styles pour le menu */
   .menu-link {
-    display: inline-block;
-    vertical-align: middle;
-    z-index: 2;
-    left: 180;
-    top: 70;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 12px;
+    z-index: 3;
+    
   }
+  
+  .menu-link:hover{
+    letter-spacing: 6px !important;
+    color: red  ;
+  }
+
+
   
   .no-js .menu-link {
     display: none
@@ -266,22 +255,19 @@
     margin-right: 16px;
     vertical-align: middle;
     background: #919795;
-    animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards;
-    margin-left: 205px;
-    margin-top: 100px;
+    animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
   }
+  
   .menu-link__mask {
     position: absolute;
-    top: 0;
-    left: 25;
+    top: 10;
+    left: 250;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    margin-left: 170px;
-    margin-top: 100px;
-
+    z-index: 2
   }
 
+  /* Flyout menu */
   .js .main-menu__flyout {
     position: fixed;
     backface-visibility: hidden;
@@ -327,290 +313,157 @@
     animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
   }
   
-/* Hire Me button styles */
-.hire-me {
-  position: fixed;
-  right: 65px;
-  color: --text;
-    font-weight:700;
-    font-size: 12px;  
-  top: 70px;
-  
-}
+  /* Hire Me button styles */
+  .hire-me {
+    position: fixed;
+    right: 65px;
+    color: --text;
+    font-weight: 700;
+    font-size: 12px;
+    top: 70px;
+  }
 
-.hire-me:hover {
-  letter-spacing: 6px;
-}
+  .hire-me:hover {
+    letter-spacing: 6px;
+  }
 
-.hire-me .shade {
-  transition: transform 1.5s ease-out;
-}/* Hire Me button styles */
-.hire-me {
-  position: fixed;
-  right: 65px;
-  color: --text;
-    font-weight:700;
-    font-size: 12px;  
-  
-}
+  .hire-me .shade {
+    transition: transform 0.3s ease-out; /* Transition plus rapide pour suivre la souris */
+  }
 
-.hire-me:hover {
-  letter-spacing: 6px;
-}
+  .hire-me .main svg, 
+  .hire-me .shade {
+    position: absolute;
+    left: -35px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+  }
 
-.hire-me .shade {
-  transition: transform 1.5s ease-out;
-}
+  .hire-me .main svg .stroke-path, 
+  .hire-me .shade .stroke-path {
+    stroke-width: 2.5px;
+  }
 
-.logo-wrap {
-  position: relative;
-  z-index: 10000;
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 65px;
-  padding-top: 8px;
-  width: 100%;
-  top: 25;
-  left: 70px;
-  margin-top: 96px;
-  margin-left: 40px;
-}
-
-@media(min-width: 512px) {
+  /* Logo styles */
   .logo-wrap {
-      padding-top:0;
+    max-width: 65px;
+    padding-top: 8px;
+    width: 100%;
+    left: 75px;
+    top:-5px;
+    z-index: 100;
+  }
+
+  @media(min-width: 512px) {
+    .logo-wrap {
+      padding-top: 0;
       max-width: 100px
+    }
   }
-}
 
-.logo-wrap .logo {
-  position: relative;
-  display: block;
-  animation: logoIn .45s ease-out .2s backwards
-}
+  .logo-wrap .logo {
+    position: relative;
+    display: block;
+    animation: logoIn .45s ease-out .2s backwards
+  }
 
-.logo-wrap .logo .shade {
-  transition: transform 1.5s ease-out;
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0
-}
+  .shade {
+    transition: transform 0.3s ease-out; /* Transition plus rapide pour suivre la souris */
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    will-change: transform;
+    /* Supprimer l'animation: animation: gentleFloat 4s ease-in-out infinite; */
+    transform-style: preserve-3d;
+  }
 
-.logo-wrap svg {
-  max-width: 100%;
-  height: auto;
-  margin-left: -10px
-}
   
-@keyframes logoIn {
-  0% {
+    
+  @keyframes logoIn {
+    0% {
       opacity: 0
-  }
-
-  to {
+    }
+    to {
       opacity: 1
+    }
   }
-}
 
-.filled-path,.filled-poly,.svg-fill {
-  fill: var(--fill,var(--bg))
-}
+  /* SVG avatar components */
+  .filled-path, .filled-poly, .svg-fill {
+    fill: var(--fill, var(--bg))
+  }
 
+  .stroke-path, .stroke-poly {
+    fill: none;
+    color: #7f00e0;
+    stroke: var(--line);
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    vector-effect: non-scaling-stroke;
+  }
 
+  @media (min-width: 512px) {
+    .stroke-path, .stroke-poly {
+      stroke-width: 3px;
+    }
+  }
 
-.dots {
-  background-image: radial-gradient(
-    var(--light-blue) 1px,
-    transparent 1px
-  );
-  background-size: 8px 8px;
-}
+  .svg-stroke-thin {
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    vector-effect: non-scaling-stroke;
+  }
 
-.u-vhide {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
+  .svg-stroke-dashed {
+    stroke-dasharray: 6;
+  }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
+  .svg-bg {
+    fill: blueviolet;
+  }
 
+  /* Dot pattern */
+  .dots {
+    background-image: radial-gradient(
+      var(--light-blue) 1px,
+      transparent 1px
+    );
+    background-size: 8px 8px;
+  }
 
-.avatar-wrap {
-  /* Style de base */
-  position: relative;
-  perspective: 1000px;
-}
+  /* Utility classes */
+  .u-vhide {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
 
-.avatar {
-  /* Style de l'avatar */
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-}
-
-
-
-/* Styles pour les éléments SVG */
-.face-outline path {
-  fill: #ffffff;
-  stroke: #7C3AED;
-  stroke-width: 3;
-}
-
-.glasses rect, .glasses line {
-  fill: none;
-  stroke: #7C3AED;
-  stroke-width: 3;
-}
-
-.eyes circle {
-  fill: #7C3AED;
-}
-
-.mouth path {
-  stroke: #7C3AED;
-  stroke-width: 3;
-}
-
-.hair path {
-  stroke: #7C3AED;
-  stroke-width: 3;
-  fill: none;
-}
-
-/* Animation d'entrée */
-.avatar--ready {
-  animation: fadeIn 0.5s ease-out;
-}
-
-/* Stroke styles for paths and polygons */
-.stroke-path, .stroke-poly {
-fill: none;
-color: #7f00e0;
-stroke: var(--line);
-stroke-width: 2.5px;
-stroke-linecap: round;
-stroke-linejoin: round;
-stroke-miterlimit: 10;
-vector-effect: non-scaling-stroke;
-}
-
-
-.primary-links{
-  color: var(--text);
-}
-
-.primary-links__item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.primary-links__link {
-  display: inline-block;
-  vertical-align: middle;
-  min-width: 120px;
-  transition: color 0.3s ease;
-}
-
-.primary-links__link:hover {
-  color: white;
-}
-
-.primary-links__summary {
-  -webkit-font-smoothing: antialiased;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-size: 1rem;
-  font-weight: 400;
-  position: absolute;
-  left: 200px;
-  top: 40%;
-  transform: translateY(-50%);
-}
-
-/* Media query for larger screens */
-@media (min-width: 512px) {
-.stroke-path, .stroke-poly {
-  stroke-width: 3px;
-}
-}
-
-/* Thin stroke style */
-.svg-stroke-thin {
-fill: none;
-stroke: var(--line);
-stroke-width: 2.5px;
-stroke-linecap: round;
-stroke-linejoin: round;
-stroke-miterlimit: 10;
-vector-effect: non-scaling-stroke;
-}
-
-/* Dashed stroke style */
-.svg-stroke-dashed {
-stroke-dasharray: 6;
-}
-
-/* Background fill */
-.svg-bg {
-fill: blueviolet;
-}
-
-/* Fill styles */
-.filled-path, .filled-poly, .svg-fill {
-fill: #aadcec;
-}
-
-/* Hire Me button styles */
-.hire-me {
-position: fixed;
-right: 65px;
-color: --text;
-  font-weight:700;
-  font-size: 12px;  
-
-}
-
-.hire-me:hover {
-letter-spacing: 6px;
-}
-
-.hire-me .shade {
-transition: transform 1.5s ease-out;
-}
-
-.hire-me .main svg, 
-.hire-me .shade {
-position: absolute;
-left: -35px;
-top: 40%;
-transform: translateY(-50%);
-width: 35px;
-height: 35px;
-}
-
-.hire-me .main svg .stroke-path, 
-.hire-me .shade .stroke-path {
-stroke-width: 2.5px;
-}
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 }
