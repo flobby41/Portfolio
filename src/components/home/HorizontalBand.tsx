@@ -5,13 +5,12 @@ import { useInView } from "react-intersection-observer";
 const HorizontalBand = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.5,
-    rootMargin: "-150px",
+    threshold: 0.3,
+    rootMargin: "-100px",
   });
 
   return (
-    <div ref={ref} className="relative w-full overflow-hidden my-16">
-      {/* Texte */}
+<div ref={ref} className="relative w-full overflow-hidden my-16 ">      {/* Texte */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
