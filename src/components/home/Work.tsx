@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import HorizontalBand from './HorizontalBand'
 
 const Work = () => {
   // Références pour les effets de parallaxe
@@ -186,6 +187,7 @@ const Work = () => {
       
       <main className="page-body page-body--header" tabIndex={-1}>
         {/* SVG filtre pour l'effet duotone */}
+        <HorizontalBand/>
         <svg
           style={{
             position: "absolute",
@@ -235,35 +237,8 @@ const Work = () => {
                 animate={headerInView ? "visible" : "hidden"}
                 variants={staggerContainer}
               >
-                <motion.div className="article-heading" variants={fadeInUp}>
-                  <h1 className=" t-heading t-medium:s t-bigger:m t-biggest:l">
-                    <span>About my work<span className="dot">.</span></span>
-                  </h1>
-                </motion.div>
-              
-              {/* barre horizontale */}
-                <motion.div 
-                  className="relative  h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
-                  initial={{ scaleX: 0 }}
-                  animate={headerInView ? { scaleX: 1 } : { scaleX: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1]
-                  }}
-                  style={{ originX: 0 }}
-                />
-                
-                <motion.p 
-                  className="page-header__lede t-primary lh-loose t-body:s t-sublede:m t-lede:l"
-                  variants={fadeInUp}
-                >
-                  I work with forward-thinking people to design and build
-                  <b> interactive, accessible websites and products</b>. From
-                  working on projects for various clients including startups and established companies,
-                  to collaborating with talented developers worldwide,
-                  I've devoted years to <b>making the web a little bit brighter</b>.
-                </motion.p>
+             
+             
                 
                 <motion.span 
                   className="page-header__scroll" 
