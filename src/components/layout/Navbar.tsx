@@ -3,9 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Determine menu background color based on path
+  const menuBgColor = pathname === "/work" ? "#fcc5d3" : "#aadcec";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -183,8 +188,9 @@ const Navbar = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="main-menu fixed top-[20px] left-5 right-5 bottom-0  bg-[#aadcec]"
+              className="main-menu fixed top-[20px] left-5 right-5 bottom-0"
               id="main-menu"
+              style={{ backgroundColor: menuBgColor }}
               variants={menuVariants}
               initial="initial"
               animate="animate"

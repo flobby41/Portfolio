@@ -2,9 +2,14 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+  
+  // Determine background color based on path
+  const bgColor = pathname === "/work" ? "#fcc5d3" : "#aadcec";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,7 +23,8 @@ export default function LoadingScreen() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="loading loading--in fixed my-4 mx-5 inset-0 bg-[#aadcec] z-50 overflow-hidden"
+          className="loading loading--in fixed my-4 mx-5 inset-0 z-50 overflow-hidden"
+          style={{ backgroundColor: bgColor }}
           initial={{ y: 0 }}
           exit={{
             y: "100%",
