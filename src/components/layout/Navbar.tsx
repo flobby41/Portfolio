@@ -121,9 +121,9 @@ const Navbar = () => {
                 </div></div></span></a>
         </div>
 
-          <div className="flex menu-link absolute top-[35px] left-[150px]">
+          <div className="menu-link ">
           <button
-  className="menu-link__trigger flex items-center gap-2 text-dark-blue font-['Inter'] tracking-[0.4em] transition-all duration-300 group"
+  className="menu-link__trigger group"
   aria-expanded={isMenuOpen}
   aria-controls="main-menu"
   onClick={toggleMenu}

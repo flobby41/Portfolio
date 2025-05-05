@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import './model.css'; // Importation du CSS modèle
 
 const Work = () => {
   // Références pour les effets de parallaxe
@@ -180,6 +179,10 @@ const Work = () => {
     background: #919795;
     animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
   }
+  
+ .filled-path {
+    margin: 15px 0 0 25px;
+  }
       
       `}</style>
       
@@ -239,9 +242,10 @@ const Work = () => {
                     <span>About my work<span className="dot">.</span></span>
                   </h1>
                 </motion.div>
-                
+              
+              {/* barre horizontale */}
                 <motion.div 
-                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
+                  className="relative  h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
                   initial={{ scaleX: 0 }}
                   animate={headerInView ? { scaleX: 1 } : { scaleX: 0 }}
                   transition={{
