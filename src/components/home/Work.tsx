@@ -234,6 +234,7 @@ const Work = () => {
                   working on projects for various clients including startups and established companies,
                   to collaborating with talented developers worldwide,
                   I've devoted years to <b>making the web a little bit brighter</b>.
+                  Whether it’s an e-commerce platform, a prototype, or a WebGL experiment — I love helping people build ambitious web projects that are both  <span className="font-semibold">powerful and playful</span>.
                 </motion.p>
                 
                 <motion.span 

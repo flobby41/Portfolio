@@ -226,8 +226,7 @@
   
   .btn:hover .stripes {
     background-image: none;
-    background-color: #aadcec;
-    opacity: 1;
+    background-color: var(--fill, var(--bg));
   }
 
   .btn:hover .btn__fill {

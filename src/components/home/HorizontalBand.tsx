@@ -62,10 +62,10 @@ const HorizontalBand = () => {
         className="mt-16 pl-24 max-w-4xl"
       >
         <p className="text-[#0f1b61] text-xl leading-relaxed mb-8">
-        From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but everyone feels. Whether it’s an e-commerce platform, a prototype, or a WebGL experiment — I love helping people build ambitious web projects that are both  <span className="font-semibold">powerful and playful</span>.
+        From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-semibold"> everyone feels</span>. 
         </p>
         
-        <motion.a href="" className="btn"
+        <motion.a href="/work" className="btn"
         >
           <span className="btn__label">
           About my approach
