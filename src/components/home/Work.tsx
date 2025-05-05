@@ -180,9 +180,7 @@ const Work = () => {
     animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
   }
   
- .filled-path {
-    margin: 15px 0 0 25px;
-  }
+
       
       `}</style>
       
