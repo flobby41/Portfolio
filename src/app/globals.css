@@ -451,6 +451,9 @@
     fill: blueviolet;
   }
 
+  .skills, .skills_title{
+    color: var(--text);
+  }
   /* Dot pattern */
   .dots {
     background-image: radial-gradient(
