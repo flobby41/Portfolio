@@ -61,9 +61,9 @@ export default function Home() {
         <HorizontalBand />
 
 <LazySection className="min-h-screen py-20">
-  <div className="max-w-7xl mx-auto px-4">
+  <div className="max-w-7xl mx-auto px-12">
     <motion.div
-      className="space-y-32"
+      className="space-y-8"
       variants={{
         hidden: { opacity: 0 },
         visible: { opacity: 1 }
@@ -74,7 +74,7 @@ export default function Home() {
       {skillsData.map((skill, index) => (
         <motion.div
           key={skill.title}
-          className="flex items-center gap-12"
+          className="flex items-center gap-12 skill-item"
           variants={{
             hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
             visible: { 
@@ -85,8 +85,9 @@ export default function Home() {
           }}
         >
           <div className={`flex-1 ${index % 2 === 0 ? 'order-1' : 'order-2'}`}>
-            <h2 className="skills_title text-4xl font-bold mb-6">{skill.title}</h2>
-            <p className="skills text-lg mb-8 system-font">{skill.description}</p>
+            <h2 className="skills_title text-4xl font-bold mb-6">{skill.title}<span className="text-[#73BBC5]">.</span>
+            </h2>
+            <p className="skills text-base mb-8 system-font">{skill.description}</p>
             <motion.a href={skill.link} className="btn"
         >
           <span className="btn__label">

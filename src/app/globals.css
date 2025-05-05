@@ -454,6 +454,24 @@
   .skills, .skills_title{
     color: var(--text);
   }
+
+  /* Ligne horizontale entre les skills */
+  .skill-item {
+    position: relative;
+    padding-bottom: 100px;  /* Augmenté pour plus d'espace */
+  }
+  
+  .skill-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;  /* Positionné 60px sous les boutons (environ) */
+    left: 10%;  /* Réduit la longueur en ajoutant 10% de marge de chaque côté */
+    width: 80%;  /* Réduit à 80% de la largeur totale */
+    height: 1px;
+    background-color: var(--about-gray-green);    /* Couleur éclaircie */
+    margin: 0 auto;  /* Centrage horizontal */
+  }
+
   /* Dot pattern */
   .dots {
     background-image: radial-gradient(
