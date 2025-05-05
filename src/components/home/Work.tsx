@@ -154,36 +154,33 @@ const Work = () => {
           background-size: 100% auto;
           background-repeat: repeat-y;
         }
-            .js .main-menu__flyout {
-    position: fixed;
-    backface-visibility: hidden;
-    z-index: 10001;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 100px 35px 50px
-  }
+        /* Style CSS pour le bouton de menu */
 
-  .primary-links__link {
-    color: var(--text);
+        .menu-link{
+        position:absolute;
+        display:flex;
+        top:35px;
+        left:150px;
+        }
+        .menu-link__trigger {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-family: 'Inter', sans-serif;
+          transition: all 0.3s;
+          
+        }
+      .menu-link:before {
+    content: "";
     display: inline-block;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    transition: color ease-out-quad 0.2s;
-    font-size: 4rem;
-    line-height: 5.2rem;
-    width: 200px;
+    width: 1px;
+    height: 26px;
+    margin-right: 25px;
+    vertical-align: middle;
+    background: #919795;
+    animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
   }
-  .primary-links__summary {
-    -webkit-font-smoothing: antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-   
-    color: var(--text);
-  }  
-  
+      
       `}</style>
       
       <main className="page-body page-body--header" tabIndex={-1}>
@@ -238,7 +235,7 @@ const Work = () => {
                 variants={staggerContainer}
               >
                 <motion.div className="article-heading" variants={fadeInUp}>
-                  <h1 className="article-heading__title t-heading t-medium:s t-bigger:m t-biggest:l">
+                  <h1 className=" t-heading t-medium:s t-bigger:m t-biggest:l">
                     <span>About my work<span className="dot">.</span></span>
                   </h1>
                 </motion.div>
