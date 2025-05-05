@@ -92,13 +92,29 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
   }
-}
 
-@layer base {
+  /* Définition des polices de base */
   body {
     font-family: 'Bitter', serif;
   }
 
+  /* Définition de la police système pour les paragraphes */
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  /* S'assurer que les paragraphes avec la classe font-bitter utilisent bien Bitter */
+  p.font-bitter {
+    font-family: 'Bitter', serif !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+  }
+}
+
+@layer base {
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -148,11 +164,6 @@
     width: 64px;
     height: 64px;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bitter', serif;
-    font-weight: 700;
-  }
 }
 
 @layer components {
@@ -167,7 +178,8 @@
     display: inline-block;
     position: relative;
   }
-  
+
+
   .btn__label {
     display: inline-block;
     position: relative;
@@ -447,6 +459,18 @@
       transparent 1px
     );
     background-size: 8px 8px;
+  }
+
+  /* Styles pour la LazySection */
+  .system-font {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  }
+
+  /* Ciblage spécifique des paragraphes dans la LazySection */
+  section.transform p {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
   }
 
   /* Utility classes */
