@@ -154,6 +154,36 @@ const Work = () => {
           background-size: 100% auto;
           background-repeat: repeat-y;
         }
+            .js .main-menu__flyout {
+    position: fixed;
+    backface-visibility: hidden;
+    z-index: 10001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px 35px 50px
+  }
+
+  .primary-links__link {
+    color: var(--text);
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: color ease-out-quad 0.2s;
+    font-size: 4rem;
+    line-height: 5.2rem;
+    width: 200px;
+  }
+  .primary-links__summary {
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+   
+    color: var(--text);
+  }  
+  
       `}</style>
       
       <main className="page-body page-body--header" tabIndex={-1}>
@@ -234,7 +264,6 @@ const Work = () => {
                   working on projects for various clients including startups and established companies,
                   to collaborating with talented developers worldwide,
                   I've devoted years to <b>making the web a little bit brighter</b>.
-                  Whether it’s an e-commerce platform, a prototype, or a WebGL experiment — I love helping people build ambitious web projects that are both  <span className="font-semibold">powerful and playful</span>.
                 </motion.p>
                 
                 <motion.span 
@@ -565,14 +594,7 @@ const Work = () => {
           </div>
         </div>
         
-        <motion.small 
-          className="made-in-france"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-        >
-          © MMXXV. Fait en France.
-        </motion.small>
+  
       </main>
     </>
   );
