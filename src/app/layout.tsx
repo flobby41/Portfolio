@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Bitter } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 
-const bitter = Bitter({
-  subsets: ["latin"],
-  weight: ['300', '400', '700'],
-  variable: "--font-bitter",
-});
 
 export const metadata: Metadata = {
   title: "Florian Cheheb - Independent Creative Developer",
@@ -21,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bitter.variable}`}>
+    <html lang="en">
       <ClientBody>{children}</ClientBody>
     </html>
   );

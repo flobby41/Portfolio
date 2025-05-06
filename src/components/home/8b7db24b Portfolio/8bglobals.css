@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    /* Base colors from the site */
+    --light-blue: #a5d0e1;
+    --dark-blue: #342c6e;
+    --off-white: #f3fbfb;
+    --purple: #8e27e2;
+    --light-purple: #d29ef1;
+    --extra-light-purple: #ecccf6;
+    --light-gray: #bfd7e7;
+    --mint-green: #d1e4b8;
+    --text-gray: #7d8484;
+
+    /* Colors for the work page */
+    --work-bg: #fbf3f4;
+    --work-purple: #8568b1;
+    --work-light-purple: #9b96b7;
+    --work-pink: #edc4d9;
+    --work-medium-purple: #c6a2d9;
+    --work-light-blue: #d0d8ee;
+    --work-peach: #dfc5b0;
+    --work-text-gray: #807e7c;
+
+    /* Colors for the about page */
+    --about-bg: #f2faf9;
+    --about-dark-blue: #435963;
+    --about-green: #9bcdba;
+    --about-light-green: #c3d2cf;
+    --about-gray-green: #b5bebb;
+    --about-text-gray: #7c8484;
+    --about-blue-gray: #7c7c9f;
+    --about-light-blue: #b4b3c5;
+    --about-very-light-blue: #d5d3d9;
+
+    /* System colors */
+    --background: 180 36% 97%;
+    --foreground: 240 26% 30%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 256 75% 52%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 180 47% 76%;
+    --accent-foreground: 243 51% 30%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+
+    --bg: #f4f9fc;
+    --line: #7f00E0;
+    --fill: #aadcec;
+    --text: #0f1b61;
+    --subtext: #73bbc5;
+    --duo: #105d67
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  /* Définition des polices de base */
+  body {
+    font-family: 'Bitter', serif;
+  }
+
+  /* Définition de la police système pour les paragraphes */
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  /* S'assurer que les paragraphes avec la classe font-bitter utilisent bien Bitter */
+  p.font-bitter {
+    font-family: 'Bitter', serif !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+  }
+}
+
+@layer base {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
+  }
+
+  .loading--in .loader {
+    opacity: 1;
+    transition: opacity 0.2s ease-out 1s;
+  }
+
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@layer components {
+  /* Styles du bouton */
+  .btn {
+    margin: 30px 0;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+  }
+
+
+  .btn__label {
+    display: inline-block;
+    position: relative;
+    padding: 15px 45px;
+    color: var(--line);
+    border: 3px solid var(--line);
+    border-radius: 8px;
+    z-index: 2;
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le saut de ligne */
+  }
+  
+  .btn__fill {
+    will-change: transform;
+    backface-visibility: hidden;
+    user-select: none;
+    transition: all 0.3s ease-out;
+    display: inline-block;
+    position: absolute;
+    padding: 15px 45px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    white-space: nowrap; /* Empêche le saut de ligne */
+    color: var(--bg);
+    text-align: center;
+    z-index: 1;
+    border-radius: 8px;
+    background-color: var(--light-blue);
+    opacity: 0.75;
+  }
+
+  .stripes {
+    background-image: repeating-linear-gradient(
+      135deg,
+      var(--light-blue),
+      var(--light-blue) 5px,
+      var(--off-white) 5px,
+      var(--off-white) 10px
+    );
+    transition: all 0.3s ease-out;
+  }
+  
+  .btn:hover .stripes {
+    background-image: none;
+    background-color: var(--fill, var(--bg));
+  }
+
+  .btn:hover .btn__fill {
+    transform: translate(0, 0) !important;
+  }
+
+  .t-outline {
+    -webkit-text-stroke: 1px var(--dark-blue);
+    color: transparent;
+  }
+
+  /* Styles pour le menu */
+  .menu-link {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 12px;
+    z-index: 3;
+    
+  }
+  
+  
+  .no-js .menu-link {
+    display: none
+  }
+  
+  .menu-link:before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 26px;
+    margin-right: 25px;
+    vertical-align: middle;
+    background: #919795;
+    animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
+  }
+  
+ 
+
+  /* Flyout menu */
+  .js .main-menu__flyout {
+    position: fixed;
+    backface-visibility: hidden;
+    z-index: 10001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px 35px 50px
+  }
+
+  .primary-links__link {
+    color: var(--text);
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: color ease-out-quad 0.2s;
+    font-size: 4rem;
+    line-height: 5.2rem;
+    width: 200px;
+  }
+  .primary-links__summary {
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+   
+    color: var(--text);
+  }  
+  
+  @media(min-width: 512px) {
+    .js .main-menu__flyout {
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 150px 55px 80px 65px
+    }
+  }
+  
+  @media(min-width: 512px)and (min-height:700px) {
+    .js .main-menu__flyout {
+        padding:180px 55px 80px 65px
+    }
+  }
+
+  .no-js .main-menu__flyout {
+    position: fixed;
+    z-index: 100000;
+    top: 70px;
+    left: 180px
+  }
+  
+  .no-js .main-menu__flyout:before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 26px;
+    margin-right: 16px;
+    background: #919795;
+    vertical-align: middle;
+    animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
+  }
+  
+  /* Hire Me button styles */
+  .hire-me {
+    position: fixed;
+    right: 65px;
+    color: --text;
+    font-weight: 700;
+    font-size: 12px;
+    top: 70px;
+    z-index: 200;
+  }
+
+  .hire-me:hover {
+    letter-spacing: 6px;
+  }
+
+  .hire-me .shade {
+    transition: transform 0.3s ease-out; /* Transition plus rapide pour suivre la souris */
+  }
+
+  .hire-me .main svg, 
+  .hire-me .shade {
+    position: absolute;
+    left: -35px;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+  }
+
+  .hire-me .main svg .stroke-path, 
+  .hire-me .shade .stroke-path {
+    stroke-width: 2.5px;
+  }
+
+  /* Logo styles */
+  .logo-wrap {
+    max-width: 65px;
+    padding-top: 8px;
+    width: 100%;
+    left: 25px;
+    top:-5px;
+    z-index: 100;
+  }
+
+  @media(min-width: 512px) {
+    .logo-wrap {
+      padding-top: 0;
+      max-width: 100px
+    }
+  }
+
+  .logo-wrap .logo {
+    position: relative;
+    display: block;
+    animation: logoIn .45s ease-out .2s backwards
+  }
+
+  .shade {
+    transition: transform 0.3s ease-out; /* Transition plus rapide pour suivre la souris */
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    will-change: transform;
+    /* Supprimer l'animation: animation: gentleFloat 4s ease-in-out infinite; */
+    transform-style: preserve-3d;
+  }
+
+  
+    
+  @keyframes logoIn {
+    0% {
+      opacity: 0
+    }
+    to {
+      opacity: 1
+    }
+  }
+
+  /* SVG avatar components */
+  .filled-path, .filled-poly, .svg-fill {
+    fill: var(--fill, var(--bg))
+  }
+
+  .stroke-path, .stroke-poly {
+    fill: none;
+    color: #7f00e0;
+    stroke: var(--line);
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    vector-effect: non-scaling-stroke;
+  }
+
+  @media (min-width: 512px) {
+    .stroke-path, .stroke-poly {
+      stroke-width: 3px;
+    }
+  }
+
+  .svg-stroke-thin {
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .svg-stroke-dashed {
+    stroke-dasharray: 6;
+  }
+
+  .svg-bg {
+    fill: blueviolet;
+  }
+
+  .skills, .skills_title{
+    color: var(--text);
+  }
+
+  /* Ligne horizontale entre les skills */
+  .skill-item {
+    position: relative;
+    padding-bottom: 100px;  /* Augmenté pour plus d'espace */
+  }
+  
+  .skill-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;  /* Positionné 60px sous les boutons (environ) */
+    left: 10%;  /* Réduit la longueur en ajoutant 10% de marge de chaque côté */
+    width: 80%;  /* Réduit à 80% de la largeur totale */
+    height: 1px;
+    background-color: var(--about-gray-green);    /* Couleur éclaircie */
+    margin: 0 auto;  /* Centrage horizontal */
+  }
+
+  /* Dot pattern */
+  .dots {
+    background-image: radial-gradient(
+      var(--light-blue) 1px,
+      transparent 1px
+    );
+    background-size: 8px 8px;
+  }
+
+  /* Styles pour la LazySection */
+  .system-font {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  }
+
+  /* Ciblage spécifique des paragraphes dans la LazySection */
+  section.transform p {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
+  }
+
+  /* Utility classes */
+  .u-vhide {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .made-in-france {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    color: #919795;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    margin-bottom: 20px;
+  }
+}

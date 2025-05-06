@@ -339,12 +339,31 @@
   .hire-me {
     position: fixed;
     right: 65px;
-    color: --text;
     font-weight: 700;
     font-size: 12px;
     top: 70px;
     z-index: 200;
+    vertical-align: middle;
+    text-align: center;
+    width: 100px;
+    height: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+      Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    position: fixed;
+    right: 65px;
+    background: transparent;
+    border: none;
+    font-weight: 700;
+    line-height: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text);
+    outline: none;
+    transition: all 0.12s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 90000;
   }
+  
 
   .hire-me:hover {
     letter-spacing: 6px;
@@ -358,8 +377,7 @@
   .hire-me .shade {
     position: absolute;
     left: -35px;
-    top: 40%;
-    transform: translateY(-50%);
+    top: -40%;
     width: 35px;
     height: 35px;
   }
@@ -559,18 +577,13 @@ p:not([class]) {
   line-height: 1.65;
 }
   /* Sections et mise en page */
-  .page-body {
-    margin: 100px 20px;
-  }
+ 
   
   .page-body--header {
     margin: 0 20px 100px;
   }
   
-  .section {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+
   
   .flow {
     margin: 0 auto;
