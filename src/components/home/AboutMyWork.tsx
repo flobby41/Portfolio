@@ -25,8 +25,8 @@ const HorizontalBand = () => {
         className="mt-12 pl-24"
       >
         <div className="relative">
-          <h2 className="font-bitter text-[3.5rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
-            Let&apos;s work together
+          <h2 className="font-bitter text-[4.68rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
+            About my work
             <span className="text-[#73BBC5]">.</span>
           </h2>
         </div>
@@ -65,7 +65,10 @@ const HorizontalBand = () => {
         From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-bold"> everyone feels</span>. 
         </p>
         
-        <motion.a href="/work" className="btn"
+
+        {/* Bouton très stylé */}
+        
+        {/* <motion.a href="/work" className="btn"
         >
           <span className="btn__label">
           About my approach
@@ -86,7 +89,7 @@ const HorizontalBand = () => {
   >
     About my approach
   </motion.span>
-        </motion.a>
+        </motion.a> */}
       </motion.div>
     </div>
   );

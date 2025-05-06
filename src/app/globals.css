@@ -718,8 +718,7 @@ p:not([class]) {
   }
   
   .page-header__inr {
-    min-height: 100vh;
-    display: flex;
+    min-height: 40vh;
     align-items: center;
     overflow: hidden;
     margin-bottom: 33.33vh;
