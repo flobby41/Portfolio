@@ -2,7 +2,7 @@
 
 import Hero from "@/components/home/Hero";
 import { LazySection } from "@/components/home/LazySection";
-import HorizontalBand from "@/components/home/HorizontalBand";
+import HorizontalBand from "@/components/home/AboutMyWork";
 import { motion } from "framer-motion";
 
 const fadeInUp = {

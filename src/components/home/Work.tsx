@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import HorizontalBand from './HorizontalBand'
+import HorizontalBand from './AboutMyWork'
 import './components.css'; // Importation du CSS modèle
 
 

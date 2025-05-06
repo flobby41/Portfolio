@@ -1622,7 +1622,7 @@ html.lock-scroll {
 }
 @media (min-width: 800px) {
   .page-body {
-    margin: 230px 60px 100px;
+    margin: 30px 60px 100px;
   }
 }
 .page-body--header {
