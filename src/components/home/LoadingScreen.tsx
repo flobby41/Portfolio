@@ -9,7 +9,10 @@ export default function LoadingScreen() {
   const pathname = usePathname();
   
   // Determine background color based on path
-  const bgColor = pathname === "/work" ? "#fcc5d3" : "#aadcec";
+  const bgColor = 
+    pathname === "/work" ? "#fcc5d3" : 
+    pathname === "/about" ? "#9bdabe" : 
+    "#aadcec";
 
   useEffect(() => {
     const timer = setTimeout(() => {
