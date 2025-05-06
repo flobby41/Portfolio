@@ -45,6 +45,11 @@ const Work = () => {
   });
 
   useEffect(() => {
+     // Défilement automatique vers le haut lors du chargement/refresh de la page
+     window.scrollTo({
+      top: 0,
+      behavior: 'auto' // Utiliser 'auto' pour un défilement instantané ou 'smooth' pour un défilement fluide
+    });
     // Gestion des effets de dérive sur les éléments décoratifs
     const handleMouseMove = (e: MouseEvent) => {
       if (!driftElements.current) {
@@ -193,7 +198,7 @@ const Work = () => {
     width: 35px;
     height: 35px;
   }
-      
+
       `}</style>
       
       <main className="page-body page-body--header" tabIndex={-1}>
@@ -281,6 +286,7 @@ const Work = () => {
                   Considered development<span className="dot">.</span>
                 </motion.h2>
                 
+                {/* ligne hz */}
                 <motion.div 
                   className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
                   initial={{ scaleX: 0 }}
