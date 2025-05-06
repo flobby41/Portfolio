@@ -2809,37 +2809,7 @@ pre[class*="language-"] > code {
     line-height: 1.25;
   }
 }
-.primary-links__item {
-  opacity: 0;
-  transform: translateY(-5px);
-}
-.is-open .primary-links__item {
-  opacity: 1;
-  transform: none;
-  transition: 0.7s ease-out;
-}
-.is-open .primary-links__item:first-child {
-  transition-delay: 0.75s;
-}
-.is-open .primary-links__item:nth-child(2) {
-  transition-delay: 1s;
-}
-.is-open .primary-links__item:nth-child(3) {
-  transition-delay: 1.25s;
-}
-.is-open .primary-links__item:nth-child(4) {
-  transition-delay: 1.5s;
-}
-.primary-links__summary {
-  -webkit-font-smoothing: antialiased;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  margin: 30px auto;
-  font-size: 1.8rem;
-  line-height: 1.45;
-  font-weight: 400;
-  color: var(--text);
-}
+
 @media (max-height: 700px) {
   .primary-links__summary {
     font-size: 1.6rem;
