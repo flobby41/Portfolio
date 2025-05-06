@@ -1,5 +1,5 @@
 import React from 'react';
-import Work from '@/components/home/Work';
+import Experiences from '@/components/home/Experiences';
 import Navbar from '@/components/layout/Navbar';
 
 export const metadata = {
@@ -9,5 +9,5 @@ export const metadata = {
 
 export default function WorkPage() {
   <Navbar/>
-  return <Work />;
+  return <Experiences />;
 }

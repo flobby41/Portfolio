@@ -291,7 +291,7 @@ const Navbar = () => {
                       { href: "/", title: "Home", desc: "Back to the home page." },
                       { href: "/work", title: "Work", desc: "My approach to development." },
                       { href: "/about", title: "About", desc: "A little about me and my background." },
-                      { href: "/writing", title: "Writing", desc: "My latest writing on tech and language." }
+                      { href: "/experiences", title: "Experiences", desc: "My latest experiences in tech and language." }
                     ].map((link, index) => (
                       <motion.li 
                         key={link.href}
