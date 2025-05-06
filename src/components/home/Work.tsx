@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import HorizontalBand from './HorizontalBand'
-import './model.css'; // Importation du CSS modèle
+import './components.css'; // Importation du CSS modèle
 
 
 const Work = () => {
