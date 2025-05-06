@@ -82,8 +82,7 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
+  
   vertical-align: baseline;
 }
 article,
@@ -303,14 +302,7 @@ b,
 strong {
   font-weight: 700;
 }
-.t-heading,
-.t-primary {
-  position: relative;
-  font-family: Bitter, serif;
-  line-height: 1.125;
-  color: var(--text);
-  scroll-margin-top: -40px;
-}
+
 .t-allcaps {
   -webkit-font-smoothing: antialiased;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
@@ -1521,10 +1513,7 @@ p:not([class]) {
 main:focus {
   outline: none;
 }
-html {
-  font-size: 62.5%;
-  -webkit-font-smoothing: antialiased;
-}
+
 html:after,
 html:before {
   content: "";
@@ -2788,39 +2777,10 @@ pre[class*="language-"] > code {
 .page-header__social.social-links a:hover {
   filter: brightness(0.65) url(#duotone_filter);
 }
-.primary-links__link {
-  color: var(--text);
-  display: inline-block;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-  transition: color ease-out-quad 0.2s;
-  font-size: 4rem;
-  line-height: 5.2rem;
-  width: 200px;
-}
-.primary-links__link:hover {
-  color: var(--contrast, var(--bg));
-}
-@media (min-width: 512px) and (min-height: 700px) {
-  .primary-links__link {
-    width: 360px;
-    font-size: 6rem;
-    line-height: 1.25;
-  }
-}
 
-@media (max-height: 700px) {
-  .primary-links__summary {
-    font-size: 1.6rem;
-    line-height: 1.25;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .primary-links__summary {
-    display: none;
-  }
-}
+
+
+
 
 @keyframes socialIn {
   0% {
@@ -2839,22 +2799,8 @@ pre[class*="language-"] > code {
   margin: 0 15px;
   transform: none;
 }
-.no-js .primary-links__summary {
-  display: none;
-}
-.no-js .primary-links__link {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--text);
-  outline: none;
-  cursor: pointer;
-  width: auto;
-}
+
+
 .duotone {
   display: block;
   position: relative;
