@@ -377,11 +377,11 @@
   .hire-me .shade {
     position: absolute;
     left: -35px;
-    top: -40%;
+    top: 40%;
+    transform: translateY(-50%);
     width: 35px;
     height: 35px;
   }
-
   .hire-me .main svg .stroke-path, 
   .hire-me .shade .stroke-path {
     stroke-width: 2.5px;

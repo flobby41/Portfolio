@@ -184,6 +184,15 @@ const Work = () => {
   }
   
 
+  .hire-me .main svg, 
+  .hire-me .shade {
+    position: absolute;
+    left: -35px;
+    top: -40%;
+    transform: translateY(0%);
+    width: 35px;
+    height: 35px;
+  }
       
       `}</style>
       
