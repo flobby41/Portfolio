@@ -352,9 +352,9 @@
     right: 65px;
     background: transparent;
     border: none;
+    letter-spacing: 4px;
     font-weight: 700;
     line-height: 1.2rem;
-    letter-spacing: 4px;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--text);
@@ -364,9 +364,7 @@
   }
   
 
-  .hire-me:hover {
-    letter-spacing: 6px;
-  }
+ 
 
   .hire-me .shade {
     transition: transform 0.3s ease-out; /* Transition plus rapide pour suivre la souris */

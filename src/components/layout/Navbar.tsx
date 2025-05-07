@@ -155,7 +155,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6 z-50">
           <Link
             href="mailto:hello@silver-api.digital?subject=🤘 Hi Florian, I'd like to hire you"
-            className="hire-me flex items-center gap-2 tracking-[0.3em] font-bold transition-all duration-300 hover:tracking-[0.5em]"
+            className="hire-me flex items-center gap-2 font-bold group"
           >
             <div className="shade" data-drift="-4 -6" data-drift-center="y" style={{ transform: "translateY(-50%) translate(-3.94702px, 2.41256px)" }}>
 
@@ -168,7 +168,15 @@ const Navbar = () => {
                 <path className="stroke-path" d="M27.78,5.87c13.52,0,24.46,9.58,24.46,21.41a19.4,19.4,0,0,1-5,12.95h0l2.9,9.82L39.37,46.1h0a27.51,27.51,0,0,1-11.59,2.58,26.84,26.84,0,0,1-14-3.86C7.42,41,3.24,34.52,3.24,27.2,3.24,15.53,14.26,5.87,27.78,5.87Z" />
               </svg>
             </div>
-            HIRE ME
+            <div className="flex">
+              <span className="transition-transform duration-300 group-hover:-translate-x-[5px]">H</span>
+              <span className="transition-transform duration-300 group-hover:-translate-x-[2px]">I</span>
+              <span className="transition-transform duration-300 group-hover:-translate-x-[1px]">R</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-[1px]">E</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-[3px]">&nbsp;</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-[5px]">M</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-[7px]">E</span>
+            </div>
           </Link>
         </div>
 
