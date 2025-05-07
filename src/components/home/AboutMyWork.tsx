@@ -11,15 +11,14 @@ const AboutMyWork = () => {
     rootMargin: "-100px",
   });
   
-  // Ajout d'un état pour suivre si le LoadingScreen a terminé
+  // Nouvel état pour contrôler le démarrage des animations après le LoadingScreen
   const [loadingComplete, setLoadingComplete] = useState(false);
 
   useEffect(() => {
-    // Attendre que le LoadingScreen soit complètement terminé
-    // Le LoadingScreen prend environ 1300ms pour se terminer complètement
+    // Attendre que le LoadingScreen soit terminé avant de démarrer nos animations
     const timer = setTimeout(() => {
       setLoadingComplete(true);
-    }, 100); // Un peu plus que les 1300ms du LoadingScreen
+    }, 1200); // Réduit de 1500ms à 1200ms pour correspondre au nouveau timing du LoadingScreen
 
     return () => clearTimeout(timer);
   }, []);
@@ -28,7 +27,7 @@ const AboutMyWork = () => {
     <div ref={ref} className="relative w-full overflow-hidden my-16 ">
       {/* Texte */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{
           delay: 0.,
@@ -43,8 +42,8 @@ const AboutMyWork = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{
-                duration: 0.5,
-                delay: 0.8,          
+                duration: 0.2,
+                delay: 0.5,          
                 ease: [0.25, 0.1, 0.25, 1],
               }}
             >
@@ -56,20 +55,27 @@ const AboutMyWork = () => {
         </div>
       </motion.div>
 
-      {/* Bande horizontale */}
+      {/* Bande horizontale - modifiée pour partir de la droite */}
       <motion.div
-        initial={{ x: "100%", width: "10%" }}
-        animate={loadingComplete ? { opacity: 1, x: 0 } : { opacity: 0, x: "100%" }}
-        transition={{ delay: 0.8, duration: 0.4 }}
-        className="relative h-[3px] bg-[#f67796] mt-10"
+        initial={{ x: "0%", width: "8%" }}
+        animate={loadingComplete ? { opacity: 1, x: 0, width: "30%" } : { opacity: 0, x: "0%" }}
+        transition={{ 
+          opacity: { delay: 0.8, duration: 0.4 },
+          width: { delay: 0.9, duration: 0.3 } 
+        }}
+        className="relative h-[3px] bg-[#f67796] mt-10 ml-auto" 
+        style={{ 
+          transformOrigin: "right",
+          right: 0
+        }}
       />
 
       {/* Nouveau contenu */}
       <motion.p 
               className="font-bitter text-3xl text-[#0f1b61] mt-10"
-              initial={{ opacity: 0, x: -20 }}
-              animate={loadingComplete ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-              transition={{ delay: 0.9, duration: 1.2 }}
+              initial={{ opacity: 0, y: 5 }}
+              animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, x: -20 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
             >
       
         From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-bold"> everyone feels</span>. 

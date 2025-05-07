@@ -21,17 +21,17 @@ export default function LoadingScreen() {
     // D'abord, nous marquons l'écran comme "en train de sortir"
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
-    }, 800);
+    }, 600); // Réduit de 800ms à 600ms
     
     // Ensuite, nous le supprimons complètement du DOM après l'animation
     const removeTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 1300); // Donner suffisamment de temps pour que l'animation exit se termine
+    }, 1000); // Réduit de 1300ms à 1000ms
 
     // Garantir que les navigateurs lents aient une expérience raisonnable avec un timeout de sécurité
     const safetyTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 250); // Réduit de 3000ms à 2500ms
 
     return () => {
       clearTimeout(exitTimer);
@@ -51,13 +51,11 @@ export default function LoadingScreen() {
           exit={{
             y: "100%",
             transition: {
-              duration: 0.5,
-              ease: [0.76, 0, 0.24, 1]
+              duration: 0.4,
             }
           }}
           transition={{
-            duration: 0.5,
-            ease: [0.76, 0, 0.24, 1]
+            duration: 0.4,
           }}
         >
           <div className="loader fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 transition-opacity duration-200 ease-out">
