@@ -27,10 +27,10 @@ const Navbar = () => {
     animate: {
       y: 0,
       transition: {
-        duration: 0.3, // ⚡️ Réduit de 0.8 à 0.5
+        duration: 0.2, // ⚡️ Réduit de 0.3 à 0.2
         ease: [0.76, 0, 0.24, 1],
         when: "beforeChildren",
-        staggerChildren: 0.05 // ⚡️ Réduit de 0.1 à 0.05 pour accélérer l'animation des enfants
+        staggerChildren: 0.03 // ⚡️ Réduit de 0.05 à 0.03 pour accélérer l'animation des enfants
       }
     },
     exit: {
@@ -52,7 +52,7 @@ const Navbar = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.3, // ⚡️ Réduit de 0.8 à 0.4
+        duration: 0.2, // ⚡️ Réduit de 0.3 à 0.2
         ease: [0.25, 0.1, 0.25, 1],
       }
     },
@@ -74,7 +74,7 @@ const Navbar = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.3, // ⚡️ Plus rapide que les autres animations
+        duration: 0.2, // ⚡️ Réduit de 0.3 à 0.2
         ease: [0.25, 0.1, 0.25, 1],
       }
     },
