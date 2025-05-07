@@ -2792,13 +2792,7 @@ pre[class*="language-"] > code {
   display: none;
 }
 
-.no-js .primary-links__item {
-  opacity: 1;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 15px;
-  transform: none;
-}
+
 
 
 .duotone {

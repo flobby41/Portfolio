@@ -337,7 +337,7 @@ const Navbar = () => {
                         </Link>
                         <span 
                           id={`desc_${link.title.toLowerCase()}`} 
-                          className="primary-links__summary block "
+                          className="primary-links__summary block ml-14"
                         >
                           {link.desc}
                         </span>

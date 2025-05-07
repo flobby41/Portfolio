@@ -300,6 +300,11 @@
     color: var(--text);
   }  
   
+  /* Style pour les descriptions des liens du menu sauf la première */
+  .primary-links__item:not(:first-child) .primary-links__summary {
+    transform: translateY(-4px);
+  }
+  
   @media(min-width: 512px) {
     .js .main-menu__flyout {
         top:0;
