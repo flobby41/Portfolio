@@ -127,25 +127,25 @@ const Navbar = () => {
 
           <div className="flex menu-link absolute top-[35px] left-[150px]">
           <button
-  className="menu-link__trigger flex items-center gap-2 text-dark-blue font-['Inter'] tracking-[0.4em] transition-all duration-300 group"
+  className="menu-link__trigger flex items-center gap-2 text-dark-blue font-['Inter'] tracking-[0.4em] transition-all duration-150 group"
   aria-expanded={isMenuOpen}
   aria-controls="main-menu"
   onClick={toggleMenu}
 >
   {isMenuOpen ? (
     <div className="flex">
-      <span className="transition-transform duration-300 group-hover:-translate-x-[5px]">C</span>
-      <span className="transition-transform duration-300 group-hover:-translate-x-[2px]">L</span>
-      <span className="transition-transform duration-300 group-hover:-translate-x-[1px]">O</span>
-      <span className="transition-transform duration-300 group-hover:translate-x-[1px]">S</span>
-      <span className="transition-transform duration-300 group-hover:translate-x-[5px]">E</span>
+      <span className="transition-transform duration-150 group-hover:-translate-x-[5px]">C</span>
+      <span className="transition-transform duration-150 group-hover:-translate-x-[2px]">L</span>
+      <span className="transition-transform duration-150 group-hover:-translate-x-[1px]">O</span>
+      <span className="transition-transform duration-150 group-hover:translate-x-[1px]">S</span>
+      <span className="transition-transform duration-150 group-hover:translate-x-[5px]">E</span>
     </div>
   ) : (
     <div className="flex">
-      <span className="transition-transform duration-300 group-hover:-translate-x-[5px]">M</span>
-      <span className="transition-transform duration-300 group-hover:-translate-x-[2px]">E</span>
-      <span className="transition-transform duration-300 group-hover:translate-x-[2px]">N</span>
-      <span className="transition-transform duration-300 group-hover:translate-x-[5px]">U</span>
+      <span className="transition-transform duration-150 group-hover:-translate-x-[5px]">M</span>
+      <span className="transition-transform duration-150 group-hover:-translate-x-[2px]">E</span>
+      <span className="transition-transform duration-150 group-hover:translate-x-[2px]">N</span>
+      <span className="transition-transform duration-150 group-hover:translate-x-[5px]">U</span>
     </div>
   )}
 </button>
@@ -169,13 +169,13 @@ const Navbar = () => {
               </svg>
             </div>
             <div className="flex">
-              <span className="transition-transform duration-300 group-hover:-translate-x-[5px]">H</span>
-              <span className="transition-transform duration-300 group-hover:-translate-x-[2px]">I</span>
-              <span className="transition-transform duration-300 group-hover:-translate-x-[1px]">R</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-[1px]">E</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-[3px]">&nbsp;</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-[5px]">M</span>
-              <span className="transition-transform duration-300 group-hover:translate-x-[7px]">E</span>
+              <span className="transition-transform duration-150 group-hover:-translate-x-[5px]">H</span>
+              <span className="transition-transform duration-150 group-hover:-translate-x-[2px]">I</span>
+              <span className="transition-transform duration-150 group-hover:-translate-x-[1px]">R</span>
+              <span className="transition-transform duration-150 group-hover:translate-x-[1px]">E</span>
+              <span className="transition-transform duration-150 group-hover:translate-x-[3px]">&nbsp;</span>
+              <span className="transition-transform duration-150 group-hover:translate-x-[5px]">M</span>
+              <span className="transition-transform duration-150 group-hover:translate-x-[7px]">E</span>
             </div>
           </Link>
         </div>
