@@ -16,7 +16,7 @@ const HorizontalBand = () => {
 <div ref={ref} className="relative w-full overflow-hidden my-16 ">      {/* Texte */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3, // Réduit de 1.2 à 0.3
           duration: 0.4, // Réduit de 0.6 à 0.4
@@ -25,45 +25,43 @@ const HorizontalBand = () => {
         className="mt-12"
       >
         <div className="relative">
-          <h2 className="font-bitter text-[4.68rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
+          <motion.h1 
+              className="font-bitter text-[4.68rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 1.2,
+                delay: 1.5,          
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+            >
             About my work
+            
             <span className="text-[#f67796]">.</span>
-          </h2>
+            </motion.h1>
+
         </div>
       </motion.div>
 
       {/* Bande horizontale */}
       <motion.div
         initial={{ x: "100%", width: "10%" }}
-        animate={inView ? { 
-          x: 0,
-          width: ["20%", "10%"],
-        } : { x: "100%", width: "100%" }}
-        transition={{
-          x: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }, // Réduit de 0.8 à 0.5
-          width: {
-            delay: 0.4, // Réduit de 0.8 à 0.4
-            duration: 0.3, // Réduit de 0.4 à 0.3
-            ease: [0.25, 0.1, 0.25, 1],
-          },
-        }}
+        animate={{ opacity: 1, x: 0 }}
+
+        transition={{ delay: 1.8, duration: 0.8 }}
+
         className="relative h-[3px] bg-[#f67796]  mt-8"
       />
 
       {/* Nouveau contenu */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{
-          delay: 0.6, // Réduit de 1.6 à 0.6
-          duration: 0.4, // Réduit de 0.6 à 0.4
-          ease: [0.25, 0.1, 0.25, 1],
-        }}
-        className="mt-8 pl-0"
-      >
-        <p className="text-[1.5rem] text-[#0f1b61] font-bitter leading-relaxed mb-8">
+      <motion.p 
+              className="font-bitter text-3xl text-[#0f1b61]"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.8, duration: 0.8 }}
+            >
+      
         From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-bold"> everyone feels</span>. 
-        </p>
         
 
         {/* Bouton très stylé */}
@@ -90,7 +88,7 @@ const HorizontalBand = () => {
     About my approach
   </motion.span>
         </motion.a> */}
-      </motion.div>
+      </motion.p>
     </div>
   );
 };

@@ -1,13 +1,29 @@
+"use client"
+
 import React from 'react';
 import Work from '@/components/home/Work';
-import Navbar from '@/components/layout/Navbar';
+import { motion } from "framer-motion";
 
-export const metadata = {
-  title: 'My Work | Florian - Web Developer',
-  description: 'From interaction design to scaleable design systems, single-page apps to more experimental projects. Learn about my approach to web development.',
-}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
 
 export default function WorkPage() {
-  <Navbar/>
-  return <Work />;
+  return (
+  
+  <motion.div 
+          className=""
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
+    <Work />
+  </motion.div>
+
+)
 }
