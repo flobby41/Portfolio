@@ -45,11 +45,13 @@ const Work = () => {
   });
 
   useEffect(() => {
-     // Défilement automatique vers le haut lors du chargement/refresh de la page
-     window.scrollTo({
-      top: 0,
-      behavior: 'auto' // Utiliser 'auto' pour un défilement instantané ou 'smooth' pour un défilement fluide
-    });
+    // Vérifier si c'est un rechargement de page (F5/refresh)
+    // performance.navigation est obsolète mais encore supporté dans la plupart des navigateurs
+    if (window.performance && performance.navigation.type === 1) {
+      // C'est un rechargement de page, on scroll vers le haut
+      window.scrollTo(0, 0);
+    }
+
     // Gestion des effets de dérive sur les éléments décoratifs
     const handleMouseMove = (e: MouseEvent) => {
       if (!driftElements.current) {
