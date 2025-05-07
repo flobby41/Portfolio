@@ -6,30 +6,48 @@ import { usePathname } from "next/navigation";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
   const pathname = usePathname();
   
   // Determine background color based on path
   const bgColor = 
     pathname === "/work" ? "#fcc5d3" : 
     pathname === "/about" ? "#9bdabe" : 
-    pathname === "/experiences" ? "#ffdaa5" : 
+    pathname === "/experience" ? "#ffdaa5" : 
     "#aadcec";
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Cette approche en deux étapes aide à éviter les problèmes de rendu bloqué
+    // D'abord, nous marquons l'écran comme "en train de sortir"
+    const exitTimer = setTimeout(() => {
+      setIsExiting(true);
+    }, 800);
+    
+    // Ensuite, nous le supprimons complètement du DOM après l'animation
+    const removeTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 900);
+    }, 1300); // Donner suffisamment de temps pour que l'animation exit se termine
 
-    return () => clearTimeout(timer);
+    // Garantir que les navigateurs lents aient une expérience raisonnable avec un timeout de sécurité
+    const safetyTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(exitTimer);
+      clearTimeout(removeTimer);
+      clearTimeout(safetyTimer);
+    };
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isLoading && (
         <motion.div
           className="loading loading--in fixed my-4 mx-5 inset-0 z-50 overflow-hidden"
           style={{ backgroundColor: bgColor }}
           initial={{ y: 0 }}
+          animate={{ y: isExiting ? "100%" : 0 }}
           exit={{
             y: "100%",
             transition: {
@@ -37,8 +55,12 @@ export default function LoadingScreen() {
               ease: [0.76, 0, 0.24, 1]
             }
           }}
+          transition={{
+            duration: 0.5,
+            ease: [0.76, 0, 0.24, 1]
+          }}
         >
-          <div className="loader fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-200 ease-out">
+          <div className="loader fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-100 transition-opacity duration-200 ease-out">
             <div className="lds-ellipsis">
               <div className="absolute top-[27px] w-[8px] h-[8px] rounded-full bg-white [animation:lds-ellipsis1_0.6s_infinite] left-[6px]"></div>
               <div className="absolute top-[27px] w-[8px] h-[8px] rounded-full bg-white [animation:lds-ellipsis2_0.6s_infinite] left-[6px]"></div>
