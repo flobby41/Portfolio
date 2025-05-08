@@ -47,7 +47,7 @@ const AboutMyWork = () => {
                 ease: [0.25, 0.1, 0.25, 1],
               }}
             >
-            About my work
+            About me
             
             <span className="text-[#f67796]">.</span>
             </motion.h1>

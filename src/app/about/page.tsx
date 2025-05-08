@@ -1,13 +1,8 @@
 import React from 'react';
 import About from '@/components/home/About';
-import Navbar from '@/components/layout/Navbar';
 
-export const metadata = {
-  title: 'My Work | Florian - Web Developer',
-  description: 'From interaction design to scaleable design systems, single-page apps to more experimental projects. Learn about my approach to web development.',
-}
 
-export default function WorkPage() {
-  <Navbar/>
+
+export default function AboutPage() {
   return <About />;
 }
