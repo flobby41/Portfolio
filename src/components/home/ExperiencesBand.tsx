@@ -78,7 +78,8 @@ const AboutMyWork = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
             >
       
-        From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-bold"> everyone feels</span>. 
+      Originally from Paris, I draw inspiration from the city’s vibrant creative scene to write both code and music. Since 2023, I’ve been building modern web applications with stacks like React, Node.js, and MongoDB, focusing on creating fast, scalable, and user-centric digital experiences.
+ 
         
 
         {/* Bouton très stylé */}

@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import HorizontalBand from './AboutMyWork'
+import AboutMe from './AboutBand'
 import './components.css'; // Importation du CSS modèle
 
 
@@ -199,11 +199,11 @@ const Work = () => {
     height: 35px;
   }
 
-      `}</style>
+      `}</style>  
       
       <main className="page-body page-body--header" tabIndex={-1}>
         {/* SVG filtre pour l'effet duotone */}
-        <HorizontalBand/>
+        <AboutMe/>
         <svg
           style={{
             position: "absolute",
@@ -283,7 +283,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Considered development<span className="dot">.</span>
+                  The Soundtrack to My Code
+                  <span className="dot">.</span>
                 </motion.h2>
                 
                 {/* ligne hz */}
@@ -300,18 +301,12 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  No two projects are the same and I take a pragmatic approach
-                  to each job I take on, focussing on delivering work that is as
-                  accessible and optimised as possible.
+                Before stepping into tech, I spent years immersed in the Parisian music scene as a songwriter, composer, and performer. Leading a French pop project taught me how to balance structure and spontaneity—skills that now fuel my work as a developer. Music remains a big part of my life, and I still find myself reaching for the guitar whenever I need to reset or spark new ideas.
+
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  Years of experience building complex interfaces
-                  means that I'm happy to deliver anything from single-page apps
-                  to scaleable design systems. I can help you identify the most
-                  appropriate technology for your project and, whilst I love a
-                  good framework, you can be sure that I will never use tech for
-                  tech's sake.
+               
                 </motion.p>
               </div>
             </motion.div>
@@ -392,7 +387,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Code Choreography<span className="dot">.</span>
+                  Building Digital Experiences, One Project at a Time
+                  <span className="dot">.</span>
                 </motion.h2>
                 
                 <motion.div 
@@ -408,17 +404,13 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  I sweat the little details that bring a design to life. But,
-                  whether it's full-on WebGL or a UI interaction, animation
-                  isn't just about looking cool - Good
-                  <b> interaction design</b> grounds an interface with a sense of
-                  space and logic.
+                 
+                  Since transitioning to development, I’ve channeled that same creative energy into crafting intuitive online stores and product templates. Recent projects include <b> ModaSphere </b> , a modular e-commerce platform built with Next.js, and SkandiWall, a Scandinavian-themed shop inspired by Ikea and Amazon. Along the way, I’ve also started exploring headless commerce using Shopify’s Storefront API and GraphQL.
+
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  I combine nuanced timing and motion with a deep understanding
-                  of browser rendering to deliver logical interactions that are
-                  both full of character and outrageously smooth.
+              
                 </motion.p>
               </div>
             </motion.div>
@@ -465,7 +457,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Server-side is my <b>jam(stack)</b><span className="dot">.</span>
+                                  Code, Music, and the Art of Living in 
+                                  <b> Sync</b><span className="dot">.</span>
                 </motion.h2>
                 
                 <motion.div 
@@ -481,27 +474,18 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  Beyond front-end development, I'm a
-                  <a
-                    href="https://jamstack.org"
+                <a
+                    href="/garcondargent.com"
                     rel="noreferrer"
                     target="_blank"
                     className="ml-1"
                   >
-                    JAMstack
                   </a>
-                  {" "}specialist. Cloud CMS platforms, lambda functions,
-                  site-generators - Whatever your requirements, I'm happy to
-                  help you plan, build and deliver a JAMstack project that's
-                  fast, secure and reliable.
+                  Now based in Sweden, I work remotely, blending the methodical side of coding with the artistic process of music creation. For me, Paris is still a constant source of inspiration—its rhythm, its chaos, its unique ability to make even the simplest things feel <b> cinematic</b> . That’s the same feeling I aim to bring to the digital experiences I build: simple, impactful, and a little unexpected.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  If JAMstack isn't your thing, I'm equally at home developing
-                  for other server-side technologies. If you need help putting
-                  together an application or API with <b>Node.js</b> and
-                  Express, or <b>Go</b> with PostgreSQL, then I've got your
-                  back.
+                
                 </motion.p>
               </div>
             </motion.div>
@@ -525,64 +509,7 @@ const Work = () => {
             </motion.div>
           </div>
           
-          {/* Final call to action section */}
-          <div className="reveal chunk hero" ref={heroRef}>
-            <motion.h2 
-              className="hero__title t-outline t-heading t-lede:s t-big:m t-bigger:l"
-              initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.7 }}
-            >
-              Let's build something <b>better</b><span className="dot">.</span>
-            </motion.h2>
-            
-            <motion.div 
-              className="flow hero__content"
-              initial="hidden"
-              animate={heroInView ? "visible" : "hidden"}
-              variants={staggerContainer}
-            >
-              <div className="hero__bg dots" data-drift="-10 -14"></div>
-              
-              <motion.p variants={fadeInUp}>
-                I strongly believe that designers and developers have a
-                responsibility to make sure that what we are building does no
-                harm and I try to be as ethical as I can in taking on projects.
-              </motion.p>
-              
-              <motion.p variants={fadeInUp}>
-                If your organisation represents online gambling, payday loans,
-                big tobacco, or mines and monetises personal data, then I am
-                probably not the best fit for your project. Due to its extremely
-                wasteful energy consumption, I don't take on projects using
-                crypto technology. I'm not one to completely write off a
-                technology but I can't conscionably work with it in its current
-                form.
-              </motion.p>
-              
-              <motion.p variants={fadeInUp}>
-                All that said, if you are looking for help building something
-                that promotes sustainability, diversity, or generally aims to
-                make a positive impact, then let's talk.
-              </motion.p>
-              
-              <motion.div variants={fadeInUp}>
-                <Link
-                  href="mailto:hello@silver-api.digital?subject=🤘 Hi Florian, I'd like to hire you"
-                  className="btn"
-                >
-                  <span className="btn__label">Get in touch</span>
-                  <span
-                    className="btn__fill stripes"
-                    data-drift="-10 -12"
-                    aria-hidden="true"
-                  >
-                    Get in touch
-                  </span>
-                </Link>
-              </motion.div>
-            </motion.div>
-          </div>
+          
         </div>
         
   

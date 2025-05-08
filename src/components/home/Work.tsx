@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import AboutMyWork from './AboutMyWork'
+import AboutMyWork from './AboutBand'
 import './components.css'; // Importation du CSS modèle
 
 
