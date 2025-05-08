@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
-const ExperiencesBand = () => {
+const WorkBand = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -47,7 +47,7 @@ const ExperiencesBand = () => {
                 ease: [0.25, 0.1, 0.25, 1],
               }}
             >
-Sandbox Experiments: Where Code Meets Curiosity
+            About my work
             
             <span className="text-[#f67796]">.</span>
             </motion.h1>
@@ -77,7 +77,8 @@ Sandbox Experiments: Where Code Meets Curiosity
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, x: -20 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-When I first started coding, I quickly realized that the best way to learn was by building. So, I created a sandbox—a space where I could experiment with new frameworks, test API integrations, and push my skills beyond their comfort zone. It’s a playground for concepts that might never see production but always teach me something valuable.
+      
+      From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-bold"> everyone feels</span>.
 
         {/* Bouton très stylé */}
         
@@ -108,4 +109,4 @@ When I first started coding, I quickly realized that the best way to learn was b
   );
 };
 
-export default ExperiencesBand;
+export default WorkBand;

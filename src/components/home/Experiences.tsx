@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import HorizontalBand from './AboutBand'
+import ExperiencesBand from './ExperiencesBand'
 import './components.css'; // Importation du CSS modèle
 
 
@@ -203,7 +203,7 @@ const Work = () => {
       
       <main className="page-body page-body--header" tabIndex={-1}>
         {/* SVG filtre pour l'effet duotone */}
-        <HorizontalBand/>
+        <ExperiencesBand/>
         <svg
           style={{
             position: "absolute",
@@ -283,7 +283,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Considered development<span className="dot">.</span>
+                  From Audio Players to Data Visualizations
+                  <span className="dot">.</span>
                 </motion.h2>
                 
                 {/* ligne hz */}
@@ -300,18 +301,12 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  No two projects are the same and I take a pragmatic approach
-                  to each job I take on, focussing on delivering work that is as
-                  accessible and optimised as possible.
+                Some of my earliest projects were simple but pivotal. I built a custom HTML5 audio player using JavaScript, experimenting with the Web Audio API to create intuitive playback controls. Then, there was the Binary Search Tree visualizer, a project that brought algorithms to life through interactive D3.js visualizations. Each project, no matter how small, taught me how to transform abstract logic into tangible user experiences.
+
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  Years of experience building complex interfaces
-                  means that I'm happy to deliver anything from single-page apps
-                  to scaleable design systems. I can help you identify the most
-                  appropriate technology for your project and, whilst I love a
-                  good framework, you can be sure that I will never use tech for
-                  tech's sake.
+                 
                 </motion.p>
               </div>
             </motion.div>
@@ -392,7 +387,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Code Choreography<span className="dot">.</span>
+                  Scalable, Modular, and Always Reusable
+                  <span className="dot">.</span>
                 </motion.h2>
                 
                 <motion.div 
@@ -408,17 +404,11 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  I sweat the little details that bring a design to life. But,
-                  whether it's full-on WebGL or a UI interaction, animation
-                  isn't just about looking cool - Good
-                  <b> interaction design</b> grounds an interface with a sense of
-                  space and logic.
+                The more I coded, the more I saw the potential for reusability. Projects like the Node.js image upload service with Multer or the Google Analytics dashboard weren’t just standalone exercises—they became modular components that could easily be integrated into larger e-commerce templates. These mini-projects might seem small, but they’re packed with lessons in scalability,<b>API design </b> , and clean code practices.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  I combine nuanced timing and motion with a deep understanding
-                  of browser rendering to deliver logical interactions that are
-                  both full of character and outrageously smooth.
+                 
                 </motion.p>
               </div>
             </motion.div>
@@ -465,7 +455,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Server-side is my <b>jam(stack)</b><span className="dot">.</span>
+                  Styling the Unseen: SVGs and CSS Tricks
+                  <span className="dot">.</span>
                 </motion.h2>
                 
                 <motion.div 
@@ -481,19 +472,14 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  Beyond front-end development, I'm a
                   <a
                     href="https://jamstack.org"
                     rel="noreferrer"
                     target="_blank"
                     className="ml-1"
                   >
-                    JAMstack
                   </a>
-                  {" "}specialist. Cloud CMS platforms, lambda functions,
-                  site-generators - Whatever your requirements, I'm happy to
-                  help you plan, build and deliver a JAMstack project that's
-                  fast, secure and reliable.
+                  While backend logic is essential, I also love playing with the frontend. In my SVG experiments, I explored how vector graphics could be manipulated with CSS to create interactive icons and UI components. It’s the kind of work that teaches you to look closer, to see how small stylistic choices can elevate the user experience.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
@@ -533,7 +519,8 @@ const Work = () => {
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.7 }}
             >
-              Let's build something <b>better</b><span className="dot">.</span>
+              Learning, Building, and Iterating
+              <span className="dot">.</span>
             </motion.h2>
             
             <motion.div 
@@ -545,41 +532,19 @@ const Work = () => {
               <div className="hero__bg dots" data-drift="-10 -14"></div>
               
               <motion.p variants={fadeInUp}>
-                I strongly believe that designers and developers have a
-                responsibility to make sure that what we are building does no
-                harm and I try to be as ethical as I can in taking on projects.
+              Every project in my sandbox is a stepping stone—an exercise in turning raw ideas into functional features. Whether it’s building a multi-instance audio player, deploying a Hugo site, or testing the limits of Shopify’s Storefront API, each experiment keeps me sharp, curious, and ready for the next challenge.
               </motion.p>
               
               <motion.p variants={fadeInUp}>
-                If your organisation represents online gambling, payday loans,
-                big tobacco, or mines and monetises personal data, then I am
-                probably not the best fit for your project. Due to its extremely
-                wasteful energy consumption, I don't take on projects using
-                crypto technology. I'm not one to completely write off a
-                technology but I can't conscionably work with it in its current
-                form.
+            
               </motion.p>
               
               <motion.p variants={fadeInUp}>
-                All that said, if you are looking for help building something
-                that promotes sustainability, diversity, or generally aims to
-                make a positive impact, then let's talk.
+      .
               </motion.p>
               
               <motion.div variants={fadeInUp}>
-                <Link
-                  href="mailto:hello@silver-api.digital?subject=🤘 Hi Florian, I'd like to hire you"
-                  className="btn"
-                >
-                  <span className="btn__label">Get in touch</span>
-                  <span
-                    className="btn__fill stripes"
-                    data-drift="-10 -12"
-                    aria-hidden="true"
-                  >
-                    Get in touch
-                  </span>
-                </Link>
+            
               </motion.div>
             </motion.div>
           </div>
