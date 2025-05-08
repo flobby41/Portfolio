@@ -285,7 +285,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Considered development<span className="dot">.</span>
+                  ModaSphere: Redefining E-commerce Templates
+                  <span className="dot">.</span>
                 </motion.h2>
                 
                 {/* ligne hz */}
@@ -302,18 +303,13 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  No two projects are the same and I take a pragmatic approach
-                  to each job I take on, focussing on delivering work that is as
-                  accessible and optimised as possible.
+                  
+<Link href="https://moda-sphere.vercel.app/">ModaSphere</Link> started as a simple e-commerce template and quickly evolved into a fully customizable platform. It’s more than just a storefront—it’s a foundation for businesses to create a seamless shopping experience that’s fast, intuitive, and visually engaging. The project taught me how to think beyond individual features and focus on building scalable systems that can adapt to different brands and product types.
+
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  Years of experience building complex interfaces
-                  means that I'm happy to deliver anything from single-page apps
-                  to scaleable design systems. I can help you identify the most
-                  appropriate technology for your project and, whilst I love a
-                  good framework, you can be sure that I will never use tech for
-                  tech's sake.
+                Working on ModaSphere pushed me to refine every detail, from the admin dashboard to the checkout process. It wasn’t just about writing code; it was about crafting a fluid user journey that feels cohesive from start to finish. It’s a project that continues to evolve as I integrate new tools and experiment with headless architecture.
                 </motion.p>
               </div>
             </motion.div>
@@ -394,7 +390,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Code Choreography<span className="dot">.</span>
+                  SkandiWall: Simplicity Meets Functionality
+                  <span className="dot">.</span>
                 </motion.h2>
                 
                 <motion.div 
@@ -410,17 +407,12 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  I sweat the little details that bring a design to life. But,
-                  whether it's full-on WebGL or a UI interaction, animation
-                  isn't just about looking cool - Good
-                  <b> interaction design</b> grounds an interface with a sense of
-                  space and logic.
+                Inspired by the minimalism of Scandinavian design, <Link href="https://skandiwall.vercel.app/">SkandiWall</Link> was my take on creating an e-commerce app that feels both <b> modern and timeless</b> . The goal was to strip away unnecessary clutter and let the products speak for themselves, all while maintaining robust backend functionality.
+
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  I combine nuanced timing and motion with a deep understanding
-                  of browser rendering to deliver logical interactions that are
-                  both full of character and outrageously smooth.
+                What started as a simple product catalog became a full-featured platform with custom user authentication, modular APIs, and a streamlined admin panel. But the heart of SkandiWall lies in its user experience—making it easy for shoppers to browse, add to cart, and complete a purchase without unnecessary friction. It’s a project that reminds me that less can truly be more.
                 </motion.p>
               </div>
             </motion.div>
@@ -467,8 +459,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Server-side is my <b>jam(stack)</b><span className="dot">.</span>
-                </motion.h2>
+Shopify Headless Demo: The Future of E-commerce
+</motion.h2>
                 
                 <motion.div 
                   className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
@@ -483,27 +475,12 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  Beyond front-end development, I'm a
-                  <a
-                    href="https://jamstack.org"
-                    rel="noreferrer"
-                    target="_blank"
-                    className="ml-1"
-                  >
-                    JAMstack
-                  </a>
-                  {" "}specialist. Cloud CMS platforms, lambda functions,
-                  site-generators - Whatever your requirements, I'm happy to
-                  help you plan, build and deliver a JAMstack project that's
-                  fast, secure and reliable.
+                 <Link href="https://e-commerce-template-sooty.vercel.app/"> Shopify </Link> is a powerhouse, but I wanted to see how its capabilities could be expanded with a headless approach. This demo project was an opportunity to explore how a Shopify backend could integrate seamlessly with a custom frontend built with Next.js and GraphQL.
+
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                  If JAMstack isn't your thing, I'm equally at home developing
-                  for other server-side technologies. If you need help putting
-                  together an application or API with <b>Node.js</b> and
-                  Express, or <b>Go</b> with PostgreSQL, then I've got your
-                  back.
+                The challenge was not just fetching data but presenting it in a way that felt intuitive and engaging. It was a lesson in balancing design and functionality, creating a user experience that feels fluid even as the underlying architecture becomes more complex. For businesses exploring headless commerce, this demo is a glimpse of what’s possible when you combine the best of both worlds.
                 </motion.p>
               </div>
             </motion.div>
