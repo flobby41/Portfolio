@@ -72,14 +72,14 @@ const WorkBand = () => {
 
       {/* Nouveau contenu */}
       <motion.p 
-              className="font-bitter text-3xl text-[#0f1b61] mt-10"
+              className="font-bitter text-2xl text-[#0f1b61] mt-10"
               initial={{ opacity: 0, y: 5 }}
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, x: -20 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
       
-      De senaste åren har jag arbetat med att utveckla headless-webbshoppar och digitala tjänster i Next.js, React och Node.js, där jag haft helhetsansvar från idé till deployment.
-      <p>Jag är en frontendutvecklare specialiserad på e-handel och headless-arkitektur. De senaste åren har jag byggt kompletta headless-webbshoppar med <strong>Next.js</strong>, <strong>React</strong>, <strong>Sanity</strong> och <strong>Shopify Storefront API</strong>, med fokus på prestanda, UX och SEO. Jag drivs av att skapa snabba, tillgängliga och konverterande digitala kundresor, och arbetar gärna nära produkt, CRO och UX-designers för att optimera upplevelsen från idé till release.</p>
+      I architect and deliver headless digital storefronts with Next.js, handling everything from UX design to cloud deployment.
+      
 
 
         {/* Bouton très stylé */}

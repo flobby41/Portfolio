@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
-const ExperiencesBand = () => {
+const ExperimentsBand = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -38,7 +38,7 @@ const ExperiencesBand = () => {
       >
         <div className="relative">
           <motion.h1 
-              className="font-bitter text-[4.68rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]"
+              className="font-bitter text-[4.68rem] text-[#47280b] leading-[67.5px] [-webkit-font-smoothing:antialiased]"
               initial={{ opacity: 0, y: 20 }}
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{
@@ -49,7 +49,7 @@ const ExperiencesBand = () => {
             >
 Sandbox Experiments: Where Code Meets Curiosity
             
-            <span className="text-[#f67796]">.</span>
+            <span className="text-[#ff5708]">.</span>
             </motion.h1>
 
         </div>
@@ -63,7 +63,7 @@ Sandbox Experiments: Where Code Meets Curiosity
           opacity: { delay: 0.8, duration: 0.4 },
           width: { delay: 0.9, duration: 0.3 } 
         }}
-        className="relative h-[3px] bg-[#f67796] mt-10 ml-auto" 
+        className="relative h-[3px] bg-[#ff5708] mt-10 ml-auto" 
         style={{ 
           transformOrigin: "right",
           right: 0
@@ -72,7 +72,7 @@ Sandbox Experiments: Where Code Meets Curiosity
 
       {/* Nouveau contenu */}
       <motion.p 
-              className="font-bitter text-3xl text-[#0f1b61] mt-10"
+              className="font-bitter text-3xl text-[#47280b] mt-10"
               initial={{ opacity: 0, y: 5 }}
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, x: -20 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -108,4 +108,4 @@ When I first started coding, I quickly realized that the best way to learn was b
   );
 };
 
-export default ExperiencesBand;
+export default ExperimentsBand;

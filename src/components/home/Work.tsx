@@ -282,10 +282,10 @@ const Work = () => {
             >
               <div className="flow">
                 <motion.h2 
-                  className="t-heading t-lede:s t-medium:m t-medium:l"
+                  className="t-heading t-lede:s t-medium:m t-medium:l text-[1.68rem]"
                   variants={fadeInUp}
                 >
-                  ModaSphere: Redefining E-commerce Templates
+                  ModaSphere: Redefining <br /> E-commerce Templates
                   <span className="dot">.</span>
                 </motion.h2>
                 
@@ -407,12 +407,15 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                Inspired by the minimalism of Scandinavian design, <Link href="https://skandiwall.vercel.app/">SkandiWall</Link> was my take on creating an e-commerce app that feels both <b> modern and timeless</b> . The goal was to strip away unnecessary clutter and let the products speak for themselves, all while maintaining robust backend functionality.
+                Inspired by the minimalism of Scandinavian design, <Link href="https://skandiwall.vercel.app/">SkandiWall</Link> was my take on creating an e-commerce app that feels both <b> modern and timeless</b> .
+                It was more than just a minimalist e-commerce app—it was a collaborative journey that taught me the power of working closely with a team. Inspired by Scandinavian design principles, we set out to build a platform that felt modern yet timeless, letting the products shine without unnecessary distractions.
+
+
 
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                What started as a simple product catalog became a full-featured platform with custom user authentication, modular APIs, and a streamlined admin panel. But the heart of SkandiWall lies in its user experience—making it easy for shoppers to browse, add to cart, and complete a purchase without unnecessary friction. It’s a project that reminds me that less can truly be more.
+                Working alongside three frontend developers, we embraced agile methodologies, holding daily stand-ups and iterating quickly based on feedback. This experience not only sharpened my ability to communicate effectively but also deepened my understanding of how to align backend development with frontend needs.
                 </motion.p>
               </div>
             </motion.div>

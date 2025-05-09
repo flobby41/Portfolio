@@ -13,7 +13,7 @@ export default function LoadingScreen() {
   const bgColor = 
     pathname === "/work" ? "#fcc5d3" : 
     pathname === "/about" ? "#9bdabe" : 
-    pathname === "/experience" ? "#ffdaa5" : 
+    pathname === "/experiments" ? "#ffdaa5" : 
     "#aadcec";
 
   useEffect(() => {

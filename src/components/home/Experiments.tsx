@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import ExperiencesBand from './ExperiencesBand'
+import ExperimentsBand from './ExperimentsBand'
 import './components.css'; // Importation du CSS modèle
 
 
@@ -203,7 +203,7 @@ const Work = () => {
       
       <main className="page-body page-body--header" tabIndex={-1}>
         {/* SVG filtre pour l'effet duotone */}
-        <ExperiencesBand/>
+        <ExperimentsBand/>
         <svg
           style={{
             position: "absolute",
