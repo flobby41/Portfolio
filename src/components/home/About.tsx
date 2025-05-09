@@ -283,8 +283,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  The Soundtrack to My Code
-                  <span className="dot">.</span>
+                  Building Digital Experiences, One Project at a Time
+
                 </motion.h2>
                 
                 {/* ligne hz */}
@@ -301,8 +301,7 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                Before stepping into tech, I spent years immersed in the Parisian music scene as a songwriter, composer, and performer. Leading a French pop project taught me how to balance structure and spontaneity—skills that now fuel my work as a developer. Music remains a big part of my life, and I still find myself reaching for the guitar whenever I need to reset or spark new ideas.
-
+                Originally from Paris, I draw inspiration from the city’s vibrant creative scene to write both code and music. Since 2023, I’ve been building modern web applications with stacks like React, Node.js, and MongoDB, focusing on creating fast, scalable, and user-centric digital experiences.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
@@ -387,8 +386,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Building Digital Experiences, One Project at a Time
-                  <span className="dot">.</span>
+                The Soundtrack to My Code
+                <span className="dot">.</span>
                 </motion.h2>
                 
                 <motion.div 
@@ -405,7 +404,8 @@ const Work = () => {
                 
                 <motion.p variants={fadeInUp}>
                  
-                  Since transitioning to development, I’ve channeled that same creative energy into crafting intuitive online stores and product templates. Recent projects include <b> ModaSphere </b> , a modular e-commerce platform built with Next.js, and SkandiWall, a Scandinavian-themed shop inspired by Ikea and Amazon. Along the way, I’ve also started exploring headless commerce using Shopify’s Storefront API and GraphQL.
+                Before stepping into tech, I spent years immersed in the Parisian music scene as a songwriter, composer, and performer. Leading a French pop project taught me how to balance structure and spontaneity—skills that now fuel my work as a developer. Music remains a big part of my life, and I still find myself reaching for the guitar whenever I need to reset or spark new ideas.
+
 
                 </motion.p>
                 
@@ -457,7 +457,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                                  Code, Music, and the Art of Living in 
+ 
+ Code, Music, and the Art of Living in 
                                   <b> Sync</b><span className="dot">.</span>
                 </motion.h2>
                 

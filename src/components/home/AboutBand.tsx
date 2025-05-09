@@ -38,7 +38,7 @@ const AboutMe = () => {
       >
         <div className="relative">
           <motion.h1 
-              className="font-bitter text-[4.68rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]"
+              className="font-bitter text-[4.68rem] text-[#1c494c] leading-[67.5px] [-webkit-font-smoothing:antialiased]"
               initial={{ opacity: 0, y: 20 }}
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{
@@ -49,7 +49,7 @@ const AboutMe = () => {
             >
             About me
             
-            <span className="text-[#f67796]">.</span>
+            <span className="text-[#73cadc]">.</span>
             </motion.h1>
 
         </div>
@@ -63,7 +63,7 @@ const AboutMe = () => {
           opacity: { delay: 0.8, duration: 0.4 },
           width: { delay: 0.9, duration: 0.3 } 
         }}
-        className="relative h-[3px] bg-[#f67796] mt-10 ml-auto" 
+        className="relative h-[3px] bg-[#73cadc] mt-10 ml-auto" 
         style={{ 
           transformOrigin: "right",
           right: 0
@@ -72,13 +72,13 @@ const AboutMe = () => {
 
       {/* Nouveau contenu */}
       <motion.p 
-              className="font-bitter text-3xl text-[#0f1b61] mt-10"
+              className="font-bitter text-xl text-[#1c494c] mt-10"
               initial={{ opacity: 0, y: 5 }}
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, x: -20 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-            >
+            > 
       
-      Originally from Paris, I draw inspiration from the city’s vibrant creative scene to write both code and music. Since 2023, I’ve been building modern web applications with stacks like React, Node.js, and MongoDB, focusing on creating fast, scalable, and user-centric digital experiences.
+      I'm a <b>developer, designer </b> and <b>singer </b> who has been building for the web in some capacity since 2023. I specialise in accessibility, performance and usability without sacrificing creativity.
  
         
 
