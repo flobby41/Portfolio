@@ -18,22 +18,25 @@ const skillsData = [
     title: "Major Projects",
     description: "Custom e-commerce solutions built with modern tech stack including Next.js, Node.js, and various APIs.",
     icon: "💼",
-    link: "/portfolio#major-projects", 
-    image: "/images/MajProj2.png"
+    link: "/work", 
+    image: "/images/MajProj2.png",
+    imageLink: "https://moda-sphere.vercel.app/" // Nouveau lien spécifique pour l'image
   },
   {
     title: "Experiments",
     description: "Interactive prototypes and technical experiments showcasing creative coding and problem-solving.",
     icon: "🔬",
-    link: "/portfolio#experiments", 
-    image: "/images/Experiments.png"
+    link: "/experiments", 
+    image: "/images/Experiments.png",
+    imageLink: "https://flobby41.github.io/blog/blog.html" // Nouveau lien spécifique pour l'image
   },
   {
     title: "About Me",
     description: "Programmer, designer, and singer passionate about creating engaging digital experiences.",
     icon: "👨‍💻",
-    link: "https://garcondargent.com/", 
-    image: "/images/AboutMe.png"
+    link: "/about", 
+    image: "/images/AboutMe.png",
+    imageLink: "https://garcondargent.com/" // Nouveau lien spécifique pour l'image
   }
 ];
 export default function Home() {
@@ -83,40 +86,43 @@ export default function Home() {
             <h2 className="skills_title text-4xl font-bold mb-6">{skill.title}<span className="text-[#73BBC5]">.</span>
             </h2>
             <p className="skills text-base mb-8 system-font">{skill.description}</p>
-            <motion.a href={skill.link} className="btn"
-        >
-          <span className="btn__label">
-          Explore {skill.title}
-          </span>
-          <motion.span 
-    className="btn__fill stripes" 
-    data-drift="-10 -12" 
-    aria-hidden="true"
-    initial={{ x: -4.95845, y: 7.15695 }}
-    whileHover={{ 
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.25, 0.1, 0.25, 1]
-      }
-    }}
-  >
-          Explore {skill.title}
-          </motion.span>
-        </motion.a>
-
+            
+            {skill.title !== "Major Projects" ? (
+              <motion.a href={skill.link} className="btn">
+                <span className="btn__label">
+                  Explore {skill.title}
+                </span>
+                <motion.span 
+                  className="btn__fill stripes" 
+                  data-drift="-10 -12" 
+                  aria-hidden="true"
+                  initial={{ x: -4.95845, y: 7.15695 }}
+                  whileHover={{ 
+                    x: 0,
+                    y: 0,
+                    transition: {
+                      duration: 0.3,
+                      ease: [0.25, 0.1, 0.25, 1]
+                    }
+                  }}
+                >
+                  Explore {skill.title}
+                </motion.span>
+              </motion.a>
+            ) : null}
           </div>
           <motion.div 
             className={`flex-1 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}
             whileHover={{ scale: 1.05 }}
           >
-
-            <img
-              src={skill.image}
-              alt={skill.title}
-              className="w-full h-auto rounded-lg shadow-lg"  />
-              {/* Placeholder pour une image ou une illustration */}
+            <a href={skill.imageLink || skill.link}>
+              <img
+                src={skill.image}
+                alt={skill.title}
+                className="w-full h-auto rounded-lg shadow-lg" 
+              />
+            </a>
+            {/* Placeholder pour une image ou une illustration */}
           </motion.div>
         </motion.div>
       ))}
