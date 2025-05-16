@@ -264,8 +264,12 @@ const Work = () => {
                   variants={fadeInUp}
                 >
                   <span>
-                    <span>S</span> <span>c</span> <span>r</span>
-                    <span>o</span> <span>l</span> <span>l</span>
+                    <span>S</span>
+                     <span>c</span>
+                      <span>r</span>
+                    <span>o</span>
+                    <span>l</span>
+                    <span>l</span>
                   </span>
                 </motion.span>
               </motion.div>
