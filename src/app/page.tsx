@@ -4,6 +4,7 @@ import Hero from "@/components/home/Hero";
 import { LazySection } from "@/components/home/LazySection";
 import HorizontalBand from "@/components/home/HorizontalBand";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 
 const staggerContainer = {
@@ -39,7 +40,68 @@ const skillsData = [
     imageLink: "https://garcondargent.com/" // Nouveau lien spécifique pour l'image
   }
 ];
+  
 export default function Home() {
+  // Références pour les effets de parallaxe
+  const driftElements = useRef<NodeListOf<Element> | null>(null);
+  const prlxElements = useRef<NodeListOf<Element> | null>(null);
+  
+  useEffect(() => {
+    // Vérifier si c'est un rechargement de page (F5/refresh)
+    // performance.navigation est obsolète mais encore supporté dans la plupart des navigateurs
+    if (window.performance && performance.navigation.type === 1) {
+      // C'est un rechargement de page, on scroll vers le haut
+      window.scrollTo(0, 0);
+    }
+
+    // Gestion des effets de dérive sur les éléments décoratifs
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!driftElements.current) {
+        driftElements.current = document.querySelectorAll('[data-drift]');
+      }
+      
+      driftElements.current.forEach((el) => {
+        const attr = el.getAttribute('data-drift');
+        if (attr) {
+          const [maxX, maxY] = attr.split(' ').map(val => parseFloat(val));
+          const centerX = window.innerWidth / 2;
+          const centerY = window.innerHeight / 2;
+          
+          const deltaX = (e.clientX - centerX) / centerX;
+          const deltaY = (e.clientY - centerY) / centerY;
+          
+          const translateX = maxX * deltaX;
+          const translateY = maxY * deltaY;
+          
+          el.setAttribute('style', `transform: translate(${translateX}px, ${translateY}px)`);
+        }
+      });
+      
+      if (!prlxElements.current) {
+        prlxElements.current = document.querySelectorAll('[data-prlx]');
+      }
+      
+      prlxElements.current.forEach((el) => {
+        const attr = el.getAttribute('data-prlx');
+        if (attr) {
+          const [minY, maxY] = attr.split(' ').map(val => parseFloat(val));
+          const percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+          const translateY = minY + (maxY - minY) * percent;
+          
+          el.setAttribute('style', `transform: translateY(${translateY * 100}px)`);
+        }
+      });
+    };
+
+    // Initialisation
+    window.addEventListener("mousemove", handleMouseMove);
+    handleMouseMove(new MouseEvent("mousemove")); // Exécuter immédiatement pour les éléments visibles au chargement
+
+    // Nettoyage
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
   return (
     <div className="bg-white min-h-screen">
       <motion.div 
@@ -87,7 +149,6 @@ export default function Home() {
             </h2>
             <p className="skills text-base mb-8 system-font">{skill.description}</p>
             
-            {skill.title !== "Major Projects" ? (
               <motion.a href={skill.link} className="btn">
                 <span className="btn__label">
                   Explore {skill.title}
@@ -109,7 +170,6 @@ export default function Home() {
                   Explore {skill.title}
                 </motion.span>
               </motion.a>
-            ) : null}
           </div>
           <motion.div 
             className={`flex-1 ${index % 2 === 0 ? 'order-2' : 'order-1'}`}

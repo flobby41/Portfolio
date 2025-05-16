@@ -379,8 +379,7 @@
   .hire-me .shade {
     position: absolute;
     left: -35px;
-    top: 40%;
-    transform: translateY(-50%);
+    top: -35%;
     width: 35px;
     height: 35px;
   }
