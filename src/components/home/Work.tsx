@@ -38,6 +38,12 @@ const Work = () => {
     rootMargin: "-50px",
   });
   
+  const [section4Ref, section4InView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+    rootMargin: "-50px",
+  });
+  
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -308,7 +314,7 @@ const Work = () => {
                 
                 <motion.p variants={fadeInUp}>
                   
-<Link href="https://moda-sphere.vercel.app/">ModaSphere</Link> started as a simple e-commerce template and quickly evolved into a fully customizable platform. It’s more than just a storefront—it’s a foundation for businesses to create a seamless shopping experience that’s fast, intuitive, and visually engaging. The project taught me how to think beyond individual features and focus on building scalable systems that can adapt to different brands and product types.
+              <Link href="https://moda-sphere.vercel.app/" target="blank">ModaSphere</Link> started as a simple e-commerce template and quickly evolved into a fully customizable platform. It’s more than just a storefront—it’s a foundation for businesses to create a seamless shopping experience that’s fast, intuitive, and visually engaging. The project taught me how to think beyond individual features and focus on building scalable systems that can adapt to different brands and product types.
 
                 </motion.p>
                 
@@ -411,7 +417,7 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                Inspired by the minimalism of Scandinavian design, <Link href="https://skandiwall.vercel.app/">SkandiWall</Link> was my take on creating an e-commerce app that feels both <b> modern and timeless</b> .
+                Inspired by the minimalism of Scandinavian design, <Link href="https://skandiwall.vercel.app/" target="blank">SkandiWall</Link> was my take on creating an e-commerce app that feels both <b> modern and timeless</b> .
                 It was more than just a minimalist e-commerce app—it was a collaborative journey that taught me the power of working closely with a team. Inspired by Scandinavian design principles, we set out to build a platform that felt modern yet timeless, letting the products shine without unnecessary distractions.
 
 
@@ -466,8 +472,8 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-Shopify Headless Demo: The Future of E-commerce
-</motion.h2>
+            Shopify Headless Demo: The Future of E-commerce
+              </motion.h2>
                 
                 <motion.div 
                   className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
@@ -482,7 +488,7 @@ Shopify Headless Demo: The Future of E-commerce
                 />
                 
                 <motion.p variants={fadeInUp}>
-                 <Link href="https://e-commerce-template-sooty.vercel.app/"> Shopify </Link> is a powerhouse, but I wanted to see how its capabilities could be expanded with a headless approach. This demo project was an opportunity to explore how a Shopify backend could integrate seamlessly with a custom frontend built with Next.js and GraphQL.
+                 <Link href="https://e-commerce-template-sooty.vercel.app/" target="blank"> Shopify </Link> is a powerhouse, but I wanted to see how its capabilities could be expanded with a headless approach. This demo project was an opportunity to explore how a Shopify backend could integrate seamlessly with a custom frontend built with Next.js and GraphQL.
 
                 </motion.p>
                 
@@ -505,6 +511,78 @@ Shopify Headless Demo: The Future of E-commerce
                     <svg viewBox="0 0 512 512" className="code-icons">
                       {/* Version simplifiée des icônes */}
                     </svg>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+          
+          {/* Fourth section: EcomCore */}
+          <div className="panels panels--reversed panels--centred" ref={section4Ref}>
+            <motion.div 
+              className="panels__main"
+              initial="hidden"
+              animate={section4InView ? "visible" : "hidden"}
+              variants={staggerContainer}
+            >
+              <div className="flow">
+                <motion.h2 
+                  className="t-heading t-lede:s t-medium:m t-medium:l"
+                  variants={fadeInUp}
+                >
+                  EcomCore: Essential E-commerce Foundation
+                  <span className="dot">.</span>
+                </motion.h2>
+                
+                <motion.div 
+                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
+                  initial={{ scaleX: 0 }}
+                  animate={section4InView ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1]
+                  }}
+                  style={{ originX: 0 }}
+                />
+                
+                <motion.p variants={fadeInUp}>
+                  EcomCore is a streamlined e-commerce template designed to provide a foundational structure for online stores. Unlike ModaSphere, which offers a fully customizable experience, EcomCore focuses on delivering essential functionalities like product display, cart management, and user authentication in a minimalist setup.
+                </motion.p>
+                
+                <motion.p variants={fadeInUp}>
+                  The goal was to build a clean, lightweight framework that developers can easily extend while maintaining a robust backend structure powered by Node.js, Express, and MongoDB. It's a canvas that can evolve, serving as a starting point for more advanced implementations.
+                </motion.p>
+                
+                <motion.p variants={fadeInUp}>
+                  See <Link href="https://github.com/flobby41/EcomCore" target="blank">EcomCore</Link> in action with the <Link href="https://ecom-core-coral.vercel.app/" target="blank">live demo</Link> and explore the source code on GitHub.
+                </motion.p>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="panels__side"
+              initial="hidden"
+              animate={section4InView ? "visible" : "hidden"}
+              variants={scaleIn}
+            >
+              <div className="circle">
+                <div className="circle__inr" data-reveal="is-active">
+                  <div className="circle__bg stripes" data-drift="-10 -14"></div>
+                  <div className="illustration illustration--laptop">
+                    <div className="laptop-illustration">
+                      <svg viewBox="0 0 610 610" className="main-laptop">
+                        {/* Version simplifiée du laptop */}
+                      </svg>
+                    </div>
+                    <motion.div 
+                      className="code"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={section4InView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                      <div className="code__inr" data-prlx="0 -0.075"></div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -553,7 +631,7 @@ Shopify Headless Demo: The Future of E-commerce
               </motion.p>
               
               <motion.div variants={fadeInUp}>
-                <Link
+                <a
                   href="mailto:hello@silver-api.digital?subject=🤘 Hi Florian, I'd like to hire you"
                   className="btn"
                 >
@@ -565,7 +643,7 @@ Shopify Headless Demo: The Future of E-commerce
                   >
                     Get in touch
                   </span>
-                </Link>
+                </a>
               </motion.div>
             </motion.div>
           </div>
