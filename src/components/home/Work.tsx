@@ -488,7 +488,7 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                 <Link href="https://e-commerce-template-sooty.vercel.app/" target="blank"> Shopify </Link> is a powerhouse, but I wanted to see how its capabilities could be expanded with a headless approach. This demo project was an opportunity to explore how a Shopify backend could integrate seamlessly with a custom frontend built with Next.js and GraphQL.
+                 <Link href="https://v0-fashion-e-commerce-app-ashy.vercel.app/#women" target="blank"> Shopify </Link> is a powerhouse, but I wanted to see how its capabilities could be expanded with a headless approach. This demo project was an opportunity to explore how a Shopify backend could integrate seamlessly with a custom frontend built with Next.js and GraphQL.
 
                 </motion.p>
                 
