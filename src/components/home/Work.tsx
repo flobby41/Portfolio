@@ -295,7 +295,7 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l text-[1.68rem]"
                   variants={fadeInUp}
                 >
-                  ModaSphere: Redefining <br /> E-commerce Templates
+                  Atelier: Redefining <br /> E-commerce Templates
                   <span className="dot">.</span>
                 </motion.h2>
                 
@@ -314,12 +314,12 @@ const Work = () => {
                 
                 <motion.p variants={fadeInUp}>
                   
-              <Link href="https://moda-sphere.vercel.app/" target="blank">ModaSphere</Link> started as a simple e-commerce template and quickly evolved into a fully customizable platform. It’s more than just a storefront—it’s a foundation for businesses to create a seamless shopping experience that’s fast, intuitive, and visually engaging. The project taught me how to think beyond individual features and focus on building scalable systems that can adapt to different brands and product types.
+              <Link href="https://atelier-storefront.vercel.app/" target="blank">Atelier</Link> started as a simple e-commerce template and quickly evolved into a fully customizable platform. It’s more than just a storefront—it’s a foundation for businesses to create a seamless shopping experience that’s fast, intuitive, and visually engaging. The project taught me how to think beyond individual features and focus on building scalable systems that can adapt to different brands and product types.
 
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                Working on ModaSphere pushed me to refine every detail, from the admin dashboard to the checkout process. It wasn’t just about writing code; it was about crafting a fluid user journey that feels cohesive from start to finish. It’s a project that continues to evolve as I integrate new tools and experiment with headless architecture.
+                Working on Atelier pushed me to refine every detail, from the admin dashboard to the checkout process. It wasn’t just about writing code; it was about crafting a fluid user journey that feels cohesive from start to finish. It’s a project that continues to evolve as I integrate new tools and experiment with headless architecture.
                 </motion.p>
               </div>
             </motion.div>
@@ -547,7 +547,7 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                  EcomCore is a streamlined e-commerce template designed to provide a foundational structure for online stores. Unlike ModaSphere, which offers a fully customizable experience, EcomCore focuses on delivering essential functionalities like product display, cart management, and user authentication in a minimalist setup.
+                  EcomCore is a streamlined e-commerce template designed to provide a foundational structure for online stores. Unlike Atelier, which offers a fully customizable experience, EcomCore focuses on delivering essential functionalities like product display, cart management, and user authentication in a minimalist setup.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
