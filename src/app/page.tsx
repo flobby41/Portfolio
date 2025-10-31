@@ -21,7 +21,7 @@ const skillsData = [
     icon: "💼",
     link: "/work", 
     image: "/images/MajProj2.png",
-    imageLink: "https://moda-sphere.vercel.app/" // Nouveau lien spécifique pour l'image
+    imageLink: "https://atelier-storefront.vercel.app/" // Nouveau lien spécifique pour l'image
   },
   {
     title: "Experiments",
