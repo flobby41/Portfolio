@@ -536,7 +536,7 @@ const Work = () => {
               <div className="hero__bg dots" data-drift="-10 -14"></div>
               
               <motion.p variants={fadeInUp}>
-              Every project in my <Link href="https://flobby41.github.io/blog/home.html">sandbox</Link> is a stepping stone—an exercise in turning raw ideas into functional features. Whether it’s building a multi-instance audio player, deploying a Hugo site, or testing the limits of Shopify’s Storefront API, each experiment keeps me sharp, curious, and ready for the next challenge. <br />
+              Every project in my sandbox is a stepping stone—an exercise in turning raw ideas into functional features. Whether it’s building a multi-instance audio player, deploying a Hugo site, or testing the limits of Shopify’s Storefront API, each experiment keeps me sharp, curious, and ready for the next challenge. <br />
               If you’re curious to see how these projects came to life, or if you’re looking for a bit of inspiration for your own coding journey, check out the full collection on my blog <Link href="https://flobby41.github.io/blog/home.html">here</Link>.
 
               </motion.p>

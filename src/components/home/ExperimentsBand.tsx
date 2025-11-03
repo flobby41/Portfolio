@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
@@ -77,7 +77,7 @@ Sandbox Experiments: Where Code Meets Curiosity
               animate={loadingComplete ? { opacity: 1, y: 0 } : { opacity: 0, x: -20 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-When I first started coding, I quickly realized that the best way to learn was by building. So, I created a sandbox—a space where I could experiment with new frameworks, test API integrations, and push my skills beyond their comfort zone. It’s a playground for concepts that might never see production but always teach me something valuable.
+When I first started coding, I quickly realized that the best way to learn was by building. So, I created a <Link href="https://flobby41.github.io/blog/home.html">sandbox</Link> — a space where I could experiment with new frameworks, test API integrations, and push my skills beyond their comfort zone. It’s a playground for concepts that might never see production but always teach me something valuable.
 
         {/* Bouton très stylé */}
         
