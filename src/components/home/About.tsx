@@ -305,7 +305,7 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                Originally from Paris, I draw inspiration from the city’s vibrant creative scene to write both code and music. Since 2023, I’ve been building modern web applications with stacks like React, Node.js, and MongoDB, focusing on creating fast, scalable, and user-centric digital experiences.
+                Originally from Paris, I draw inspiration from the city’s vibrant creative scene to write both code and music.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>

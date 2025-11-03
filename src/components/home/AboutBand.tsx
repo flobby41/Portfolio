@@ -78,7 +78,7 @@ const AboutMe = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
             > 
       
-      I'm a <b>developer, designer </b> and <b>singer </b> who has been building for the web in some capacity since 2023. <br />
+      I'm a <b>developer, designer </b> and <b>singer </b>. <br />
        I specialise in accessibility, performance and usability without sacrificing creativity.
  
         
