@@ -22,7 +22,7 @@ const HorizontalBand = () => {
           duration: 0.4, // Réduit de 0.6 à 0.4
           ease: [0.25, 0.1, 0.25, 1],
         }}
-        className="mt-12 px-4 text-center"
+        className="mt-12 px-4 text-center md:px-0 md:text-left md:pl-24"
       >
         <div className="relative">
           <h2 className="font-bitter text-[3.5rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
@@ -47,7 +47,7 @@ const HorizontalBand = () => {
             ease: [0.25, 0.1, 0.25, 1],
           },
         }}
-        className="relative h-[5px] bg-[#73BBC5] mt-8 mx-auto"
+        className="relative h-[5px] bg-[#73BBC5] mt-8 mx-auto md:mx-0 md:ml-24"
       />
 
       {/* Nouveau contenu */}
@@ -59,13 +59,13 @@ const HorizontalBand = () => {
           duration: 0.4, // Réduit de 0.6 à 0.4
           ease: [0.25, 0.1, 0.25, 1],
         }}
-        className="mt-16 max-w-4xl mx-auto text-center px-4"
+        className="mt-16 max-w-4xl mx-auto text-center px-4 md:mx-0 md:text-left md:px-0 md:pl-24"
       >
         <p className="text-[#0f1b61] text-lg leading-relaxed mb-8">
         From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-bold"> everyone feels</span>. 
         </p>
         
-        <motion.a href="/work" className="btn"
+        <motion.a href="/work" className="btn mx-auto md:mx-0"
         >
           <span className="btn__label">
           About my approach
@@ -74,17 +74,8 @@ const HorizontalBand = () => {
     className="btn__fill stripes" 
     data-drift="-10 -12" 
     aria-hidden="true"
-    initial={{ x: -4.95845, y: 7.15695 }}
-    whileHover={{ 
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: [0.25, 0.1, 0.25, 1]
-      }
-    }}
+    
   >
-    About my approach
   </motion.span>
         </motion.a>
       </motion.div>

@@ -167,7 +167,6 @@ export default function Home() {
                     }
                   }}
                 >
-                  Explore {skill.title}
                 </motion.span>
               </motion.a>
           </div>

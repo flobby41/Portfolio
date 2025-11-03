@@ -188,17 +188,16 @@
   }
   
   .btn__fill {
-    will-change: transform;
     backface-visibility: hidden;
     user-select: none;
     transition: all 0.3s ease-out;
     display: inline-block;
     position: absolute;
     padding: 15px 45px;
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
     white-space: nowrap; /* Empêche le saut de ligne */
     color: var(--bg);
     text-align: center;
