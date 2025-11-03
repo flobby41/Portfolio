@@ -22,7 +22,7 @@ const HorizontalBand = () => {
           duration: 0.4, // Réduit de 0.6 à 0.4
           ease: [0.25, 0.1, 0.25, 1],
         }}
-        className="mt-12 pl-24"
+        className="mt-12 px-4 text-center"
       >
         <div className="relative">
           <h2 className="font-bitter text-[3.5rem] text-[#0f1b61] leading-[67.5px] [-webkit-font-smoothing:antialiased]">
@@ -47,7 +47,7 @@ const HorizontalBand = () => {
             ease: [0.25, 0.1, 0.25, 1],
           },
         }}
-        className="relative h-[5px] bg-[#73BBC5] ml-24 mt-8"
+        className="relative h-[5px] bg-[#73BBC5] mt-8 mx-auto"
       />
 
       {/* Nouveau contenu */}
@@ -59,7 +59,7 @@ const HorizontalBand = () => {
           duration: 0.4, // Réduit de 0.6 à 0.4
           ease: [0.25, 0.1, 0.25, 1],
         }}
-        className="mt-16 pl-24 max-w-4xl"
+        className="mt-16 max-w-4xl mx-auto text-center px-4"
       >
         <p className="text-[#0f1b61] text-lg leading-relaxed mb-8">
         From performance-driven storefronts to modular APIs, headless CMS to fully custom admin dashboards — I design and develop modern, fast and accessible web experiences that feel good to use. I believe that great user experience comes from a balance between clean design, solid architecture and small technical details that no one sees… but <span className="font-bold"> everyone feels</span>. 
