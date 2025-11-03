@@ -155,7 +155,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6 z-50">
           <Link
             href="mailto:hello@silver-api.digital?subject=🤘 Hi Florian, I'd like to hire you"
-            className="hire-me flex items-center gap-2 font-bold group"
+            className="hire-me hidden sm:flex items-center gap-2 font-bold group"
           >
             <div className="shade hidden sm:block" data-drift="-4 -6" data-drift-center="y" style={{ transform: "translateY(-50%) translate(-3.94702px, 2.41256px)" }}>
 

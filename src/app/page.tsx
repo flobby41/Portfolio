@@ -103,15 +103,15 @@ export default function Home() {
     };
   }, []);
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen overflow-hidden">
       <motion.div 
-        className="section space-y-32 relative bg-[#F4F9FC] mx-[20px] mt-[20px] min-h-[calc(100vh-15px)]"
+        className="section space-y-32 relative bg-[#F4F9FC] mx-[20px] mt-[20px] min-h-[calc(100vh-15px)] "
         initial="initial"
         animate="animate"
         variants={staggerContainer}
       >
         {/* Hero section */}
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen ">
           <div className="flex-1 flex items-center">
             <Hero />
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="h-[1px]" />
         <HorizontalBand />
 
-<LazySection className="min-h-screen py-20">
+<LazySection className="min-h-screen py-20 overflow-hidden">
   <div className="max-w-7xl mx-auto px-0">
     <motion.div
       className="space-y-8"
