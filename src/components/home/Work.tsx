@@ -518,77 +518,7 @@ const Work = () => {
             </motion.div>
           </div>
           
-          {/* Fourth section: EcomCore */}
-          <div className="panels panels--reversed panels--centred" ref={section4Ref}>
-            <motion.div 
-              className="panels__main"
-              initial="hidden"
-              animate={section4InView ? "visible" : "hidden"}
-              variants={staggerContainer}
-            >
-              <div className="flow">
-                <motion.h2 
-                  className="t-heading t-lede:s t-medium:m t-medium:l"
-                  variants={fadeInUp}
-                >
-                  EcomCore: Essential E-commerce Foundation
-                  <span className="dot">.</span>
-                </motion.h2>
-                
-                <motion.div 
-                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
-                  initial={{ scaleX: 0 }}
-                  animate={section4InView ? { scaleX: 1 } : { scaleX: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1]
-                  }}
-                  style={{ originX: 0 }}
-                />
-                
-                <motion.p variants={fadeInUp}>
-                  EcomCore is a streamlined e-commerce template designed to provide a foundational structure for online stores. Unlike Atelier, which offers a fully customizable experience, EcomCore focuses on delivering essential functionalities like product display, cart management, and user authentication in a minimalist setup.
-                </motion.p>
-                
-                <motion.p variants={fadeInUp}>
-                  The goal was to build a clean, lightweight framework that developers can easily extend while maintaining a robust backend structure powered by Node.js, Express, and MongoDB. It's a canvas that can evolve, serving as a starting point for more advanced implementations.
-                </motion.p>
-                
-                <motion.p variants={fadeInUp}>
-                  See <Link href="https://github.com/flobby41/EcomCore" target="blank">EcomCore</Link> in action with the <Link href="https://ecom-core-coral.vercel.app/" target="blank">live demo</Link> and explore the source code on GitHub.
-                </motion.p>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="panels__side"
-              initial="hidden"
-              animate={section4InView ? "visible" : "hidden"}
-              variants={scaleIn}
-            >
-              <div className="circle">
-                <div className="circle__inr" data-reveal="is-active">
-                  <div className="circle__bg stripes" data-drift="-10 -14"></div>
-                  <div className="illustration illustration--laptop">
-                    <div className="laptop-illustration">
-                      <svg viewBox="0 0 610 610" className="main-laptop">
-                        {/* Version simplifiée du laptop */}
-                      </svg>
-                    </div>
-                    <motion.div 
-                      className="code"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={section4InView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                    >
-                      <div className="code__inr" data-prlx="0 -0.075"></div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+         
           
           {/* Final call to action section */}
           <div className="reveal chunk hero" ref={heroRef}>
