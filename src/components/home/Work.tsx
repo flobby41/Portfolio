@@ -472,8 +472,9 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-            Shopify Headless Demo: The Future of E-commerce
-              </motion.h2>
+                  AI Image Playground: Combining Images with Multimodal AI
+                  <span className="dot">.</span>
+                </motion.h2>
                 
                 <motion.div 
                   className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
@@ -488,12 +489,12 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                 <Link href="https://v0-fashion-e-commerce-app-ashy.vercel.app/#women" target="blank"> Shopify </Link> is a powerhouse, but I wanted to see how its capabilities could be expanded with a headless approach. This demo project was an opportunity to explore how a Shopify backend could integrate seamlessly with a custom frontend built with Next.js and GraphQL.
-
+                <Link href="https://elite-sport-storefront.
+                 vercel.app/" target="blank"> AI Image Playground </Link> combines two images using Google Gemini 2.5 Flash Image with a textual prompt, built on Next.js 14, React 19, and TypeScript. The architecture leverages Vercel AI SDK for seamless integration, with AI Gateway providing monitoring and cost control. The application features drag-and-drop uploads, real-time previews, and optimized image processing that converts formats automatically. Designed for scalability, it uses serverless functions for horizontal scaling and maintains a stateless architecture for maximum flexibility. The system balances performance with observability, offering complete visibility into AI usage while ensuring efficient resource consumption.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
-                The challenge was not just fetching data but presenting it in a way that felt intuitive and engaging. It was a lesson in balancing design and functionality, creating a user experience that feels fluid even as the underlying architecture becomes more complex. For businesses exploring headless commerce, this demo is a glimpse of what’s possible when you combine the best of both worlds.
+                  The frontend handles image uploads and validation, while the backend processes images through format conversion before sending them to Gemini. The multimodal model processes both images and text in a single request, returning generated images as base64 data. This architecture represents an optimal balance between simplicity, performance, and scalability, ready for growth without major refactoring.
                 </motion.p>
               </div>
             </motion.div>
