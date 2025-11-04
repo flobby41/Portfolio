@@ -29,7 +29,7 @@ const skillsData = [
     icon: "🔬",
     link: "/experiments", 
     image: "/images/Experiments.png",
-    imageLink: "https://flobby41.github.io/blog/blog.html" // Nouveau lien spécifique pour l'image
+    imageLink: "https://flobby41.github.io/sandbox/" // Nouveau lien spécifique pour l'image
   },
   {
     title: "About Me",
