@@ -489,8 +489,7 @@ const Work = () => {
                 />
                 
                 <motion.p variants={fadeInUp}>
-                <Link href="https://elite-sport-storefront.
-                 vercel.app/" target="blank"> AI Image Playground </Link> combines two images using Google Gemini 2.5 Flash Image with a textual prompt, built on Next.js 14, React 19, and TypeScript. The architecture leverages Vercel AI SDK for seamless integration, with AI Gateway providing monitoring and cost control. The application features drag-and-drop uploads, real-time previews, and optimized image processing that converts formats automatically. Designed for scalability, it uses serverless functions for horizontal scaling and maintains a stateless architecture for maximum flexibility. The system balances performance with observability, offering complete visibility into AI usage while ensuring efficient resource consumption.
+                <Link href="https://elite-sport-storefront.vercel.app/" target="_blank" rel="noopener noreferrer"> AI Image Playground </Link> combines two images using Google Gemini 2.5 Flash Image with a textual prompt, built on Next.js 14, React 19, and TypeScript. The architecture leverages Vercel AI SDK for seamless integration, with AI Gateway providing monitoring and cost control. The application features drag-and-drop uploads, real-time previews, and optimized image processing that converts formats automatically. Designed for scalability, it uses serverless functions for horizontal scaling and maintains a stateless architecture for maximum flexibility. The system balances performance with observability, offering complete visibility into AI usage while ensuring efficient resource consumption.
                 </motion.p>
                 
                 <motion.p variants={fadeInUp}>
