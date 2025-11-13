@@ -10,13 +10,13 @@ interface LazySectionProps {
   triggerOnce?: boolean;
   rootMargin?: string;
 }
-
-export const LazySection = ({ 
-  children, 
+//vercel test
+export const LazySection = ({
+  children,
   className = "",
   threshold = 0.1,
   triggerOnce = true,
-  rootMargin = "-100px"
+  rootMargin = "-100px",
 }: LazySectionProps) => {
   const [ref, inView] = useInView({
     triggerOnce,
@@ -39,4 +39,4 @@ export const LazySection = ({
       {children}
     </motion.section>
   );
-}; 
+};
