@@ -4,46 +4,45 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import WorkBand from './WorkBand'
-import './components.css'; // Importation du CSS modèle
-
+import WorkBand from "./WorkBand";
+import "./components.css"; // Importation du CSS modèle
 
 const Work = () => {
   // Références pour les effets de parallaxe
   const driftElements = useRef<NodeListOf<Element> | null>(null);
   const prlxElements = useRef<NodeListOf<Element> | null>(null);
-  
+
   // Création des refs pour l'animation au défilement
   const [headerRef, headerInView] = useInView({
     triggerOnce: true,
     threshold: 0.3,
     rootMargin: "-100px",
   });
-  
+
   const [section1Ref, section1InView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
     rootMargin: "-50px",
   });
-  
+
   const [section2Ref, section2InView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
     rootMargin: "-50px",
   });
-  
+
   const [section3Ref, section3InView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
     rootMargin: "-50px",
   });
-  
+
   const [section4Ref, section4InView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
     rootMargin: "-50px",
   });
-  
+
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -61,38 +60,45 @@ const Work = () => {
     // Gestion des effets de dérive sur les éléments décoratifs
     const handleMouseMove = (e: MouseEvent) => {
       if (!driftElements.current) {
-        driftElements.current = document.querySelectorAll('[data-drift]');
+        driftElements.current = document.querySelectorAll("[data-drift]");
       }
-      
+
       driftElements.current.forEach((el) => {
-        const attr = el.getAttribute('data-drift');
+        const attr = el.getAttribute("data-drift");
         if (attr) {
-          const [maxX, maxY] = attr.split(' ').map(val => parseFloat(val));
+          const [maxX, maxY] = attr.split(" ").map((val) => parseFloat(val));
           const centerX = window.innerWidth / 2;
           const centerY = window.innerHeight / 2;
-          
+
           const deltaX = (e.clientX - centerX) / centerX;
           const deltaY = (e.clientY - centerY) / centerY;
-          
+
           const translateX = maxX * deltaX;
           const translateY = maxY * deltaY;
-          
-          el.setAttribute('style', `transform: translate(${translateX}px, ${translateY}px)`);
+
+          el.setAttribute(
+            "style",
+            `transform: translate(${translateX}px, ${translateY}px)`,
+          );
         }
       });
-      
+
       if (!prlxElements.current) {
-        prlxElements.current = document.querySelectorAll('[data-prlx]');
+        prlxElements.current = document.querySelectorAll("[data-prlx]");
       }
-      
+
       prlxElements.current.forEach((el) => {
-        const attr = el.getAttribute('data-prlx');
+        const attr = el.getAttribute("data-prlx");
         if (attr) {
-          const [minY, maxY] = attr.split(' ').map(val => parseFloat(val));
-          const percent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+          const [minY, maxY] = attr.split(" ").map((val) => parseFloat(val));
+          const percent =
+            window.scrollY / (document.body.scrollHeight - window.innerHeight);
           const translateY = minY + (maxY - minY) * percent;
-          
-          el.setAttribute('style', `transform: translateY(${translateY * 100}px)`);
+
+          el.setAttribute(
+            "style",
+            `transform: translateY(${translateY * 100}px)`,
+          );
         }
       });
     };
@@ -110,14 +116,14 @@ const Work = () => {
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1],
-      }
-    }
+      },
+    },
   };
 
   const staggerContainer = {
@@ -126,21 +132,21 @@ const Work = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const scaleIn = {
     hidden: { opacity: 0, scale: 0.95 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.7,
-        ease: [0.25, 0.1, 0.25, 1]
-      }
-    }
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
   };
 
   return (
@@ -171,47 +177,45 @@ const Work = () => {
         }
         /* Style CSS pour le bouton de menu */
 
-        .menu-link{
-        position:absolute;
-        display:flex;
-        top:35px;
-        left:150px;
+        .menu-link {
+          position: absolute;
+          display: flex;
+          top: 35px;
+          left: 150px;
         }
         .menu-link__trigger {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          font-family: 'Inter', sans-serif;
+          font-family: "Inter", sans-serif;
           transition: all 0.3s;
-          
         }
-      .menu-link:before {
-    content: "";
-    display: inline-block;
-    width: 1px;
-    height: 26px;
-    margin-right: 25px;
-    vertical-align: middle;
-    background: #919795;
-    animation: menuBarIn .45s cubic-bezier(.25,.46,.45,.94) .3s backwards
-  }
-  
+        .menu-link:before {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 26px;
+          margin-right: 25px;
+          vertical-align: middle;
+          background: #919795;
+          animation: menuBarIn 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s
+            backwards;
+        }
 
-  .hire-me .main svg, 
-  .hire-me .shade {
-    position: absolute;
-    left: -35px;
-    top: -40%;
-    transform: translateY(0%);
-    width: 35px;
-    height: 35px;
-  }
-
+        .hire-me .main svg,
+        .hire-me .shade {
+          position: absolute;
+          left: -35px;
+          top: -40%;
+          transform: translateY(0%);
+          width: 35px;
+          height: 35px;
+        }
       `}</style>
-      
+
       <main className="page-body page-body--header" tabIndex={-1}>
         {/* SVG filtre pour l'effet duotone */}
-        <WorkBand/>
+        <WorkBand />
         <svg
           style={{
             position: "absolute",
@@ -261,11 +265,8 @@ const Work = () => {
                 animate={headerInView ? "visible" : "hidden"}
                 variants={staggerContainer}
               >
-             
-             
-                
-                <motion.span 
-                  className="page-header__scroll" 
+                <motion.span
+                  className="page-header__scroll"
                   aria-hidden="true"
                   variants={fadeInUp}
                 >
@@ -281,50 +282,67 @@ const Work = () => {
               </motion.div>
             </div>
           </header>
-          
+
           {/* First section: Considered development */}
           <div className="panels panels--centred" ref={section1Ref}>
-            <motion.div 
+            <motion.div
               className="panels__main"
               initial="hidden"
               animate={section1InView ? "visible" : "hidden"}
               variants={staggerContainer}
             >
               <div className="flow">
-                <motion.h2 
+                <motion.h2
                   className="t-heading t-lede:s t-medium:m t-medium:l text-[1.68rem]"
                   variants={fadeInUp}
                 >
-                  Atelier: Redefining <br /> E-commerce Templates
+                  Shopify Flow: <br /> Building the Headless Connection
                   <span className="dot">.</span>
                 </motion.h2>
-                
+
                 {/* ligne hz */}
-                <motion.div 
+                <motion.div
                   className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
                   initial={{ scaleX: 0 }}
                   animate={section1InView ? { scaleX: 1 } : { scaleX: 0 }}
                   transition={{
                     duration: 0.5,
                     delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1]
+                    ease: [0.25, 0.1, 0.25, 1],
                   }}
                   style={{ originX: 0 }}
                 />
-                
-                <motion.p variants={fadeInUp}>
-                  
-              <Link href="https://atelier-storefront.vercel.app/" target="blank">Atelier</Link> started as a simple e-commerce template and quickly evolved into a fully customizable platform. It’s more than just a storefront—it’s a foundation for businesses to create a seamless shopping experience that’s fast, intuitive, and visually engaging. The project taught me how to think beyond individual features and focus on building scalable systems that can adapt to different brands and product types.
 
-                </motion.p>
-                
                 <motion.p variants={fadeInUp}>
-                Working on Atelier pushed me to refine every detail, from the admin dashboard to the checkout process. It wasn’t just about writing code; it was about crafting a fluid user journey that feels cohesive from start to finish. It’s a project that continues to evolve as I integrate new tools and experiment with headless architecture.
+                  <Link
+                    href="https://atelier-storefront.vercel.app/"
+                    target="blank"
+                  >
+                    Atelier
+                  </Link>{" "}
+                  started as a simple e-commerce template and quickly became a
+                  deep exploration of Shopify’s ecosystem—from the Storefront
+                  API to the Admin backend. The goal wasn’t just to connect
+                  data, but to create a seamless flow between a custom-built
+                  e-commerce platform and Shopify’s headless architecture.
+                </motion.p>
+
+                <motion.p variants={fadeInUp}>
+                  Through this project, I built a complete environment that
+                  automates product migration, powers a real-time headless
+                  storefront, and provides a custom admin dashboard for managing
+                  stock and pricing. It taught me how to balance flexibility and
+                  structure—leveraging Shopify’s APIs while keeping the freedom
+                  of a fully custom Next.js stack.
+                  <br />
+                  <br /> It’s a technical bridge between two worlds: the
+                  creativity of custom development and the reliability of a
+                  global commerce platform.
                 </motion.p>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="panels__side"
               initial="hidden"
               animate={section1InView ? "visible" : "hidden"}
@@ -332,7 +350,10 @@ const Work = () => {
             >
               <div className="circle">
                 <div className="circle__inr" data-reveal="is-active">
-                  <div className="circle__bg stripes" data-drift="-10 -14"></div>
+                  <div
+                    className="circle__bg stripes"
+                    data-drift="-10 -14"
+                  ></div>
                   <div className="illustration illustration--board">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -350,8 +371,8 @@ const Work = () => {
                         height="86.55"
                       />
                     </svg>
-                    <motion.div 
-                      className="illustration__layer" 
+                    <motion.div
+                      className="illustration__layer"
                       data-drift="-4 -4"
                       initial={{ x: 5, y: 5 }}
                       animate={section1InView ? { x: 0, y: 0 } : { x: 5, y: 5 }}
@@ -386,127 +407,86 @@ const Work = () => {
               </div>
             </motion.div>
           </div>
-          
-          {/* Second section: Code Choreography */}
-          <div className="panels panels--reversed panels--centred" ref={section2Ref}>
-            <motion.div 
+
+          {/* Second section: AI Image Playground */}
+          <div
+            className="panels panels--reversed panels--centred"
+            ref={section2Ref}
+          >
+            <motion.div
               className="panels__main"
               initial="hidden"
               animate={section2InView ? "visible" : "hidden"}
               variants={staggerContainer}
             >
               <div className="flow">
-                <motion.h2 
-                  className="t-heading t-lede:s t-medium:m t-medium:l"
-                  variants={fadeInUp}
-                >
-                  SkandiWall: Simplicity Meets Functionality
-                  <span className="dot">.</span>
-                </motion.h2>
-                
-                <motion.div 
-                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
-                  initial={{ scaleX: 0 }}
-                  animate={section2InView ? { scaleX: 1 } : { scaleX: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1]
-                  }}
-                  style={{ originX: 0 }}
-                />
-                
-                <motion.p variants={fadeInUp}>
-                Inspired by the minimalism of Scandinavian design, <Link href="https://skandiwall.vercel.app/" target="blank">SkandiWall</Link> was my take on creating an e-commerce app that feels both <b> modern and timeless</b> .
-                It was more than just a minimalist e-commerce app—it was a collaborative journey that taught me the power of working closely with a team. Inspired by Scandinavian design principles, we set out to build a platform that felt modern yet timeless, letting the products shine without unnecessary distractions.
-
-
-
-                </motion.p>
-                
-                <motion.p variants={fadeInUp}>
-                Working alongside three frontend developers, we embraced agile methodologies, holding daily stand-ups and iterating quickly based on feedback. This experience not only sharpened my ability to communicate effectively but also deepened my understanding of how to align backend development with frontend needs.
-                </motion.p>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              className="panels__side"
-              initial="hidden"
-              animate={section2InView ? "visible" : "hidden"}
-              variants={scaleIn}
-            >
-              <div className="circle">
-                <div className="circle__inr" data-reveal="is-active">
-                  <div className="circle__bg stripes" data-drift="-10 -14"></div>
-                  <div className="illustration illustration--laptop">
-                    <div className="laptop-illustration">
-                      <svg viewBox="0 0 610 610" className="main-laptop">
-                        {/* Version simplifiée du laptop */}
-                      </svg>
-                    </div>
-                    <motion.div 
-                      className="code"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={section2InView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                    >
-                      <div className="code__inr" data-prlx="0 -0.075"></div>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-          
-          {/* Third section: JAMstack */}
-          <div className="panels panels--centred" ref={section3Ref}>
-            <motion.div 
-              className="panels__main"
-              initial="hidden"
-              animate={section3InView ? "visible" : "hidden"}
-              variants={staggerContainer}
-            >
-              <div className="flow">
-                <motion.h2 
+                <motion.h2
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
                   AI Image Playground: Combining Images with Multimodal AI
                   <span className="dot">.</span>
                 </motion.h2>
-                
-                <motion.div 
+
+                <motion.div
                   className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
                   initial={{ scaleX: 0 }}
-                  animate={section3InView ? { scaleX: 1 } : { scaleX: 0 }}
+                  animate={section2InView ? { scaleX: 1 } : { scaleX: 0 }}
                   transition={{
                     duration: 0.5,
                     delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1]
+                    ease: [0.25, 0.1, 0.25, 1],
                   }}
                   style={{ originX: 0 }}
                 />
-                
+
                 <motion.p variants={fadeInUp}>
-                <Link href="https://elite-sport-storefront.vercel.app/" target="_blank" rel="noopener noreferrer"> AI Image Playground </Link> combines two images using Google Gemini 2.5 Flash Image with a textual prompt, built on Next.js 14, React 19, and TypeScript. The architecture leverages Vercel AI SDK for seamless integration, with AI Gateway providing monitoring and cost control. The application features drag-and-drop uploads, real-time previews, and optimized image processing that converts formats automatically. Designed for scalability, it uses serverless functions for horizontal scaling and maintains a stateless architecture for maximum flexibility. The system balances performance with observability, offering complete visibility into AI usage while ensuring efficient resource consumption.
+                  <Link
+                    href="https://elite-sport-storefront.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {" "}
+                    AI Image Playground{" "}
+                  </Link>{" "}
+                  combines two images using Google Gemini 2.5 Flash Image with a
+                  textual prompt, built on Next.js 14, React 19, and TypeScript.
+                  The architecture leverages Vercel AI SDK for seamless
+                  integration, with AI Gateway providing monitoring and cost
+                  control. The application features drag-and-drop uploads,
+                  real-time previews, and optimized image processing that
+                  converts formats automatically. Designed for scalability, it
+                  uses serverless functions for horizontal scaling and maintains
+                  a stateless architecture for maximum flexibility. The system
+                  balances performance with observability, offering complete
+                  visibility into AI usage while ensuring efficient resource
+                  consumption.
                 </motion.p>
-                
+
                 <motion.p variants={fadeInUp}>
-                  The frontend handles image uploads and validation, while the backend processes images through format conversion before sending them to Gemini. The multimodal model processes both images and text in a single request, returning generated images as base64 data. This architecture represents an optimal balance between simplicity, performance, and scalability, ready for growth without major refactoring.
+                  The frontend handles image uploads and validation, while the
+                  backend processes images through format conversion before
+                  sending them to Gemini. The multimodal model processes both
+                  images and text in a single request, returning generated
+                  images as base64 data. This architecture represents an optimal
+                  balance between simplicity, performance, and scalability,
+                  ready for growth without major refactoring.
                 </motion.p>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="panels__side"
               initial="hidden"
-              animate={section3InView ? "visible" : "hidden"}
+              animate={section2InView ? "visible" : "hidden"}
               variants={scaleIn}
             >
               <div className="circle">
                 <div className="circle__inr" data-reveal="is-active">
-                  <div className="circle__bg stripes" data-drift="-10 -14"></div>
+                  <div
+                    className="circle__bg stripes"
+                    data-drift="-10 -14"
+                  ></div>
                   <div className="illustration illustration--codeicons">
                     <svg viewBox="0 0 512 512" className="code-icons">
                       {/* Version simplifiée des icônes */}
@@ -516,34 +496,125 @@ const Work = () => {
               </div>
             </motion.div>
           </div>
-          
-         
-          
+
+          {/* Third section: SkandiWall */}
+          <div className="panels panels--centred" ref={section3Ref}>
+            <motion.div
+              className="panels__main"
+              initial="hidden"
+              animate={section3InView ? "visible" : "hidden"}
+              variants={staggerContainer}
+            >
+              <div className="flow">
+                <motion.h2
+                  className="t-heading t-lede:s t-medium:m t-medium:l"
+                  variants={fadeInUp}
+                >
+                  SkandiWall: Simplicity Meets Functionality
+                  <span className="dot">.</span>
+                </motion.h2>
+
+                <motion.div
+                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
+                  initial={{ scaleX: 0 }}
+                  animate={section3InView ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  style={{ originX: 0 }}
+                />
+
+                <motion.p variants={fadeInUp}>
+                  Inspired by the minimalism of Scandinavian design,{" "}
+                  <Link href="https://skandiwall.vercel.app/" target="blank">
+                    SkandiWall
+                  </Link>{" "}
+                  was my take on creating an e-commerce app that feels both{" "}
+                  <b> modern and timeless</b> . It was more than just a
+                  minimalist e-commerce app—it was a collaborative journey that
+                  taught me the power of working closely with a team. Inspired
+                  by Scandinavian design principles, we set out to build a
+                  platform that felt modern yet timeless, letting the products
+                  shine without unnecessary distractions.
+                </motion.p>
+
+                <motion.p variants={fadeInUp}>
+                  Working alongside three frontend developers, we embraced agile
+                  methodologies, holding daily stand-ups and iterating quickly
+                  based on feedback. This experience not only sharpened my
+                  ability to communicate effectively but also deepened my
+                  understanding of how to align backend development with
+                  frontend needs.
+                </motion.p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="panels__side"
+              initial="hidden"
+              animate={section3InView ? "visible" : "hidden"}
+              variants={scaleIn}
+            >
+              <div className="circle">
+                <div className="circle__inr" data-reveal="is-active">
+                  <div
+                    className="circle__bg stripes"
+                    data-drift="-10 -14"
+                  ></div>
+                  <div className="illustration illustration--laptop">
+                    <div className="laptop-illustration">
+                      <svg viewBox="0 0 610 610" className="main-laptop">
+                        {/* Version simplifiée du laptop */}
+                      </svg>
+                    </div>
+                    <motion.div
+                      className="code"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={
+                        section3InView
+                          ? { opacity: 1, y: 0 }
+                          : { opacity: 0, y: 10 }
+                      }
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                      <div className="code__inr" data-prlx="0 -0.075"></div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
           {/* Final call to action section */}
           <div className="reveal chunk hero" ref={heroRef}>
-            <motion.h2 
+            <motion.h2
               className="hero__title t-outline t-heading t-lede:s t-big:m t-bigger:l"
               initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={
+                heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              }
               transition={{ duration: 0.7 }}
             >
-              Let's build something <b>better</b><span className="dot">.</span>
+              Let's build something <b>better</b>
+              <span className="dot">.</span>
             </motion.h2>
-            
-            <motion.div 
+
+            <motion.div
               className="flow hero__content"
               initial="hidden"
               animate={heroInView ? "visible" : "hidden"}
               variants={staggerContainer}
             >
               <div className="hero__bg dots" data-drift="-10 -14"></div>
-              
+
               <motion.p variants={fadeInUp}>
                 I strongly believe that designers and developers have a
                 responsibility to make sure that what we are building does no
                 harm and I try to be as ethical as I can in taking on projects.
               </motion.p>
-              
+
               <motion.p variants={fadeInUp}>
                 If your organisation represents online gambling, payday loans,
                 big tobacco, or mines and monetises personal data, then I am
@@ -553,13 +624,13 @@ const Work = () => {
                 technology but I can't conscionably work with it in its current
                 form.
               </motion.p>
-              
+
               <motion.p variants={fadeInUp}>
                 All that said, if you are looking for help building something
                 that promotes sustainability, diversity, or generally aims to
                 make a positive impact, then let's talk.
               </motion.p>
-              
+
               <motion.div variants={fadeInUp}>
                 <a
                   href="mailto:hello@silver-api.digital?subject=🤘 Hi Florian, I'd like to hire you"
@@ -578,8 +649,6 @@ const Work = () => {
             </motion.div>
           </div>
         </div>
-        
-  
       </main>
     </>
   );
