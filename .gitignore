@@ -18,7 +18,7 @@ node_modules
 *.pem
 test.html
 .cursor
-model.css
+/8b7db24b Portfolio/
 netlify.toml
 
 # Debug

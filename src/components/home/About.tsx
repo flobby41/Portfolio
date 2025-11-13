@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import WorkBand from "./WorkBand";
+import AboutMe from "./AboutBand";
 import "./components.css"; // Importation du CSS modèle
 
 const Work = () => {
@@ -37,12 +37,6 @@ const Work = () => {
     rootMargin: "-50px",
   });
 
-  const [section4Ref, section4InView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-    rootMargin: "-50px",
-  });
-
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -50,13 +44,11 @@ const Work = () => {
   });
 
   useEffect(() => {
-    // Vérifier si c'est un rechargement de page (F5/refresh)
-    // performance.navigation est obsolète mais encore supporté dans la plupart des navigateurs
-    if (window.performance && performance.navigation.type === 1) {
-      // C'est un rechargement de page, on scroll vers le haut
-      window.scrollTo(0, 0);
-    }
-
+    // Défilement automatique vers le haut lors du chargement/refresh de la page
+    window.scrollTo({
+      top: 0,
+      behavior: "auto", // Utiliser 'auto' pour un défilement instantané ou 'smooth' pour un défilement fluide
+    });
     // Gestion des effets de dérive sur les éléments décoratifs
     const handleMouseMove = (e: MouseEvent) => {
       if (!driftElements.current) {
@@ -154,20 +146,20 @@ const Work = () => {
       {/* Intégration des variables CSS de thème en haut du composant */}
       <style jsx global>{`
         :root {
-          --bg: #fff7f7;
-          --line: #7e66c7;
-          --fill: #fcc5d3;
-          --text: #021963;
-          --subtext: #f67796;
-          --duo: #fcc5d3;
+          --bg: #f7f8f9;
+          --line: #5269bd;
+          --fill: #9bdabe;
+          --text: #1c494c;
+          --subtext: #73cadc;
+          --duo: #9bdabe;
         }
         .stripes {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.93 22.93'%3E%3Cpolygon fill='%23FCC5D3' points='0 8.18 14.75 22.93 22.74 22.93 0 0.19 0 8.18'/%3E%3Cpolygon fill='%23FCC5D3' points='22.93 8.37 22.93 0.38 22.56 0 14.56 0 22.93 8.37'/%3E%3C/svg%3E");
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22.93 22.93'%3E%3Cpolygon fill='%239bdabe' points='0 8.18 14.75 22.93 22.74 22.93 0 0.19 0 8.18'/%3E%3Cpolygon fill='%239bdabe' points='22.93 8.37 22.93 0.38 22.56 0 14.56 0 22.93 8.37'/%3E%3C/svg%3E");
           background-size: 11px;
           opacity: 0.6;
         }
         .dots {
-          background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 22.9 22.9' style='enable-background:new 0 0 22.9 22.9;' xml:space='preserve'%3E%3Ccircle fill='%23FCC5D3' class='st0' cx='5.7' cy='5.9' r='3'/%3E%3Ccircle fill='%23FCC5D3' class='st0' cx='17.2' cy='17.2' r='3'/%3E%3C/svg%3E%0A");
+          background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 22.9 22.9' style='enable-background:new 0 0 22.9 22.9;' xml:space='preserve'%3E%3Ccircle fill='%239bdabe' class='st0' cx='5.7' cy='5.9' r='3'/%3E%3Ccircle fill='%239bdabe' class='st0' cx='17.2' cy='17.2' r='3'/%3E%3C/svg%3E%0A");
           background-size: 12px;
         }
         .code__inr {
@@ -215,7 +207,7 @@ const Work = () => {
 
       <main className="page-body page-body--header" tabIndex={-1}>
         {/* SVG filtre pour l'effet duotone */}
-        <WorkBand />
+        <AboutMe />
         <svg
           style={{
             position: "absolute",
@@ -293,11 +285,10 @@ const Work = () => {
             >
               <div className="flow">
                 <motion.h2
-                  className="t-heading t-lede:s t-medium:m t-medium:l text-[1.68rem]"
+                  className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  Shopify Flow: <br /> Building the Headless Connection
-                  <span className="dot">.</span>
+                  Building Digital Experiences, One Project at a Time
                 </motion.h2>
 
                 {/* ligne hz */}
@@ -314,31 +305,11 @@ const Work = () => {
                 />
 
                 <motion.p variants={fadeInUp}>
-                  <Link
-                    href="https://atelier-storefront.vercel.app/"
-                    target="blank"
-                  >
-                    Atelier
-                  </Link>{" "}
-                  started as a simple e-commerce template and quickly became a
-                  deep exploration of Shopify’s ecosystem—from the Storefront
-                  API to the Admin backend. The goal wasn’t just to connect
-                  data, but to create a seamless flow between a custom-built
-                  e-commerce platform and Shopify’s headless architecture.
+                  Originally from Paris, I draw inspiration from the city’s
+                  vibrant creative scene to write both code and music.
                 </motion.p>
 
-                <motion.p variants={fadeInUp}>
-                  Through this project, I built a complete environment that
-                  automates product migration, powers a real-time headless
-                  storefront, and provides a custom admin dashboard for managing
-                  stock and pricing. It taught me how to balance flexibility and
-                  structure—leveraging Shopify’s APIs while keeping the freedom
-                  of a fully custom Next.js stack.
-                  <br />
-                  <br /> It’s a technical bridge between two worlds: the
-                  creativity of custom development and the reliability of a
-                  global commerce platform.
-                </motion.p>
+                <motion.p variants={fadeInUp}></motion.p>
               </div>
             </motion.div>
 
@@ -408,7 +379,7 @@ const Work = () => {
             </motion.div>
           </div>
 
-          {/* Second section: AI Image Playground */}
+          {/* Second section: Code Choreography */}
           <div
             className="panels panels--reversed panels--centred"
             ref={section2Ref}
@@ -424,7 +395,7 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  AI Image Playground: Combining Images with Multimodal AI
+                  The Soundtrack to My Code
                   <span className="dot">.</span>
                 </motion.h2>
 
@@ -441,37 +412,16 @@ const Work = () => {
                 />
 
                 <motion.p variants={fadeInUp}>
-                  <Link
-                    href="https://elite-sport-storefront.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {" "}
-                    AI Image Playground{" "}
-                  </Link>{" "}
-                  combines two images using Google Gemini 2.5 Flash Image with a
-                  textual prompt, built on Next.js 14, React 19, and TypeScript.
-                  The architecture leverages Vercel AI SDK for seamless
-                  integration, with AI Gateway providing monitoring and cost
-                  control. The application features drag-and-drop uploads,
-                  real-time previews, and optimized image processing that
-                  converts formats automatically. Designed for scalability, it
-                  uses serverless functions for horizontal scaling and maintains
-                  a stateless architecture for maximum flexibility. The system
-                  balances performance with observability, offering complete
-                  visibility into AI usage while ensuring efficient resource
-                  consumption.
+                  Before stepping into tech, I spent years immersed in the
+                  Parisian music scene as a songwriter, composer, and performer.
+                  Leading a French pop project taught me how to balance
+                  structure and spontaneity—skills that now fuel my work as a
+                  developer. Music remains a big part of my life, and I still
+                  find myself reaching for the guitar whenever I need to reset
+                  or spark new ideas.
                 </motion.p>
 
-                <motion.p variants={fadeInUp}>
-                  The frontend handles image uploads and validation, while the
-                  backend processes images through format conversion before
-                  sending them to Gemini. The multimodal model processes both
-                  images and text in a single request, returning generated
-                  images as base64 data. This architecture represents an optimal
-                  balance between simplicity, performance, and scalability,
-                  ready for growth without major refactoring.
-                </motion.p>
+                <motion.p variants={fadeInUp}></motion.p>
               </div>
             </motion.div>
 
@@ -479,82 +429,6 @@ const Work = () => {
               className="panels__side"
               initial="hidden"
               animate={section2InView ? "visible" : "hidden"}
-              variants={scaleIn}
-            >
-              <div className="circle">
-                <div className="circle__inr" data-reveal="is-active">
-                  <div
-                    className="circle__bg stripes"
-                    data-drift="-10 -14"
-                  ></div>
-                  <div className="illustration illustration--codeicons">
-                    <svg viewBox="0 0 512 512" className="code-icons">
-                      {/* Version simplifiée des icônes */}
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Third section: SkandiWall */}
-          <div className="panels panels--centred" ref={section3Ref}>
-            <motion.div
-              className="panels__main"
-              initial="hidden"
-              animate={section3InView ? "visible" : "hidden"}
-              variants={staggerContainer}
-            >
-              <div className="flow">
-                <motion.h2
-                  className="t-heading t-lede:s t-medium:m t-medium:l"
-                  variants={fadeInUp}
-                >
-                  SkandiWall: Simplicity Meets Functionality
-                  <span className="dot">.</span>
-                </motion.h2>
-
-                <motion.div
-                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
-                  initial={{ scaleX: 0 }}
-                  animate={section3InView ? { scaleX: 1 } : { scaleX: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  style={{ originX: 0 }}
-                />
-
-                <motion.p variants={fadeInUp}>
-                  Inspired by the minimalism of Scandinavian design,{" "}
-                  <Link href="https://skandiwall.vercel.app/" target="blank">
-                    SkandiWall
-                  </Link>{" "}
-                  was my take on creating an e-commerce app that feels both{" "}
-                  <b> modern and timeless</b> . It was more than just a
-                  minimalist e-commerce app—it was a collaborative journey that
-                  taught me the power of working closely with a team. Inspired
-                  by Scandinavian design principles, we set out to build a
-                  platform that felt modern yet timeless, letting the products
-                  shine without unnecessary distractions.
-                </motion.p>
-
-                <motion.p variants={fadeInUp}>
-                  Working alongside three frontend developers, we embraced agile
-                  methodologies, holding daily stand-ups and iterating quickly
-                  based on feedback. This experience not only sharpened my
-                  ability to communicate effectively but also deepened my
-                  understanding of how to align backend development with
-                  frontend needs.
-                </motion.p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="panels__side"
-              initial="hidden"
-              animate={section3InView ? "visible" : "hidden"}
               variants={scaleIn}
             >
               <div className="circle">
@@ -573,7 +447,7 @@ const Work = () => {
                       className="code"
                       initial={{ opacity: 0, y: 10 }}
                       animate={
-                        section3InView
+                        section2InView
                           ? { opacity: 1, y: 0 }
                           : { opacity: 0, y: 10 }
                       }
@@ -587,65 +461,75 @@ const Work = () => {
             </motion.div>
           </div>
 
-          {/* Final call to action section */}
-          <div className="reveal chunk hero" ref={heroRef}>
-            <motion.h2
-              className="hero__title t-outline t-heading t-lede:s t-big:m t-bigger:l"
-              initial={{ opacity: 0, y: 30 }}
-              animate={
-                heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-              }
-              transition={{ duration: 0.7 }}
-            >
-              Let's build something <b>better</b>
-              <span className="dot">.</span>
-            </motion.h2>
-
+          {/* Third section: JAMstack */}
+          <div className="panels panels--centred" ref={section3Ref}>
             <motion.div
-              className="flow hero__content"
+              className="panels__main"
               initial="hidden"
-              animate={heroInView ? "visible" : "hidden"}
+              animate={section3InView ? "visible" : "hidden"}
               variants={staggerContainer}
             >
-              <div className="hero__bg dots" data-drift="-10 -14"></div>
-
-              <motion.p variants={fadeInUp}>
-                I strongly believe that designers and developers have a
-                responsibility to make sure that what we are building does no
-                harm and I try to be as ethical as I can in taking on projects.
-              </motion.p>
-
-              <motion.p variants={fadeInUp}>
-                If your organisation represents online gambling, payday loans,
-                big tobacco, or mines and monetises personal data, then I am
-                probably not the best fit for your project. Due to its extremely
-                wasteful energy consumption, I don't take on projects using
-                crypto technology. I'm not one to completely write off a
-                technology but I can't conscionably work with it in its current
-                form.
-              </motion.p>
-
-              <motion.p variants={fadeInUp}>
-                All that said, if you are looking for help building something
-                that promotes sustainability, diversity, or generally aims to
-                make a positive impact, then let's talk.
-              </motion.p>
-
-              <motion.div variants={fadeInUp}>
-                <a
-                  href="mailto:hello@silver-api.digital?subject=🤘 Hi Florian, I'd like to hire you"
-                  className="btn"
+              <div className="flow">
+                <motion.h2
+                  className="t-heading t-lede:s t-medium:m t-medium:l"
+                  variants={fadeInUp}
                 >
-                  <span className="btn__label">Get in touch</span>
-                  <span
-                    className="btn__fill stripes"
-                    data-drift="-10 -12"
-                    aria-hidden="true"
-                  >
-                    Get in touch
-                  </span>
-                </a>
-              </motion.div>
+                  Code, Music, and the Art of Living in
+                  <b> Sync</b>
+                  <span className="dot">.</span>
+                </motion.h2>
+
+                <motion.div
+                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
+                  initial={{ scaleX: 0 }}
+                  animate={section3InView ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  style={{ originX: 0 }}
+                />
+
+                <motion.p variants={fadeInUp}>
+                  <a
+                    href="/garcondargent.com"
+                    rel="noreferrer"
+                    target="_blank"
+                    className="ml-1"
+                  ></a>
+                  Now based in Sweden, I work remotely, blending the methodical
+                  side of coding with the artistic process of music creation.
+                  For me, Paris is still a constant source of inspiration—its
+                  rhythm, its chaos, its unique ability to make even the
+                  simplest things feel <b> cinematic</b> . That’s the same
+                  feeling I aim to bring to the digital experiences I build:
+                  simple, impactful, and a little unexpected.
+                </motion.p>
+
+                <motion.p variants={fadeInUp}></motion.p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="panels__side"
+              initial="hidden"
+              animate={section3InView ? "visible" : "hidden"}
+              variants={scaleIn}
+            >
+              <div className="circle">
+                <div className="circle__inr" data-reveal="is-active">
+                  <div
+                    className="circle__bg stripes"
+                    data-drift="-10 -14"
+                  ></div>
+                  <div className="illustration illustration--codeicons">
+                    <svg viewBox="0 0 512 512" className="code-icons">
+                      {/* Version simplifiée des icônes */}
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
