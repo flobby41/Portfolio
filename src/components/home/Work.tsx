@@ -320,24 +320,13 @@ const Work = () => {
                   >
                     Atelier
                   </Link>{" "}
-                  started as a simple e-commerce template and quickly became a
-                  deep exploration of Shopify’s ecosystem—from the Storefront
-                  API to the Admin backend. The goal wasn’t just to connect
-                  data, but to create a seamless flow between a custom-built
-                  e-commerce platform and Shopify’s headless architecture.
+                  started as a custom e‑commerce platform and became a playground to integrate Shopify into a headless architecture. I worked with both the Storefront GraphQL API and the Admin API to experiment with importing and synchronizing product data into my own Node/Express backend.
                 </motion.p>
 
                 <motion.p variants={fadeInUp}>
-                  Through this project, I built a complete environment that
-                  automates product migration, powers a real-time headless
-                  storefront, and provides a custom admin dashboard for managing
-                  stock and pricing. It taught me how to balance flexibility and
-                  structure—leveraging Shopify’s APIs while keeping the freedom
-                  of a fully custom Next.js stack.
+                The goal was not just to display data, but to connect a fully custom Next.js storefront—with advanced product filtering, URL‑synced state and SSR for SEO—to Shopify as a complementary commerce engine. On top of that, I integrated Stripe Checkout and built an internal admin area to manage products, stock and pricing on the custom side, while keeping the door open for deeper Shopify integration.
                   <br />
-                  <br /> It’s a technical bridge between two worlds: the
-                  creativity of custom development and the reliability of a
-                  global commerce platform.
+                  <br /> This project sits at the intersection of two worlds: the flexibility of a bespoke full‑stack setup and the reliability of a global commerce platform.
                 </motion.p>
               </div>
             </motion.div>
