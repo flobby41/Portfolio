@@ -92,7 +92,7 @@ const Navbar = () => {
 
   const socialIcons = [
     {
-      href: "https://www.linkedin.com/in/florian-dev/",
+      href: "https://www.linkedin.com/in/silverapi/",
       icon: "linkedIn",
       label: "linkedIn",
     },
