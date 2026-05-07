@@ -37,12 +37,6 @@ const Work = () => {
     rootMargin: "-50px",
   });
 
-  const [section4Ref, section4InView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-    rootMargin: "-50px",
-  });
-
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -283,7 +277,7 @@ const Work = () => {
             </div>
           </header>
 
-          {/* First section: Considered development */}
+          {/* First section: MiniDist / dsp-pipeline */}
           <div className="panels panels--centred" ref={section1Ref}>
             <motion.div
               className="panels__main"
@@ -296,7 +290,7 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l text-[1.68rem]"
                   variants={fadeInUp}
                 >
-                  Shopify Flow: <br /> Building the Headless Connection
+                  MiniDist: Rebuilding a Pipeline That Was Silently Failing.
                   <span className="dot">.</span>
                 </motion.h2>
 
@@ -314,19 +308,43 @@ const Work = () => {
                 />
 
                 <motion.p variants={fadeInUp}>
-                  <Link
-                    href="https://atelier-storefront.vercel.app/"
-                    target="blank"
-                  >
-                    Atelier
-                  </Link>{" "}
-                  started as a custom e‑commerce platform and became a playground to integrate Shopify into a headless architecture. I worked with both the Storefront GraphQL API and the Admin API to experiment with importing and synchronizing product data into my own Node/Express backend.
+                  Dsp-pipeline started as a real problem at Alter K Global Music
+                  Services, where artists would upload their music and simply
+                  never hear back. No error. No notification. Just silence.
                 </motion.p>
 
                 <motion.p variants={fadeInUp}>
-                The goal was not just to display data, but to connect a fully custom Next.js storefront—with advanced product filtering, URL‑synced state and SSR for SEO—to Shopify as a complementary commerce engine. On top of that, I integrated Stripe Checkout and built an internal admin area to manage products, stock and pricing on the custom side, while keeping the door open for deeper Shopify integration.
+                  The original system worked when we were small. As volumes grew,
+                  large files timed out on upload, DSP API failures went
+                  undetected, and platform-specific logic was scattered across
+                  the codebase. I rebuilt it from scratch as three clean layers:
+                  S3 multipart upload to eliminate timeouts on files up to 200
+                  MB, a BullMQ worker pipeline that handles encoding
+                  asynchronously without blocking the API, and a DSP adapter
+                  layer that isolates each platform — Spotify, Apple Music,
+                  Deezer — behind its own interface.
+                </motion.p>
+
+                <motion.p variants={fadeInUp}>
+                  This project is a portable rebuild of that architecture, with
+                  a live demo that walks through the full pipeline in real time.
                   <br />
-                  <br /> This project sits at the intersection of two worlds: the flexibility of a bespoke full‑stack setup and the reliability of a global commerce platform.
+                  <br />
+                  <Link
+                    href="https://dsp-pipeline.vercel.app/demo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live demo
+                  </Link>
+                  {" • "}
+                  <Link
+                    href="https://github.com/flobby41/dsp-pipeline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </Link>
                 </motion.p>
               </div>
             </motion.div>
@@ -397,7 +415,7 @@ const Work = () => {
             </motion.div>
           </div>
 
-          {/* Second section: AI Image Playground */}
+          {/* Second section: Shopify Flow */}
           <div
             className="panels panels--reversed panels--centred"
             ref={section2Ref}
@@ -413,7 +431,7 @@ const Work = () => {
                   className="t-heading t-lede:s t-medium:m t-medium:l"
                   variants={fadeInUp}
                 >
-                  AI Image Playground: Combining Images with Multimodal AI
+                  Shopify Flow: <br /> Building the Headless Connection
                   <span className="dot">.</span>
                 </motion.h2>
 
@@ -431,12 +449,136 @@ const Work = () => {
 
                 <motion.p variants={fadeInUp}>
                   <Link
+                    href="https://atelier-storefront.vercel.app/"
+                    target="blank"
+                  >
+                    Atelier
+                  </Link>{" "}
+                  started as a custom e‑commerce platform and became a playground
+                  to integrate Shopify into a headless architecture. I worked
+                  with both the Storefront GraphQL API and the Admin API to
+                  experiment with importing and synchronizing product data into
+                  my own Node/Express backend.
+                </motion.p>
+
+                <motion.p variants={fadeInUp}>
+                  The goal was not just to display data, but to connect a fully
+                  custom Next.js storefront—with advanced product filtering,
+                  URL‑synced state and SSR for SEO—to Shopify as a complementary
+                  commerce engine. On top of that, I integrated Stripe Checkout
+                  and built an internal admin area to manage products, stock and
+                  pricing on the custom side, while keeping the door open for
+                  deeper Shopify integration.
+                  <br />
+                  <br /> This project sits at the intersection of two worlds:
+                  the flexibility of a bespoke full‑stack setup and the
+                  reliability of a global commerce platform.
+                </motion.p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="panels__side"
+              initial="hidden"
+              animate={section2InView ? "visible" : "hidden"}
+              variants={scaleIn}
+            >
+              <div className="circle">
+                <div className="circle__inr" data-reveal="is-active">
+                  <div
+                    className="circle__bg stripes"
+                    data-drift="-10 -14"
+                  ></div>
+                  <div className="illustration illustration--board">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 596.6 554.39"
+                      className="main-board"
+                    >
+                      <path
+                        className="svg-bg"
+                        d="M495.76,114.63H362.5L308.56,80.41a13,13,0,0,0-5.28-8A13,13,0,0,0,279.84,78L222,114.63H83.22a14.2,14.2,0,0,0-14.11,14.29V371.07a14.2,14.2,0,0,0,14.11,14.28H495.76a14.19,14.19,0,0,0,14.11-14.28V128.92A14.2,14.2,0,0,0,495.76,114.63ZM281.7,86.75a13.17,13.17,0,0,0,3.51,3.7,13,13,0,0,0,21.87-1l39.7,25.18h-109Z"
+                      />
+                      <rect
+                        className="svg-bg"
+                        y="467.84"
+                        width="596.6"
+                        height="86.55"
+                      />
+                    </svg>
+                    <motion.div
+                      className="illustration__layer"
+                      data-drift="-4 -4"
+                      initial={{ x: 5, y: 5 }}
+                      animate={section2InView ? { x: 0, y: 0 } : { x: 5, y: 5 }}
+                      transition={{ duration: 0.8, delay: 0.5 }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 596.6 554.39"
+                      >
+                        <rect
+                          className="svg-fill"
+                          x="223.63"
+                          y="273.15"
+                          width="103.26"
+                          height="26.64"
+                        />
+                        <circle
+                          className="svg-fill"
+                          cx="237.5"
+                          cy="255.96"
+                          r="8.94"
+                          transform="translate(-52.45 61.41) rotate(-13.28)"
+                        />
+                        <path
+                          className="svg-fill"
+                          d="M215.35,239.35H335V188.7H215.35Zm17.85-42.19a.92.92,0,1,1,.73-1.69L275,213.25l41.09-17.78a.92.92,0,0,1,.73,1.69l-39.51,17.09,39.51,17.09a.93.93,0,0,1,.48,1.21.94.94,0,0,1-1.21.48L275,215.25,233.93,233a1,1,0,0,1-.37.07.92.92,0,0,1-.36-1.76l39.5-17.09Z"
+                        />
+                      </svg>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Third section: AI Image Playground */}
+          <div className="panels panels--centred" ref={section3Ref}>
+            <motion.div
+              className="panels__main"
+              initial="hidden"
+              animate={section3InView ? "visible" : "hidden"}
+              variants={staggerContainer}
+            >
+              <div className="flow">
+                <motion.h2
+                  className="t-heading t-lede:s t-medium:m t-medium:l"
+                  variants={fadeInUp}
+                >
+                  AI Image Playground: Combining Images with Multimodal AI
+                  <span className="dot">.</span>
+                </motion.h2>
+
+                <motion.div
+                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
+                  initial={{ scaleX: 0 }}
+                  animate={section3InView ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
+                  style={{ originX: 0 }}
+                />
+
+                <motion.p variants={fadeInUp}>
+                  <Link
                     href="https://elite-sport-storefront.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {" "}
-                    AI Image Playground{" "}
+                    AI Image Playground
                   </Link>{" "}
                   combines two images using Google Gemini 2.5 Flash Image with a
                   textual prompt, built on Next.js 14, React 19, and TypeScript.
@@ -460,82 +602,6 @@ const Work = () => {
                   images as base64 data. This architecture represents an optimal
                   balance between simplicity, performance, and scalability,
                   ready for growth without major refactoring.
-                </motion.p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="panels__side"
-              initial="hidden"
-              animate={section2InView ? "visible" : "hidden"}
-              variants={scaleIn}
-            >
-              <div className="circle">
-                <div className="circle__inr" data-reveal="is-active">
-                  <div
-                    className="circle__bg stripes"
-                    data-drift="-10 -14"
-                  ></div>
-                  <div className="illustration illustration--codeicons">
-                    <svg viewBox="0 0 512 512" className="code-icons">
-                      {/* Version simplifiée des icônes */}
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Third section: SkandiWall */}
-          <div className="panels panels--centred" ref={section3Ref}>
-            <motion.div
-              className="panels__main"
-              initial="hidden"
-              animate={section3InView ? "visible" : "hidden"}
-              variants={staggerContainer}
-            >
-              <div className="flow">
-                <motion.h2
-                  className="t-heading t-lede:s t-medium:m t-medium:l"
-                  variants={fadeInUp}
-                >
-                  SkandiWall: Simplicity Meets Functionality
-                  <span className="dot">.</span>
-                </motion.h2>
-
-                <motion.div
-                  className="relative h-[3px] bg-[var(--line)] mt-4 mb-8 w-[30%]"
-                  initial={{ scaleX: 0 }}
-                  animate={section3InView ? { scaleX: 1 } : { scaleX: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  style={{ originX: 0 }}
-                />
-
-                <motion.p variants={fadeInUp}>
-                  Inspired by the minimalism of Scandinavian design,{" "}
-                  <Link href="https://skandiwall.vercel.app/" target="blank">
-                    SkandiWall
-                  </Link>{" "}
-                  was my take on creating an e-commerce app that feels both{" "}
-                  <b> modern and timeless</b> . It was more than just a
-                  minimalist e-commerce app—it was a collaborative journey that
-                  taught me the power of working closely with a team. Inspired
-                  by Scandinavian design principles, we set out to build a
-                  platform that felt modern yet timeless, letting the products
-                  shine without unnecessary distractions.
-                </motion.p>
-
-                <motion.p variants={fadeInUp}>
-                  Working alongside three frontend developers, we embraced agile
-                  methodologies, holding daily stand-ups and iterating quickly
-                  based on feedback. This experience not only sharpened my
-                  ability to communicate effectively but also deepened my
-                  understanding of how to align backend development with
-                  frontend needs.
                 </motion.p>
               </div>
             </motion.div>
